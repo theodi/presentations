@@ -16,6 +16,7 @@
 
     <link rel="stylesheet" href="reveal.js/css/reveal.min.css">
     <link rel="stylesheet" href="reveal.js/css/theme/sky.css" id="theme">
+    <link rel="stylesheet" href="reveal.js/css/fullscreen-img.css">
 
     <!-- For syntax highlighting -->
     <link rel="stylesheet" href="reveal.js/css/zenburn.css">
@@ -33,18 +34,26 @@
 <div class="slides">
 	
 	<section id="titlepage">
-        <h1>Sense and Non-Sense of a Personal Information Security Standard</h1>
+        <h2>Sense and Non-Sense of a Personal Information Security Standard</h2>
 		<p><br></p>
 		<p>Ulrich Atz · Open Data Institute</p>
 		<a href="https://twitter.com/panoramadata">@panoramadata</a>
 		<hr>
 		<span style="font-size:16px;">
-		<p>You can access the slides at <a href="http://theodi.github.io/presentations/unlock-value"> <code class="url">http://theodi.github.io/presentations/unlock-value</code></a>.</p>
-		<p>Thanks also to <a href="https://twitter.com/JeniT">@JeniT</a>.</p>
+		<p>You can access the slides at <a href="http://theodi.github.io/presentations/personal-information"> <code class="url">http://theodi.github.io/presentations/personal-information</code></a>.</p>
 		<p>Use arrows to navigate. Press 'f' for fullscreen. Press the <code>Escape</code> key to see all slides.</p>
 		</span>
 	</section>
-
+	
+	<section>
+		 <a href='http://quantifiedself.com'><img src='personal-information/QSEU_Header.png'></a>
+	</section>
+	<section>
+		<p>Tracking individuals is a lot like tracking companies.</p>
+	</section>
+    <section fullscreen-img='personal-information/QSEU_Header.png' fullscreen-size="contain">
+      ODI
+    </section>
 
 
 	<section id="open-data-institute">
@@ -109,7 +118,7 @@
 	</div>
 </div>
 
-<script src="reveal.js/lib/js/head.min.js"></script>	
+<script src="reveal.js/js/head.min.js"></script>	
 <script src="reveal.js/js/reveal.min.js"></script>
 
 <script>
@@ -123,8 +132,7 @@
         theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
         transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
-        dependencies: [
-        ]
+		dependencies: [ { src: 'reveal.js/js/fullscreen-img.js' } ]
     });
 
 </script>
