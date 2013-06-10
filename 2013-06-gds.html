@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>The State of Open Government Data</title>
+
+		<meta name="description" content="The State of Open Government Data">
+		<meta name="author" content="Jeni Tennison">
+
+	    <meta name="apple-mobile-web-app-capable" content="yes"/>
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	    <link rel="stylesheet" href="reveal.js/css/reveal.min.css">
+	    <link rel="stylesheet" href="reveal.js/css/theme/sky.css" id="theme">
+
+	    <!-- For syntax highlighting -->
+	    <link rel="stylesheet" href="reveal.js/css/zenburn.css">
+
+	    <!--[if lt IE 9]>
+	    <script src="lib/js/html5shiv.js"></script>
+	    <![endif]-->
+
+			<style type="text/css">
+				#odi-presentation .logo {
+					border: none;
+					box-shadow: none;
+				}
+			</style>
+
+	</head>
+
+	<body id="odi-presentation">
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+					
+				<section id="titlepage">
+				  <h1><a href="http://theodi.org/"><img class="logo" src="brand/ODI-logo-xlg.png" alt="ODI - Open Data Institute" /></a></h1>
+					<p><br></p>
+					<h2>The State of Open Government Data</h2>
+					<p><br></p>
+					<p>Jeni Tennison</p>
+					<p><a href="mailto:jeni@theodi.org">jeni@theodi.org</a> &middot; <a href="https://twitter.com/JeniT">@JeniT</a></p>
+					<hr>
+				  <span style="font-size: medium">
+				  	<p>You can access the slides at <a href="http://theodi.github.io/presentations/2013-06-gds.html"> <code class="url">http://theodi.github.io/presentations/2013-06-gds.html</code></a>.</p>
+				    <p>Use space-bar or arrows to navigate. Press 'f' for fullscreen. Press the <code>Escape</code> key to see all slides.</p>
+				  </span>
+				</section>
+				
+				<section>
+					<section>
+						<h2>What is Open Data?</h2>
+						<h3>multiple choice quiz</h3>
+						<ol>
+							<li>data you can get without paying</li>
+							<li>data you can republish</li>
+							<li>data you can't sell</li>
+							<li class="fragment">trick question, all three!</li>
+						</ol>
+					</section>
+					<section>
+						<h2>What is Open Data?</h2>
+						<p><strong>data you can republish</strong></p>
+						<ul>
+							<li>not all data you get without paying is open
+								<ul>
+									<li>licences and T&amp;Cs limit reuse</li>
+								</ul>
+							</li>
+							<li>you can sell open data
+								<ul>
+									<li>just like you can sell open source</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h2>Open Data Institute</h2>
+						<ul>
+							<li>independent institute</li>
+							<li>£10m over 5 years from TSB</li>
+							<li>matching with money from:
+								<ul>
+									<li>paying members</li>
+									<li>training &amp; professional services</li>
+									<li>philanthropic investors (eg Omidyar Network)</li>
+									<li>research grants</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h2>ODI Focus</h2>
+						<ul>
+							<li>unlocking supply</li>
+							<li>unlocking demand</li>
+							<li>communicating value</li>
+						</ul>
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h2>Reasons for Open Data</h2>
+						<ul>
+							<li>transparency &amp; accountability
+								<span class="fragment"><br />&rarr; org structures &amp; spending</span></li>
+							<li>innovation &amp; economic growth
+								<span class="fragment"><br />&rarr; data of interest outside government</span></li>
+							<li>effectiveness &amp; efficiency gains
+								<span class="fragment"><br />&rarr; data for digital public services</span></li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Saving Money</h2>
+						<p><strong>how much duplicate data does government maintain?</strong></p>
+						<ul>
+							<li>addresses
+								<ul>
+									<li>delivery points by Royal Mail</li>
+									<li>locations in AddressBase by OS</li>
+									<li>cadastral parcels by Land Registry</li>
+								</ul>
+							</li>
+							<li>for 2011 census, ONS spent £12m combining <small>[<a href="http://data.gov.uk/sites/default/files/Open%20Data%20User%20Group%20-%20Annexes%20to%20The%20Case%20for%20an%20Open%20National%20Address%20Dataset%20-%20November%202012%20%282%29.pdf">source</a>]</small>
+								<ul>
+									<li>cannot be reused ever again!</li>
+								</ul>
+							</li>
+							<li>Denmark saved £4.3m 2005-2009 by opening address data <small>[<a href="http://www.digst.dk/Home/Servicemenu/English/Digitisation/~/media/Files/English/Grunddata_UK_web_05102012_Publication.ashx">source</a>]</small>
+								<ul>
+									<li>plus £53.7m benefits to wider society</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h2>Saving Money</h2>
+						<p><strong>how much data does government surrender rights to?</strong></p>
+						<ul>
+							<li>traditional contracts
+								<ul>
+									<li>contract gives IP to provider</li>
+									<li>they profit as monopoly</li>
+									<li>government buys back</li>
+									<li>government loses data when contract ends</li>
+								</ul>
+							</li>
+							<li>good practice
+								<ul>
+									<li>IP remains with government</li>
+									<li>provider publishes open data</li>
+									<li>they profit on level playing field</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h2>Saving Money</h2>
+						<p><strong>how much does government spend buying back its own data?</strong></p>
+						<ul>
+							<li>legislation &amp; judgements
+								<ul>
+									<li>free from <a href="http://legislation.gov.uk">legislation.gov.uk</a> &amp; <a href="http://www.bailii.org/">BAILII</a></li>
+									<li>costly subscriptions to private sources</li>
+									<li>~£10m spent by courts alone</li>
+									<li>more spent by government depts &amp; other bodies</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h2>Saving Money</h2>
+						<p><strong>what data do <em>you</em> need to use?</strong></p>
+						<ul>
+							<li>maps, addresses, postcodes, properties</li>
+							<li>company register, VAT register</li>
+							<li>vehicle details, driving test centres</li>
+							<li>demographic statistics</li>
+							<li>prisons, courts, schools, hospitals...</li>
+							<li>job vacancies, job centres</li>
+							<li>...</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h2>Saving Money</h2>
+						<ul>
+							<li>how much duplicate data does government maintain?</li>
+							<li>how much data does government surrender rights to?</li>
+							<li>how much does government spend on its own data?</li>
+							<li>what data does government need to use?</li>
+						</ul>
+						<p><strong>we don't know</strong></p>
+					</section>
+				</section>
+				
+				<section>
+					<h2>National Core<br />Reference Data</h2>
+					<ul>
+						<li>highlighted in Shakespeare Review</li>
+						<li>data you need for digital public services
+							<ul>
+								<li>anything you give identifiers / codes to</li>
+							</ul>
+						</li>
+						<li>national information infrastructure
+							<ul>
+								<li>the data we build on</li>
+								<li>the data that makes everything else run smoothly</li>
+							</ul>
+						</li>
+						<li>deserve persistent URLs</li>
+					</ul>
+				</section>
+				
+				<section>
+					<section>
+						<h2>What You Can Do</h2>
+						<p><strong>lead by example</strong></p>
+						<ul>
+							<li>how much duplicate data does government maintain?<br />&rarr;identify and reduce duplication</li>
+							<li>how much data does government surrender rights to?<br />&rarr;write open data into procurement rules</li>
+							<li>how much does government spend on its own data?<br />&rarr;publish as open data</li>
+							<li>what data would government like to use?<br />&rarr;support internal and external reuse</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h2>When Publishing Data</h2>
+						<p><strong>focus on (re)user needs</strong></p>
+						<ul>
+							<li>clear legal status</li>
+							<li>clear quality &amp; availability guarantees</li>
+							<li>standard data formats that don't change</li>
+							<li>documentation, support networks &amp; tools</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Open Data Certificates</h2>
+						<ul>
+							<li>set standard for open data publishing</li>
+							<li>emphasise (re)user needs</li>
+							<li>help publishers get better</li>
+						</ul>
+					</section>
+					<section>
+						<img src="2013-06-research-councils-uk/odc.png" />
+					</section>
+					<section>
+						<img src="2013-06-research-councils-uk/odc-questionnaire-2.png" />
+					</section>
+					<section>
+						<img src="2013-06-research-councils-uk/odc-certificate.png" />
+					</section>
+					<section>
+						<h2>Which Level?</h2>
+						<ul>
+							<li>all government data should get a certificate</li>
+							<li>that published on GOV.UK should achieve <strong>Pilot</strong>
+								<ul>
+									<li>really, should be <strong>Standard</strong></li>
+								</ul>
+							</li>
+							<li>National Core Reference Data, <strong>Expert</strong></li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Collaboration</h2>
+						<p>where open data gets exciting</p>
+					</section>
+					<section>
+						<h2>Collaboration</h2>
+						<ul>
+							<li>how has open source succeeded?</li>
+							<li>we can do better working together</li>
+							<li>same is true of data</li>
+						</ul>
+					</section>
+					<section>
+						<h2>OpenStreetMap</h2>
+						<ul>
+							<li>open geographic data</li>
+							<li>large numbers of collaborators</li>
+							<li>increasing quality</li>
+							<li>fantastic reuse</li>
+						</ul>
+					</section>
+					<section>
+						<h2>For Government?</h2>
+						<ul>
+							<li>trusted information</li>
+							<li>managed platform for collaboration</li>
+							<li>monitor, review and report quality</li>
+							<li>increase coverage</li>
+						</ul>
+					</section>
+				</section>
+				
+				<section>
+					<h2>Final Thoughts</h2>
+					<p>you have in your hands the keys to government's data</p>
+					<p>your lead gets followed</p>
+					<p>if we can help, we will</p>
+				</section>
+
+				<section>
+			    <h3>Questions?</h3><br>
+			    <img class="logo" src="brand/ODI-logo-lg.png" alt="ODI" style="border:none;"></a><br>
+		    	<p>Jeni Tennison</p>
+			    <p><a href="mailto:jeni@theodi.org">jeni@theodi.org</a> &middot; <a href="https://twitter.com/JeniT">@JeniT</a></p>
+				</section>
+				</div>
+				<div id="brand">
+				<a class="image" href="http://theodi.org"><img class="logo" style="position:fixed; left:10px; bottom:50px; z-index:30;" src="brand/ODI-logo-sml.png" alt="ODI"></a>
+				<br>
+				<a class="image" href="http://creativecommons.org/licenses/by-sa/3.0/"><img width="97" height="34" style="position:fixed; left:10px; bottom:10px; z-index:30;" src="brand/licence.png" alt="Creative Commons"></a>
+				</div>
+		</div>
+
+		<script src="reveal.js/js/head.min.js"></script>	
+		<script src="reveal.js/js/reveal.min.js"></script>
+
+		<script>
+
+		    Reveal.initialize({
+		        controls: false,
+		        progress: true,
+		        history: true,
+		        center: true,
+
+		        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+		        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+		        dependencies: [
+		        ]
+		    });
+
+		</script>
+
+
+	</body>
+</html>
