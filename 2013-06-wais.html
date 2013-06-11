@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>The Open Data Institute: Introduction &amp; Research</title>
+
+		<meta name="description" content="ODI: Introduction &amp; Research">
+		<meta name="author" content="Jeni Tennison">
+		<meta name="author" content="Tom Heath">
+
+	    <meta name="apple-mobile-web-app-capable" content="yes"/>
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	    <link rel="stylesheet" href="reveal.js/css/reveal.min.css">
+	    <link rel="stylesheet" href="reveal.js/css/theme/sky.css" id="theme">
+
+	    <!-- For syntax highlighting -->
+	    <link rel="stylesheet" href="reveal.js/css/zenburn.css">
+
+	    <!--[if lt IE 9]>
+	    <script src="lib/js/html5shiv.js"></script>
+	    <![endif]-->
+
+			<style type="text/css">
+				#odi-presentation .logo {
+					border: none;
+					box-shadow: none;
+				}
+			</style>
+
+	</head>
+
+	<body id="odi-presentation">
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<section>
+						<h2>Tabular Data on the Web</h2>
+						<h3>the problems</h3>
+						<ul>
+							<li>Excel is too flexible</li>
+							<li>CSV lacks metadata</li>
+							<li>RDF formats are too verbose</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Tabular Data on the Web</h2>
+						<h3>the proposals</h3>
+						<ul>
+							<li><a href="https://developers.google.com/public-data/">Google's Dataset Publishing Language (DSPL)</a>
+								<ul>
+									<li>zip of CSVs + XML metadata</li>
+								</ul>
+							</li>
+							<li><a href="http://www.dataprotocols.org/en/latest/simple-data-format.html">OKFN's Simple Data Format (SDF)</a>
+								<ul>
+									<li>zip of CSVs + JSON metadata</li>
+								</ul>
+							</li>
+							<li><a href="http://jenit.github.io/linked-csv/">Jeni's Linked CSV</a>
+								<ul>
+									<li>conventions for embedding metadata in CSV</li>
+								</ul>
+							</li>
+							<li>schema.org approach
+								<ul>
+									<li>HTML page with embedded markup describing CSVs</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Tabular Data on the Web</h2>
+						<h3><a href="http://theodi.github.io/linked-csv-browser/">Linked CSV Browser</a> - Data</h3>
+						<img src="2013-06-wais/linked-csv-main.png" />
+					</section>
+					<section>
+						<h2>Tabular Data on the Web</h2>
+						<h3><a href="http://theodi.github.io/linked-csv-browser/">Linked CSV Browser</a> - Metadata</h3>
+						<img src="2013-06-wais/linked-csv-meta.png" />
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h2>Data Ecosystem</h2>
+						<p>How do licensing choices affect the data ecosystem?</p>
+						<p>What kind of licence is best for government to choose?</p>
+					</section>
+					<section>
+						<h2>Data Ecosystem</h2>
+						<h3><a href="http://theodi.github.io/data-ecosystem-simulation/">Simulation with D3</a></h3>
+						<img src="2013-06-wais/data-ecosystem.png" />
+					</section>
+				</section>
+			</div>
+			<div id="brand">
+				<a class="image" href="http://theodi.org"><img class="logo" style="position:fixed; left:10px; bottom:50px; z-index:30;" src="brand/ODI-logo-sml.png" alt="ODI"></a>
+				<br>
+				<a class="image" href="http://creativecommons.org/licenses/by-sa/3.0/"><img width="97" height="34" style="position:fixed; left:10px; bottom:10px; z-index:30;" src="brand/licence.png" alt="Creative Commons"></a>
+			</div>
+		</div>
+
+		<script src="reveal.js/js/head.min.js"></script>	
+		<script src="reveal.js/js/reveal.min.js"></script>
+
+		<script>
+
+		    Reveal.initialize({
+		        controls: false,
+		        progress: true,
+		        history: true,
+		        center: true,
+
+		        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+		        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+		        dependencies: [
+		        ]
+		    });
+
+		</script>
+
+
+	</body>
+</html>
