@@ -29,6 +29,16 @@
 					border: none;
 					box-shadow: none;
 				}
+				
+				#odi-presentation table {
+					width: 100%;
+				}
+				#odi-presentation td, #odi-presentation th {
+					text-align: center;
+				}
+				#odi-presentation th {
+					font-weight: bold;
+				}
 			</style>
 
 	</head>
@@ -67,7 +77,7 @@
 					</section>
 					<section>
 						<h2>What is Open Data?</h2>
-						<p><strong>data you can republish</strong></p>
+						<p><strong>2. data you can republish</strong></p>
 						<ul>
 							<li>not all data you get without paying is open
 								<ul>
@@ -93,7 +103,7 @@
 								<ul>
 									<li>paying members</li>
 									<li>training &amp; professional services</li>
-									<li>philanthropic investors (eg Omidyar Network)</li>
+									<li>philanthropic investors</li>
 									<li>research grants</li>
 								</ul>
 							</li>
@@ -128,25 +138,28 @@
 					<section>
 						<h2>Saving Money</h2>
 						<p><strong>how much duplicate data does government maintain?</strong></p>
-						<ul>
-							<li>addresses
-								<ul>
-									<li>delivery points by Royal Mail</li>
-									<li>locations in AddressBase by OS</li>
-									<li>cadastral parcels by Land Registry</li>
-								</ul>
-							</li>
-							<li>for 2011 census, ONS spent £12m combining <small>[<a href="http://data.gov.uk/sites/default/files/Open%20Data%20User%20Group%20-%20Annexes%20to%20The%20Case%20for%20an%20Open%20National%20Address%20Dataset%20-%20November%202012%20%282%29.pdf">source</a>]</small>
-								<ul>
-									<li>cannot be reused ever again!</li>
-								</ul>
-							</li>
-							<li>Denmark saved £4.3m 2005-2009 by opening address data <small>[<a href="http://www.digst.dk/Home/Servicemenu/English/Digitisation/~/media/Files/English/Grunddata_UK_web_05102012_Publication.ashx">source</a>]</small>
-								<ul>
-									<li>plus £53.7m benefits to wider society</li>
-								</ul>
-							</li>
-						</ul>
+						<img src="2013-06-gds/map.png" />
+						<aside class="notes">
+							<ul>
+								<li>addresses
+									<ul>
+										<li>delivery points by Royal Mail</li>
+										<li>locations in AddressBase by OS</li>
+										<li>cadastral parcels by Land Registry</li>
+									</ul>
+								</li>
+								<li>for 2011 census, ONS spent £12m combining <small>[<a href="http://data.gov.uk/sites/default/files/Open%20Data%20User%20Group%20-%20Annexes%20to%20The%20Case%20for%20an%20Open%20National%20Address%20Dataset%20-%20November%202012%20%282%29.pdf">source</a>]</small>
+									<ul>
+										<li>cannot be reused ever again!</li>
+									</ul>
+								</li>
+								<li>Denmark saved £4.3m 2005-2009 by opening address data <small>[<a href="http://www.digst.dk/Home/Servicemenu/English/Digitisation/~/media/Files/English/Grunddata_UK_web_05102012_Publication.ashx">source</a>]</small>
+									<ul>
+										<li>plus £53.7m benefits to wider society</li>
+									</ul>
+								</li>
+							</ul>
+						</aside>
 					</section>
 					
 					<section>
@@ -161,7 +174,7 @@
 									<li>government loses data when contract ends</li>
 								</ul>
 							</li>
-							<li>good practice
+							<li class="fragment">good practice
 								<ul>
 									<li>IP remains with government</li>
 									<li>provider publishes open data</li>
@@ -174,16 +187,19 @@
 					<section>
 						<h2>Saving Money</h2>
 						<p><strong>how much does government spend buying back its own data?</strong></p>
-						<ul>
-							<li>legislation &amp; judgements
-								<ul>
-									<li>free from <a href="http://legislation.gov.uk">legislation.gov.uk</a> &amp; <a href="http://www.bailii.org/">BAILII</a></li>
-									<li>costly subscriptions to private sources</li>
-									<li>~£10m spent by courts alone</li>
-									<li>more spent by government depts &amp; other bodies</li>
-								</ul>
-							</li>
-						</ul>
+						<img src="2013-06-gds/legislation.gov.uk.png" />
+						<aside class="notes">
+							<ul>
+								<li>legislation &amp; judgements
+									<ul>
+										<li>free from <a href="http://legislation.gov.uk">legislation.gov.uk</a> &amp; <a href="http://www.bailii.org/">BAILII</a></li>
+										<li>costly subscriptions to private sources</li>
+										<li>~£10m/year spent by courts alone</li>
+										<li>more spent by government depts &amp; other bodies</li>
+									</ul>
+								</li>
+							</ul>
+						</aside>
 					</section>
 					
 					<section>
@@ -199,36 +215,6 @@
 							<li>...</li>
 						</ul>
 					</section>
-					
-					<section>
-						<h2>Saving Money</h2>
-						<ul>
-							<li>how much duplicate data does government maintain?</li>
-							<li>how much data does government surrender rights to?</li>
-							<li>how much does government spend on its own data?</li>
-							<li>what data does government need to use?</li>
-						</ul>
-						<p><strong>we don't know</strong></p>
-					</section>
-				</section>
-				
-				<section>
-					<h2>National Core<br />Reference Data</h2>
-					<ul>
-						<li>highlighted in Shakespeare Review</li>
-						<li>data you need for digital public services
-							<ul>
-								<li>anything you give identifiers / codes to</li>
-							</ul>
-						</li>
-						<li>national information infrastructure
-							<ul>
-								<li>the data we build on</li>
-								<li>the data that makes everything else run smoothly</li>
-							</ul>
-						</li>
-						<li>deserve persistent URLs</li>
-					</ul>
 				</section>
 				
 				<section>
@@ -236,13 +222,41 @@
 						<h2>What You Can Do</h2>
 						<p><strong>lead by example</strong></p>
 						<ul>
-							<li>how much duplicate data does government maintain?<br />&rarr;identify and reduce duplication</li>
-							<li>how much data does government surrender rights to?<br />&rarr;write open data into procurement rules</li>
-							<li>how much does government spend on its own data?<br />&rarr;publish as open data</li>
-							<li>what data would government like to use?<br />&rarr;support internal and external reuse</li>
+							<li>how much duplicate data does government maintain?<strong class="fragment"><br />&rarr; identify and reduce duplication</strong></li>
+							<li>how much data does government surrender rights to?<strong class="fragment"><br />&rarr; write open data into procurement rules</strong></li>
+							<li>how much does government spend on its own data?<strong class="fragment"><br />&rarr; publish as open data</strong></li>
+							<li>what data would government like to use?<strong class="fragment"><br />&rarr; support internal and external reuse</strong></li>
 						</ul>
 					</section>
 					
+					<section>
+						<h2>National Core<br />Reference Data</h2>
+						<img src="2013-06-gds/spaghetti-junction.jpg" />
+						<p><small><a href="http://www.flickr.com/photos/highwaysagency/6194409693">photo</a> by <a href="http://www.flickr.com/photos/highwaysagency/">Highways Agency</a></small></p>
+						<aside class="notes">
+							<ul>
+								<li>highlighted in Shakespeare Review</li>
+								<li>data you need for digital public services
+									<ul>
+										<li>anything you give identifiers / codes to</li>
+									</ul>
+								</li>
+								<li>national information infrastructure
+									<ul>
+										<li>the data we build on</li>
+										<li>the data that makes everything else run smoothly</li>
+									</ul>
+								</li>
+								<li>deserve persistent URLs</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section>
+						<h2>New Business Models</h2>
+						<img src="2013-06-gds/business-model.jpg" />
+					</section>
+
 					<section>
 						<h2>When Publishing Data</h2>
 						<p><strong>focus on (re)user needs</strong></p>
@@ -265,58 +279,40 @@
 						</ul>
 					</section>
 					<section>
-						<img src="2013-06-research-councils-uk/odc.png" />
+						<img src="2013-06-gds/odc.png" />
 					</section>
 					<section>
-						<img src="2013-06-research-councils-uk/odc-questionnaire-2.png" />
+						<img src="2013-06-gds/odc-questionnaire-2.png" />
 					</section>
 					<section>
-						<img src="2013-06-research-councils-uk/odc-certificate.png" />
+						<img src="2013-06-gds/odc-certificate.png" />
 					</section>
 					<section>
 						<h2>Which Level?</h2>
-						<ul>
-							<li>all government data should get a certificate</li>
-							<li>that published on GOV.UK should achieve <strong>Pilot</strong>
-								<ul>
-									<li>really, should be <strong>Standard</strong></li>
-								</ul>
-							</li>
-							<li>National Core Reference Data, <strong>Expert</strong></li>
-						</ul>
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h2>Collaboration</h2>
-						<p>where open data gets exciting</p>
-					</section>
-					<section>
-						<h2>Collaboration</h2>
-						<ul>
-							<li>how has open source succeeded?</li>
-							<li>we can do better working together</li>
-							<li>same is true of data</li>
-						</ul>
-					</section>
-					<section>
-						<h2>OpenStreetMap</h2>
-						<ul>
-							<li>open geographic data</li>
-							<li>large numbers of collaborators</li>
-							<li>increasing quality</li>
-							<li>fantastic reuse</li>
-						</ul>
-					</section>
-					<section>
-						<h2>For Government?</h2>
-						<ul>
-							<li>trusted information</li>
-							<li>managed platform for collaboration</li>
-							<li>monitor, review and report quality</li>
-							<li>increase coverage</li>
-						</ul>
+						<table>
+							<col width="25%" />
+							<col width="25%" />
+							<col width="25%" />
+							<col width="25%" />
+							<tr>
+								<td><img class="logo" src="2013-06-gds/raw_level_badge.png" /></td>
+								<td><img class="logo" src="2013-06-gds/pilot_level_badge.png" /></td>
+								<td><img class="logo" src="2013-06-gds/standard_level_badge.png" /></td>
+								<td><img class="logo" src="2013-06-gds/exemplar_level_badge.png" /></td>
+							</tr>
+							<tr>
+								<th>Raw</th>
+								<th>Pilot</th>
+								<th>Standard</th>
+								<th>Exemplar</th>
+							</tr>
+							<tr>
+								<td></td>
+								<td>minimum government standard</td>
+								<td></td>
+								<td>core reference data</td>
+							</tr>
+						</table>
 					</section>
 				</section>
 				
