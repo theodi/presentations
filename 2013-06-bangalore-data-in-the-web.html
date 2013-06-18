@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Data and the Web: Past, Present and Future</title>
+
+		<meta name="description" content="Description of your talk">
+		<meta name="author" content="Your Name">
+
+	    <meta name="apple-mobile-web-app-capable" content="yes"/>
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	    <link rel="stylesheet" href="reveal.js/css/reveal.min.css">
+	    <link rel="stylesheet" href="reveal.js/css/theme/sky.css" id="theme">
+
+	    <!-- For syntax highlighting -->
+	    <link rel="stylesheet" href="reveal.js/css/zenburn.css">
+
+	    <!--[if lt IE 9]>
+	    <script src="lib/js/html5shiv.js"></script>
+	    <![endif]-->
+
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+					
+				<section id="titlepage">
+				  <!--<h1>From Data <strong>on</strong> the Web to Data <strong>in</strong> the Web</h1>-->
+				  <h2>Data and the Web</h2>
+				  <h2>Past, Present and Future</h2>
+				  <h2>[work in progress!!!]</h2>
+				  <p>&nbsp;</p>
+				  <p>Dr Tom Heath · Head of Research · Open Data Institute</p>
+				  <a href="https://twitter.com/handle">@tommyh</a>
+				  <hr>
+				  <span style="font-size: medium">
+				    <p>You can access the slides at <a href="http://theodi.github.io/presentations/"> <code class="url">http://theodi.github.io/presentations/</code></a>.</p>
+				    <p>Use arrows to navigate. Press 'f' for fullscreen. Press the <code>Escape</code> key to see all slides.</p>
+				  </span>
+				</section>
+
+				<section id="overview"><h2>Overview</h2><ol><li>Introduction</li><li>A History of Data on the Web</li><li>Open Data</li><li>A Web of Open Data</li><li>Conclusions and Future Directions</li></ol></section>
+				
+				<section id="intro"><h2>== Part 1 ==</h2><h2>Introduction</h2></section>
+				<section id="odi"><h2>The Open Data Institute</h2><p class="fragment">founded by Tim Berners-Lee and Nigel Shadbolt in 2012</p><p>non-profit, non-partisan company limited by guarantee</p>dedicated to unlocking the supply of and demand for open data, communicating its value</p></section>
+				<section><h2>ODI Funding</h2><p>partly funded by (but independent from) government; additional funding from members, philanthropic donations, research grants, training</p></section>
+				<section><h2>ODI Scope</h2><p>based in east london, but national remit and global leadership</p></section>
+				<section><h2>ODI Activities</h2><p>training, tools and services, startups, policy, research...(all in support of our three goals)</p></section>
+				<section><h2>ODI Startups</h2><p>[list them]</p></section>
+				<section><h2>ODI Members</h2><p>[list them]</p></section>
+				<section><h2>ODI Ethos</h2><p>[how we work; everything in the open; links]</p></section>
+
+				<section id="me">
+					<h2>My Background</h2>
+					<p>[see source]</p>
+					<!-- Web Development; limitations of HTML -->
+					<!-- PhD Student at The OU --> 
+					<!-- Linking Open Data Project -->
+					<!-- Talis -->
+					<!-- Linked Data -- The Story So Far -->
+					<!-- Linked Data -- Evolving the Web into a Global Data Space -->
+					<!-- data science -->
+					<!-- how I came to be at the ODI -->
+				</section>
+
+				<section id="history"><h2>== Part 2 ==</h2><h2>A History of Data<br/>on the Web</h2></section>
+				<section>
+					<h2>[Data and the Original Web Vision]</h2>
+					<p>[&quot;The system must achieve a critical usefulness early on. Existing hypertext systems have had to justify themselves solely on new data. If, however, there was an existing base of data of personnel, for example, to which new data could be linked, the value of each new piece of data would be greater.&quot;]</p>
+					<p>[http://www.w3.org/History/1989/proposal.html]</p>
+					<!--
+							//We should work toward a universal linked information system//
+							// It is sometimes possible to enhance an existing storage system by coding hypertext information in, if one knows that a server will be generating a hypertext representation. In 'news' articles, for example, one could use (in the text) a standard format for a reference to another article. This would be picked out by the hypertext gateway and used to generate a link to that note. This sort of enhancement will allow greater integration between old and new systems. //
+					-->
+				</section>
+				<section>
+					<h2>What Happened Next?</h2>
+					<p>[the document web was such a revolution, we hardly worried about the data]</p>
+				</section>
+				<section>
+					<h2>Data on the Web:<br/>the Early Years</h2>
+					<p><strong>a little bit more structure</strong></p>
+					<p>or</p>
+					<p><strong>the Web as a filesystem</strong></p>
+					<p>[a continuum]</p>
+				</section>
+				<section>
+					<h2>More Structure</h2>
+					<p>POSH: Plain Old Semantic HTML</p>
+					<p>Microformats: highly granular fragments of structured markup</p>
+					<p>[examples of microformats]</p>
+				</section>
+				<section>
+					<h2>Microformats</h2>
+					<p>what were the drivers of this? For POSH and microformats => SEO? data reuse?</p>
+					<p>limitations: microformats (no underlying data model); </p>
+				</section>
+				<!-- at the other end of the spectrum -->
+				<section>
+					<h2>Web as Filesystem for Data</h2>
+					<p>csv, database dumps
+					<p>what were the drivers of this? => sharing data</p>
+				</section>
+				<section>
+					<h2>Web as Filesystem for Data</h2>
+					<p>limitations: db dumps (proprietary, need a sql interpreter); csv (no context); xml and json (no discoverable context; not particularly webby; leaf nodes, dead ends)]</p>
+				</section>
+				<section>
+					<h2>Conclusions</h2>
+					<p>the historical picture is very fragmented</p>
+					<p>data remained a second class citizen of the Web</p>
+					<p>we are seeing and will see a gradual convergence based on common standards and evolving best practices, driven by two principles...</p>
+				</section>
+				<section><h2>accessible and usable web data means open data</h2></section>
+
+				<section id="open-data"><h2>== Part 3 ==</h2><h2>Open Data</h2></section>
+				<section><h2>what do we mean by open data? clear and open licensing terms</h2></section>
+				<section><h2>why does this matter? because data is not for human consumption -- it requires some processing to be made into something useful; it is not the finished product, unlike web pages; give examples</h2></section>
+				<section><h2>licensing primer; content vs data licensing</h2></section>
+				<section><h2>historical context in the UK and elsewhere; e.g. free our postcodes; data.gov.uk; recent announcements at G8 e.g. WorldBank</h2></section>
+				<section><h2>state of the art (technical, deployment)</h2></section>
+				<section><h2>what are people doing with the data?</h2></section>
+				<section><h2>business models and business cases; pivotal question: is data your product?</h2></section>
+				<section><h2>what needs to happen next? So what about the data itself? Is open enough by itself? Revisit accessible and usable; can it be discovered? Is it's meaning clear? Can the meaning be discovered?</h2></section>
+
+				<section id="linked-data"><h2>== Part 4 ==</h2><h2>A Web of Open Data</h2></section>
+				<section><h2>revisit the previous discussion on formats for Web data: to what extent are they discoverable and usable? (do a table of these, expanding on various criteria, including are they first class citizens of the Web? Include JSON)</h2></section>
+				<section><h2>a universal data model: the triple and the graph: give an example of a graph without URIs; show how this maps to CSV, XML, JSON; what are the limitations?</h2></section>
+				<section><h2>a webby approach to data: RDF + URIs: context/meaning, discovery, provenance, descriptions of other data, painless data merging</h2></section>
+				<section><h2>RDF serialisations: pros and cons (n-triples as entry level; turtle more compact; RDF/XML the legacy choice; RDFa for embedded data; each has advantages; what about RDF/JSON and JSON-LD?)</h2></section>
+				<section><h2>The Linked Data Principles: data in the Web; a first class citizen</h2></section>
+				<section><h2>Vocabs: how to define them; different models: e.g. schema.org vs web of vocabs?</h2></section>
+				<section><h2>Advantages of a distributed approach to data management (reduce duplication of effort; establish authority, track provenance; allow all the things that make the Web powerful)</h2></section>
+				<section><h2>Current applications</h2></section>
+
+				<section id="future"><h2>== Part 5 ==</h2><h2>Future Directions and Research Challenges</h2></section>
+				<section><h2>outlook for the Web of data: what happens next? has been debate about the technology stack, but the trends are indisputable and this is the best technology stack available</h2></section>
+				<section><h2>what place for reasoning? what role for sparql?</h2></section>
+				<section><h2>licensing</h2></section>
+				<section><h2>data discovery, profiling, indexing, ranking: differences to classic IR</h2></section>
+				<section><h2>Automated data linking?</h2></section>
+				<section><h2>how do graph-like, tabular and statistical data actually fit together?</h2></section>
+
+				<section>
+			    <h3>Questions?</h3><br>
+				  <p>Names · Open Data Institute</p>
+				  <img width="97" height="40" src="brand/odi_logo.png" alt="ODI" style="border:none;"></a><br>
+				  <a href="mailto:">foo@theodi.org</a>
+				</section>
+				</div>
+				
+				<div id="brand">
+				<a class="image" href="http://theodi.org"><img height="40" style="position:fixed; left:10px; bottom:50px; z-index:30;" src="brand/odi_logo.svg" alt="ODI"></a>
+				<br>
+				<a class="image" href="http://creativecommons.org/licenses/by-sa/3.0/"><img width="97" height="34" style="position:fixed; left:10px; bottom:10px; z-index:30;" src="brand/licence.png" alt="Creative Commons"></a>
+				</div>
+		</div>
+
+		<script src="reveal.js/js/head.min.js"></script>	
+		<script src="reveal.js/js/reveal.min.js"></script>
+
+		<script>
+
+		    Reveal.initialize({
+		        controls: false,
+		        progress: true,
+		        history: true,
+		        center: true,
+
+		        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+		        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+		        dependencies: [
+		        ]
+		    });
+
+		</script>
+
+
+	</body>
+</html>
