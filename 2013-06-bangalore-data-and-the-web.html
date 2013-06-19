@@ -102,37 +102,146 @@
 				<section>
 					<h2>Microformats</h2>
 					<p>what were the drivers of this? For POSH and microformats => SEO? data reuse?</p>
-					<p>limitations: microformats (no underlying data model); </p>
+					<p>limitations: no underlying data model [add others?]</p>
 				</section>
 				<!-- at the other end of the spectrum -->
 				<section>
 					<h2>Web as Filesystem for Data</h2>
 					<p>csv, database dumps
-					<p>what were the drivers of this? => sharing data</p>
+					<p>what were the drivers of this? => sharing data; just a distribution mechanism?</p>
 				</section>
 				<section>
 					<h2>Web as Filesystem for Data</h2>
 					<p>limitations: db dumps (proprietary, need a sql interpreter); csv (no context); xml and json (no discoverable context; not particularly webby; leaf nodes, dead ends)]</p>
 				</section>
 				<section>
-					<h2>Conclusions</h2>
+					<h2>Summary</h2>
 					<p>the historical picture is very fragmented</p>
-					<p>data remained a second class citizen of the Web</p>
-					<p>we are seeing and will see a gradual convergence based on common standards and evolving best practices, driven by two principles...</p>
+					<p>data has been a second class citizen of the Web</p>
+					<p>[demand for web as data platform; examples of how data has come to the forefront]</p>
+					<p>[gradual convergence based on common standards and evolving best practices, driven by two principles...]</p>
 				</section>
-				<section><h2>accessible and usable web data means open data</h2></section>
+				<section><h2>web data must be<br/>accessible and usable<br/>at scale</h2></section>
+				<section>
+					<h2>Accessible and Usable<br/>at Scale</h2>
+					<p>accessible to all, findable</p>
+					<p>usable by all, legally and technically</p>
+				</section>
+				<section>
+					<h2>Overview</h2>
+					<ol>
+						<li>Introduction</li>
+						<li>A History of Data on the Web</li>
+						<li style="font-weight:bold">Open Data</li>
+						<li style="font-weight:bold">A Web of Open Data</li>
+						<li>Conclusions and Future Directions</li>
+					</ol>
+				</section>
 
 				<section id="open-data"><h2>== Part 3 ==</h2><h2>Open Data</h2></section>
-				<section><h2>what do we mean by open data? clear and open licensing terms</h2></section>
-				<section><h2>why does this matter? because data is not for human consumption -- it requires some processing to be made into something useful; it is not the finished product, unlike web pages; give examples</h2></section>
-				<section><h2>licensing primer; content vs data licensing</h2></section>
-				<section><h2>historical context in the UK and elsewhere; e.g. free our postcodes; data.gov.uk; recent announcements at G8 e.g. WorldBank</h2></section>
-				<section><h2>state of the art (technical, deployment)</h2></section>
-				<section><h2>what are people doing with the data?</h2></section>
-				<section><h2>business models and business cases; pivotal question: is data your product?</h2></section>
-				<section><h2>what needs to happen next? So what about the data itself? Is open enough by itself? Revisit accessible and usable; can it be discovered? Is it's meaning clear? Can the meaning be discovered?</h2></section>
+				<section>
+					<h2>Open Data Definitions</h2>
+					<p><blockquote>A piece of data or content is open if anyone is free to use, reuse, and redistribute it &mdash; subject only, at most, to the requirement to attribute and/or share-alike.</blockquote></p>
+					<p style="font-size: smaller">&mdash;&nbsp;<a href="http://opendefinition.org/">http://opendefinition.org/</a></p>
+				</section>
+				<section>
+					<h2>Open Data Definitions</h2>
+					<p><blockquote>Open data is information that is available for anyone to use, for any purpose, at no cost</blockquote></p>
+					<p>&mdash;&nbsp;http://theodi.org/guide/what-open-data</p>
+				</section>
+				<section>
+					<h2>Open Data</h2>
+					<p>must be explicitly licensed</p>
+					<p>the license may impose additional conditions: e.g. attribution, share-alike</p>
+				</section>
+				<section>
+					<h2>Why Does this Matter?</h2>
+					<p>data is not the finished product</p>
+					<p>[clarity about usage is critical]</p>
+					<p>[unlike web pages; give examples]</p>
+				</section>
+				<section>
+					<h2>Content Licensing</h2>
+					<p>[underpinned by long-established and well-defined concept: copyright</p>
+					<p>[predicated on the notion of creative works, e.g. a book, painting, film script, blog post...]</p>
+				</section>
+				<section>
+					<h2>Data Licensing</h2>
+					<p>[much more complicated, and varied across jurisdictions]</p>
+					<p>[what do we mean by data(base): structure? contents? the collection?</p>
+					<p>structure: covered by copyright</p>
+					<p>contents (individual entries): creative or factual?</p>
+					<p>creative: see previous slide</p>
+					<p>factual: individual facts not protected in any jurisdiction</p>
+					<p>collection: some protection in some jurisdictions</p>
+					<p>ref: http://opendefinition.org/guide/data/</p>
+				</section>
+				<section>
+					<h2>[Licensing simulation]</h2>
+					<p>http://theodi.github.io/data-ecosystem-simulation/</p>
+				</section>
+				<section>
+					<h2>Open Data in the UK</h2>
+					<h3>Another (Brief) History Lesson</h3>
+					<p>The Dark Ages: public data not open by default</p>
+					<p>2006: The Guardian newspaper launches &quot;free our data&quot; campaign</p>
+					<p>2007-2009: significant political moves</p>
+					<p>2010: data.gov.uk launched (similar initiatives elsewhere)</p>
+					<p>2011: ODI announced</p>
+					<p>2012: cultural shift towards presumption to publish; ODI official launch</p>
+					<p>2013: open is the new normal</p>
+					<p>2013: World Bank open procurement</p>
+					<p>2013: G8 Open Data Charter</p>
+					<p>refs: http://en.wikipedia.org/wiki/Open_Data_in_the_United_Kingdom</p>
+					<p>http://www.worldbank.org/en/news/speech/2013/06/15/remarks-world-bank-managing-director-closing-plenary-g8-conference</p>
+					<p>https://www.gov.uk/government/publications/open-data-charter</p>
+					<p>[still some grey clouds: http://addressing.me/2013/the-address-mess/]</p>
+				</section>
+				<section>
+					<h2>Open Data Charter</h2>
+					<p>Five principles</p>
+					<p>Open Data by Default
+					Quality and Quantity
+					Useable by All
+					Releasing Data for Improved Governance
+					Releasing Data for Innovation</p>
+				</section>
+				<section>
+					<h2>Applications</h2>
+					<p>[refer back to ODI startups for examples: prescribing analytics; cost of retrofit/honest buildings; placr]</p>
+				</section>
+				<section>
+					<h2>The Business of Open Data</h2>
+					<p>pivotal question: is selling data your primary business?</p>
+					<p>[no => open data]</p>
+					<p>[yes => open data, but may need to be more selective]</p>
+				</section>
+				<section>
+					<h2>The Business of Open Data</h2>
+					<p>[explore business model canvas for those that answered yes]</p>
+				</section>
+				<section>
+					<h2>What Happens Next?</h2>
+					<h3>Open is necessary but not sufficient</h3>
+				</section>
+				<section>
+					<h2>web data must be<br/>accessible and usable<br/>at scale</h2>
+				</section>
+				<section>
+					<h2>Accessible and Usable<br/>at Scale</h2>
+					<p>accessible to all, findable</p>
+					<p>usable by all, legally and technically</p>
+				</section>
+				<section>
+					<h2>Further Requirements</h2>
+					<p>[can it be discovered? Is it's meaning clear? Can the meaning be discovered?]</p>
+					<p>[scale is the key thing here]</p>
+				</section>
 
-				<section id="linked-data"><h2>== Part 4 ==</h2><h2>A Web of Open Data</h2></section>
+				<section id="linked-data">
+					<h2>== Part 4 ==</h2>
+					<h2>A Web of Open Data</h2>
+				</section>
 				<section><h2>revisit the previous discussion on formats for Web data: to what extent are they discoverable and usable? (do a table of these, expanding on various criteria, including are they first class citizens of the Web? Include JSON)</h2></section>
 				<section><h2>a universal data model: the triple and the graph: give an example of a graph without URIs; show how this maps to CSV, XML, JSON; what are the limitations?</h2></section>
 				<section><h2>a webby approach to data: RDF + URIs: context/meaning, discovery, provenance, descriptions of other data, painless data merging</h2></section>
