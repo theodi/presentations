@@ -23,10 +23,36 @@
 	    <!--[if lt IE 9]>
 	    <script src="lib/js/html5shiv.js"></script>
 	    <![endif]-->
+	    
+	    <style type="text/css">
+				#odi-presentation .logo {
+					border: none;
+					box-shadow: none;
+				}
+				
+				#odi-presentation table {
+					width: 100%;
+				}
+				#odi-presentation td, #odi-presentation th {
+					text-align: center;
+				}
+				#odi-presentation th {
+					font-weight: bold;
+				}
+				#odi-presentation p {
+					margin: 0.8em 0 0.8em 0;
+				}
+				#odi-presentation blockquote {
+					padding: 0.8em;
+				}
+				#odi-presentation .quote-source {
+					font-size: smaller;
+				}
+			</style>
 
 	</head>
 
-	<body>
+	<body id="odi-presentation">
 
 		<div class="reveal">
 
@@ -34,7 +60,7 @@
 			<div class="slides">
 					
 				<section id="titlepage">
-				  <h1 style="font-size:2.4em">Open Data and<br/>Web Observatories</h1>
+				  <h1 style="font-size:2.4em">Open Data &amp;<br/>Web Observatories</h1>
 				  <p><br></p>
 				  <p>Dr Tom Heath · Head of Research · Open Data Institute</p>
 				  <a href="https://twitter.com/tommyh">@tommyh</a>
@@ -48,38 +74,38 @@
 				<section>
 					<h2>Open Data Definitions</h2>
 					<p><blockquote>A piece of data or content is open if anyone is free to use, reuse, and redistribute it &mdash; subject only, at most, to the requirement to attribute and/or share-alike.</blockquote></p>
-					<p style="font-size: smaller">&mdash;&nbsp;<a href="http://opendefinition.org/">http://opendefinition.org/</a></p>
+					<p class="quote-source">&mdash;&nbsp;<a href="http://opendefinition.org/">http://opendefinition.org/</a></p>
 				</section>
 				
 				<section>
 					<h2>Open Data Definitions</h2>
-					<p><blockquote>Open data is information that is available for anyone to use, for any purpose, at no cost</blockquote></p>
-					<p>&mdash;&nbsp;http://theodi.org/guide/what-open-data</p>
+					<p><blockquote>Open data is information that is available for anyone to use,<br/>for any purpose,<br/>at no cost</blockquote></p>
+					<p class="quote-source">&mdash;&nbsp;<a href="http://theodi.org/guide/what-open-data">http://theodi.org/guide/what-open-data</a></p>
 				</section>
 				
 				<section>
 					<h2>Open Data</h2>
-					<p>must be explicitly licensed</p>
-					<p>the license may impose additional conditions: e.g. attribution, share-alike</p>
-					<p>!= all the data on the Web</p>
+					<p><strong>must be explicitly licensed</strong></p>
+					<p><strong>the license may impose additional conditions</strong><br/>e.g. attribution, share-alike</p>
+					<p><strong>!= all the data on the Web</strong></p>
 				</section>
 
 				<section>
-					<h2>Why does Open Data matter to Web Observatories?</h2>
+					<h2>Why does Open Data matter to<br/>Web Observatories?</h2>
 				</section>
 
 				<section>
-					<p>open data is increasingly common</p>
-					<p>a proving ground for WO tools and techniques</p>
-					<p>worth studying in its own right</p>
+					<p><strong>open data is increasingly widespread</strong></p>
+					<p><strong>a proving ground for WO tools and techniques</strong></p>
+					<p><strong>worth studying in its own right</strong></p>
 				</section>
 
 				<section>
 					<section>
-						<h2>How do Licensing Choices affect the Data Ecosystem?</h2>
+						<h2>How do Licensing Choices affect <br/>the Data Ecosystem?</h2>
 					</section>
 					<section>
-						<h2>The Data Ecosystem?</h2>
+						<h2>The Data Ecosystem</h2>
 						<p><a href="http://theodi.github.io/data-ecosystem-simulation/">simulation</a> &mdash; what are the real numbers?</p>
 						<img src="2013-06-london-web-observatories-open-data/data-ecosystem.png" />
 					</section>
@@ -87,15 +113,13 @@
 
 				<section>
 					<section>
-						<h2>Open Data Certificates: an Analytical Framework for Web Data</h2>
+						<h2>Open Data Certificates: an Analytical<br/>Framework for<br/>Web Data</h2>
 					</section>
 					<section>
 						<h2>Open Data Certificates</h2>
-						<ul>
-							<li>set standard for open data publishing</li>
-							<li>emphasise (re)user needs</li>
-							<li>help publishers get better</li>
-						</ul>
+						<p><strong>set standard for open data publishing</strong></p>
+						<p><strong>emphasise (re)user needs</strong></p>
+						<p><strong>help publishers get better</strong></p>
 					</section>
 					<section>
 						<p><img src="2013-06-london-web-observatories-open-data/odc.png" /></p>
@@ -108,7 +132,7 @@
 						<img src="2013-06-london-web-observatories-open-data/odc-certificate.png" />
 					</section> -->
 					<section>
-						<h2>Which Level?</h2>
+						<h2>Multiple Levels</h2>
 						<table>
 							<col width="25%" />
 							<col width="25%" />
@@ -135,7 +159,7 @@
 						</table>
 					</section>
 					<section>
-						<h2>A Holistic View of Data</h2>
+						<h2>A Holistic View<br/>of Published Data</h2>
 						<p>technical</p>
 						<p>legal</p>
 						<p>practical</p>
@@ -146,25 +170,26 @@
 
 				<section>
 					<h2>Data Discovery</h2>
-					<p>appropriate granularity?</p>
-					<p>meaningful definitions of collections (theoretical and practical)</p>
-					<p>prioritisation</p>
+					<p><strong>appropriate granularity?</strong></p>
+					<p><strong>meaningful definitions of collections?</strong><br/>(theoretical and practical)</p>
+					<p><strong>prioritising discovery?</strong></p>
 				</section>
 				
 				<section>
 					<h2>Data Comprehension</h2>
-					<p>profiling</p>
-					<p>summarisation</p>
-					<p>indexing</p>
-					<p>cognitive architecture?</p>
+					<p><strong>profiling</strong></p>
+					<p><strong>summarisation</strong></p>
+					<p><strong>indexing</strong></p>
+					<p><strong>cognitive architecture?</strong></p>
 				</section>
 
 				<section>
-			          <h3>Questions?</h3><br>
+			    <h3>Questions?</h3><br>
 				  <p>Tom Heath · Head of Research · Open Data Institute</p>
-				  <img width="97" height="40" src="brand/odi_logo.png" alt="ODI" style="border:none;"></a><br>
+				  <img class="logo" src="brand/ODI-logo-lg.png" alt="ODI" style="border:none;"><br>
 				  <a href="https://twitter.com/tommyh">@tommyh</a> · <a href="mailto:tom.heath@theodi.org">tom.heath@theodi.org</a>
 				</section>
+
 				</div>
 				
 				<div id="brand">
