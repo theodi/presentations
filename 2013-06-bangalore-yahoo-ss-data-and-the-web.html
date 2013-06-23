@@ -159,8 +159,8 @@
 				</section>
 				<section>
 					<h2>ODI Ethos</h2>
-					<ul class="centred-list">
-						<li>everything in the open</li>
+					<p>everything in the open</p>
+					<ul>
 						<li><a href="http://theodi.github.io/open-development">principles</a></li>
 						<li><a href="https://www.leftronic.com/share/g/OqF269/#jphb3p/OqF269">dashboard</a></li>
 						<li><a href="https://github.com/theodi/">github</a></li>
@@ -171,8 +171,7 @@
 				</section>
 
 				<section id="me">
-					<h2>My Background</h2>
-					<p>[see source]</p>
+					<h2>Why I Care about Data on the Web</h2>
 					<!-- Web Development; limitations of HTML -->
 					<!-- PhD Student at The OU --> 
 					<!-- Linking Open Data Project -->
@@ -183,7 +182,10 @@
 					<!-- how I came to be at the ODI -->
 				</section>
 
-				<section id="history"><h2>== Part 2 ==</h2><h2>A History of Data<br/>on the Web</h2></section>
+				<section id="history">
+					<h2>== Part 2 ==</h2>
+					<h2>A History of Data<br/>on the Web</h2>
+				</section>
 				<section>
 					<h2>The Web Vision</h2>
 					<!-- The system must achieve a critical usefulness early on. Existing hypertext systems have had to justify themselves solely on new data. -->
@@ -201,53 +203,75 @@
 				</section>
 				<section>
 					<h2>What Happened Next?</h2>
-					<p>[the document web was such a revolution, we hardly worried about the data]</p>
+					<p>the document web was such a revolution, we hardly worried about the data</p>
 				</section>
 				<section>
 					<h2>Data on the Web:<br/>the Early Years</h2>
-					<p><strong>a little bit more structure</strong></p>
+					<p style="margin-top:1.4em"><strong>HTML + little bit more structure</strong></p>
 					<p>or</p>
 					<p><strong>the Web as a filesystem</strong></p>
-					<p>[a continuum]</p>
 				</section>
 				<section>
 					<h2>More Structure</h2>
-					<p>POSH: Plain Old Semantic HTML</p>
-					<p>Microformats: highly granular fragments of structured markup</p>
-					<p>[examples of microformats]</p>
+					<ul class="centred-list">
+						<li><strong>POSH</strong><br/>Plain Old Semantic HTML</li>
+						<li><strong>Microformats</strong><br/>highly granular fragments of structured markup</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Examples of<br/>Microformats</h2>
+					<ul class="centred-list">
+						<li><strong>rel="license"</strong><br/>
+						<pre class="code">
+&lt;a href=&quot;http://creativecommons.org/licenses/by/2.0/&quot;  
+rel=&quot;license&quot;&gt;cc by 2.0&lt;/a&gt;
+</pre>
+						</li>
+						<li>
+							<strong>geo</strong><br/>
+							<pre class="code">
+&lt;div class=&quot;geo&quot;&gt;GEO:
+  &lt;span class=&quot;latitude&quot;&gt;37.386013&lt;/span&gt;,
+  &lt;span class=&quot;longitude&quot;&gt;-122.082932&lt;/span&gt;
+&lt;/div&gt;
+</pre>
+						</li>
+						<li><strong>hCard, hCalendar, hProduct, hRecipe...</strong></li>
+					</ul>
 				</section>
 				<section>
 					<h2>Microformats</h2>
-					<p>what were the drivers of this? For POSH and microformats => SEO? data reuse?</p>
-					<p>limitations: no underlying data model [add others?]</p>
+					<p>drivers: SEO, data reuse</p>
+					<p>limitations: no underlying data model, unscalable process?</p>
 				</section>
 				<!-- at the other end of the spectrum -->
 				<section>
-					<h2>[Web as a Filesystem]</h2>
-					<p>[csv, database dumps]
-					<p>[what were the drivers of this? => sharing data; just a distribution mechanism?]</p>
+					<h2>Web as a Filesystem</h2>
+					<p>CSV files, Excel spreadsheets, Database dumps</p>
+					<p>drivers: sharing data, ease of distribution</p>
 				</section>
 				<section>
-					<h2>[Web as a Filesystem]</h2>
-					<h3>[Limitations]</h3>
+					<h2>Web as a Filesystem</h2>
+					<h3>Limitations</h3>
 					<ul class="centred-list">
-						<li><strong>compression widespread</strong></li>
-						<li><strong>database dumps</strong><br/>proprietary; SQL interpreter in the user-agent?</li>
-						<li><strong>csv/xml/json</strong><br/>no discoverable context; not particularly webby; leaf nodes, dead ends</li>
+						<li><strong>widespread use of compression</strong></li>
+						<li><strong>database dumps</strong><br/>proprietary formats<br/>SQL interpreter required in the user-agent?!</li>
+						<li><strong>csv/json/xml</strong><br/>(see later slides)</li>
 					</ul>
 				</section>
 				<section>
 					<h2>Summary</h2>
 					<p>the historical picture is very fragmented</p>
-					<p>data has been a second class citizen of the Web</p>
-					<p>[demand for web as data platform; examples of how data has come to the forefront]</p>
-					<p>[gradual convergence based on common standards and evolving best practices, driven by two principles...]</p>
+					<p>the demand for data over the web is indeniable</p>
+					<p>but data has been a second class citizen of the Web</p>
+					<p>how do we move forward</p>
 				</section>
-				<section><h2>web data must be<br/>accessible and usable<br/>at scale</h2></section>
+				<section>
+					<h2>web data must be<br/>accessible and usable<br/>at scale</h2></section>
 				<section>
 					<h2>Accessible and Usable<br/>at Scale</h2>
-					<p>accessible to all, findable</p>
-					<p>usable by all, legally and technically</p>
+					<p>accessible, findable</p>
+					<p>usable &ndash; legally and technically</p>
 				</section>
 				<section>
 					<h2>Overview</h2>
@@ -320,8 +344,8 @@
 					<p class="quote-source">&mdash;&nbsp;source: <a href="http://opendefinition.org/guide/data/">http://opendefinition.org/guide/data/</a></p>
 				</section>
 				<section>
-					<h2>[Open Licenses for Data]</h2>
-					<p>reproduce table from: http://opendefinition.org/licenses/</p>
+					<h2>Open Licenses for Data</h2>
+					<p><a href="http://opendefinition.org/licenses/">http://opendefinition.org/licenses/</a></p>
 				</section>
 				<section>
 					<section>
@@ -387,16 +411,15 @@
 				</section>
 				<section>
 					<h2>Applications</h2>
-					<p>[prescribing analytics]</p>
-					<p>[selling data is not core business for the NHS]</p>
+					<p><img src="2013-06-bangalore-yahoo-ss-data-and-the-web/prescribinganalytics.png" alt="Prescribing Analytics screenshot"/><br/>[selling data is not core business for the NHS]</p>
 				</section>
 				<section>
 					<h2>Open is necessary but not sufficient</h2>
 				</section>
 				<section>
 					<h2>Accessible and Usable<br/>at Scale</h2>
-					<p class="fragment"><strike>accessible to all</strike>, findable</p>
-					<p class="fragment">usable by all, <strike>legally</strike> and technically</p>
+					<p class="fragment"><strike>accessible</strike>, findable</p>
+					<p class="fragment">usable &ndash; <strike>legally</strike> and technically</p>
 				</section>
 				<section>
 					<h2>[Further Issues]</h2>
@@ -580,7 +603,7 @@
 					<h2>[Vocabs: how to define them]</h2>
 				</section>
 				<section>
-					<h2>[different perspectives: schema.org vs web of vocabs?]</h2>
+					<h2>schema.org vs<br/>a web of vocabularies</h2>
 				</section>
 				<section>
 					<h2>[a webby approach to data: RDF + URIs]</h2>
@@ -595,16 +618,55 @@
 						<li><strike>able to provide context</strike></li>
 					</ul>
 				</section>
-				<section><h2>[Advantages of a distributed approach to data management (reduce duplication of effort; establish authority, track provenance; allow all the things that make the Web powerful)]</h2></section>
+				<section>
+					<h2>[Advantages of a distributed approach to data management</h2>
+					<ul>
+						<li>(reduce duplication of effort; establish authority, track provenance; allow all the things that make the Web powerful)]</li>
+					</ul>
+				</section>
 				<section><h2>[Current applications]</h2><p>and why we shouldn't get too hung up about applications</p></section>
 
-				<section id="future"><h2>== Part 5 ==</h2><h2>Future Directions and Research Challenges</h2></section>
-				<section><h2>outlook for the Web of data: what happens next? has been debate about the technology stack, but the trends are indisputable and this is the best technology stack available</h2></section>
-				<section><h2>what place for reasoning? what role for sparql?</h2></section>
-				<section><h2>licensing</h2></section>
-				<section><h2>data discovery, profiling, indexing, ranking: differences to classic IR</h2></section>
-				<section><h2>Automated data linking?</h2></section>
-				<section><h2>how do graph-like, tabular and statistical data actually fit together?</h2></section>
+				<section id="future">
+					<h2>== Part 5 ==</h2>
+					<h2>Future Directions and Research Challenges</h2>
+				</section>
+				<section>
+					<h2>[outlook for the Web of data]</h2>
+					<p>what happens next? has been debate about the technology stack, but the trends are indisputable and this is the best technology stack available</p>
+				</section>
+				<section>
+			    <h2>[The Web of Open Data]</h2>
+				  <ul>
+						<li><strong>data discovery</strong></li>
+						<li><strong>profiling and indexing</strong></li>
+						<li><strong>relevance and filtering</strong></li>
+						<li><strong>integration</strong></li>
+						<li><strong>dynamic interfaces</strong></li>
+				  </ul>
+				</section>
+				<section>
+					<h2>[Data Discovery]</h2>
+					<p><strong>appropriate granularity?</strong></p>
+					<p><strong>meaningful definitions of collections?</strong><br/>(theoretical and practical)</p>
+					<p><strong>prioritising discovery?</strong></p>
+				</section>				
+				<section>
+					<h2>[Data Comprehension]</h2>
+					<p><strong>profiling</strong></p>
+					<p><strong>summarisation</strong></p>
+					<p><strong>indexing</strong></p>
+					<p>ranking</p>
+					<p>[differences to classic IR?]</p>
+					<p><strong>cognitive architecture?</strong></p>
+				</section>
+
+				<section><h2>[Automated data linking?]</h2></section>
+				<section><h2>[how do graph-like, tabular and statistical data actually fit together?]</h2></section>
+				<section><h2>[what role for sparql?]</h2></section>
+				<section>
+					<h2>[what place for reasoning?]</h2>
+				</section>
+				<section><h2>[licensing]</h2></section>
 
 				<section>
 			    <h3>Questions?</h3><br>
