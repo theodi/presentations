@@ -24,9 +24,50 @@
 	    <script src="lib/js/html5shiv.js"></script>
 	    <![endif]-->
 
+	    <style type="text/css">
+				#odi-presentation .logo {
+					border: none;
+					box-shadow: none;
+				}
+				
+				#odi-presentation table {
+					width: 100%;
+				}
+				#odi-presentation td, #odi-presentation th {
+					text-align: center;
+				}
+				#odi-presentation th {
+					font-weight: bold;
+				}
+				#odi-presentation p {
+					margin: 0.8em 0 0.8em 0;
+				}
+				#odi-presentation li {
+					margin: 0.4em 0 0.4em 0;
+				}
+				#odi-presentation blockquote {
+					padding: 0.8em;
+				}
+				#odi-presentation .quote-source {
+					font-size: smaller;
+				}
+				#odi-presentation ul.centred-list {
+					list-style: none;
+					text-align: center;
+				}
+				#odi-presentation ul.centred-list li {
+					margin: 0.8em;
+				}
+				#odi-presentation .code {
+					font-family: courier;
+					border: 1px solid gray;
+					padding: 0.8em;
+				}
+			</style>
+
 	</head>
 
-	<body>
+	<body id="odi-presentation">
 
 		<div class="reveal">
 
@@ -74,12 +115,18 @@
 
 				<section id="history"><h2>== Part 2 ==</h2><h2>A History of Data<br/>on the Web</h2></section>
 				<section>
-					<h2>[Data and the Original Web Vision]</h2>
-					<p>[&quot;The system must achieve a critical usefulness early on. Existing hypertext systems have had to justify themselves solely on new data. If, however, there was an existing base of data of personnel, for example, to which new data could be linked, the value of each new piece of data would be greater.&quot;]</p>
-					<p>[http://www.w3.org/History/1989/proposal.html]</p>
+					<h2>The Web Vision</h2>
+					<!-- The system must achieve a critical usefulness early on. Existing hypertext systems have had to justify themselves solely on new data. -->
+					<p><blockquote>If...there was an existing base of data of personnel, for example, to which new data could be linked, the value of each new piece of data would be greater.</blockquote></p>
+					<p class="quote-source">&mdash;&nbsp;<a href="http://www.w3.org/History/1989/proposal.html">http://www.w3.org/History/1989/proposal.html</a></p>
+				</section>
+				<section>
+					<h2>The Web Vision</h2>
+					<p><blockquote>In &apos;news&apos; articles, for example, one could use (in the text) a standard format for a reference to another article.</blockquote></p>
+					<!--  This would be picked out by the hypertext gateway and used to generate a link to that note. This sort of enhancement will allow greater integration between old and new systems. -->
+					<p class="quote-source">&mdash;&nbsp;<a href="http://www.w3.org/History/1989/proposal.html">http://www.w3.org/History/1989/proposal.html</a></p>
 					<!--
 							//We should work toward a universal linked information system//
-							// It is sometimes possible to enhance an existing storage system by coding hypertext information in, if one knows that a server will be generating a hypertext representation. In 'news' articles, for example, one could use (in the text) a standard format for a reference to another article. This would be picked out by the hypertext gateway and used to generate a link to that note. This sort of enhancement will allow greater integration between old and new systems. //
 					-->
 				</section>
 				<section>
@@ -106,13 +153,18 @@
 				</section>
 				<!-- at the other end of the spectrum -->
 				<section>
-					<h2>Web as Filesystem for Data</h2>
-					<p>csv, database dumps
-					<p>what were the drivers of this? => sharing data; just a distribution mechanism?</p>
+					<h2>[Web as a Filesystem]</h2>
+					<p>[csv, database dumps]
+					<p>[what were the drivers of this? => sharing data; just a distribution mechanism?]</p>
 				</section>
 				<section>
-					<h2>Web as Filesystem for Data</h2>
-					<p>limitations: db dumps (proprietary, need a sql interpreter); csv (no context); xml and json (no discoverable context; not particularly webby; leaf nodes, dead ends)]</p>
+					<h2>[Web as a Filesystem]</h2>
+					<h3>[Limitations]</h3>
+					<ul class="centred-list">
+						<li><strong>compression widespread</strong></li>
+						<li><strong>database dumps</strong><br/>proprietary; SQL interpreter in the user-agent?</li>
+						<li><strong>csv/xml/json</strong><br/>no discoverable context; not particularly webby; leaf nodes, dead ends</li>
+					</ul>
 				</section>
 				<section>
 					<h2>Summary</h2>
@@ -142,118 +194,339 @@
 				<section>
 					<h2>Open Data Definitions</h2>
 					<p><blockquote>A piece of data or content is open if anyone is free to use, reuse, and redistribute it &mdash; subject only, at most, to the requirement to attribute and/or share-alike.</blockquote></p>
-					<p style="font-size: smaller">&mdash;&nbsp;<a href="http://opendefinition.org/">http://opendefinition.org/</a></p>
+					<p class="quote-source">&mdash;&nbsp;<a href="http://opendefinition.org/">http://opendefinition.org/</a></p>
 				</section>
 				<section>
 					<h2>Open Data Definitions</h2>
 					<p><blockquote>Open data is information that is available for anyone to use, for any purpose, at no cost</blockquote></p>
-					<p>&mdash;&nbsp;http://theodi.org/guide/what-open-data</p>
+					<p class="quote-source">&mdash;&nbsp;<a href="http://theodi.org/guide/what-open-data">http://theodi.org/guide/what-open-data</a></p>
 				</section>
 				<section>
 					<h2>Open Data</h2>
-					<p>must be explicitly licensed</p>
-					<p>the license may impose additional conditions: e.g. attribution, share-alike</p>
+					<ul class="centred-list">
+						<li><strong>must be explicitly licensed</strong></li>
+						<li><strong>the license may impose additional conditions</strong><br/>e.g. attribution, share-alike</li>
+						<li><strong>!= all the data on the Web</strong></li>
+					</ul>
 				</section>
 				<section>
 					<h2>Why Does this Matter?</h2>
-					<p>data is not the finished product</p>
-					<p>[clarity about usage is critical]</p>
-					<p>[unlike web pages; give examples]</p>
+					<ul class="centred-list">
+						<li>web pages are a finished product<br/>&mdash;&nbsp;<strong>data is not</strong></li>
+						<li>value from data is dependent on<br/><strong>further processing</strong></li>
+						<li><strong>clarity about terms of use is critical</strong></li>
+					</ul>
+				</section>
+				<section>
+					<h2>Content and<br/>Database Licensing</h2>
+					<h3>A Brief Primer</h3>
 				</section>
 				<section>
 					<h2>Content Licensing</h2>
-					<p>[underpinned by long-established and well-defined concept: copyright</p>
-					<p>[predicated on the notion of creative works, e.g. a book, painting, film script, blog post...]</p>
+					<ul class="centred-list">
+						<li><strong>Creative Commons</strong><br/>provides a range of open content licenses</li>
+						<li><strong>legal basis in copyright law</strong><br/>long-established, well understood,<br/>widely supported</li>
+						<li><strong>predicated on the notion of creative works</strong><br/>e.g. a book, painting, film script, blog post</li>
+					</ul>
 				</section>
 				<section>
-					<h2>Data Licensing</h2>
-					<p>[much more complicated, and varied across jurisdictions]</p>
-					<p>[what do we mean by data(base): structure? contents? the collection?</p>
-					<p>structure: covered by copyright</p>
-					<p>contents (individual entries): creative or factual?</p>
-					<p>creative: see previous slide</p>
-					<p>factual: individual facts not protected in any jurisdiction</p>
-					<p>collection: some protection in some jurisdictions</p>
-					<p>ref: http://opendefinition.org/guide/data/</p>
+					<h2>Database Licensing</h2>
+					<ul class="centred-list">
+						<li><strong>much more complicated</strong><br/>and varied across jurisdictions</p>
+						<li><strong>what do we mean by database?</strong><br/>structure? contents? the collection?</p>
+					</ul>
 				</section>
 				<section>
-					<h2>Open Licenses for Data</h2>
+					<h2>A Licensing View<br/>of Databases</h2>
+					<ul>
+						<li>structure: covered by copyright</li>
+						<li>contents (individual entries)</li>
+						<ul>
+							<li>creative: see previous slide</li>
+							<li>factual: no protection for individual facts</li>
+						</ul>
+						<li>collection: some protection in some jurisdictions</li>
+					</ul>
+					<p class="quote-source">&mdash;&nbsp;source: <a href="http://opendefinition.org/guide/data/">http://opendefinition.org/guide/data/</a></p>
+				</section>
+				<section>
+					<h2>[Open Licenses for Data]</h2>
 					<p>reproduce table from: http://opendefinition.org/licenses/</p>
 				</section>
 				<section>
-					<h2>[Licensing simulation]</h2>
-					<p>http://theodi.github.io/data-ecosystem-simulation/</p>
+					<section>
+						<h2>How do Licensing Choices affect <br/>the Data Ecosystem?</h2>
+					</section>
+					<section>
+						<h2>The Data Ecosystem</h2>
+						<p><a href="http://theodi.github.io/data-ecosystem-simulation/">simulation</a></p>
+						<img src="2013-06-bangalore-yahoo-ss-data-and-the-web/data-ecosystem.png" />
+					</section>
 				</section>
 				<section>
 					<h2>Open Data in the UK</h2>
 					<h3>Another (Brief) History Lesson</h3>
-					<p>The Dark Ages: public data not open by default</p>
-					<p>2006: The Guardian newspaper launches &quot;free our data&quot; campaign</p>
-					<p>2007-2009: significant political moves</p>
-					<p>2010: data.gov.uk launched (similar initiatives elsewhere)</p>
-					<p>2011: ODI announced</p>
-					<p>2012: cultural shift towards presumption to publish; ODI official launch</p>
-					<p>2013: open is the new normal</p>
-					<p>2013: World Bank open procurement</p>
-					<p>2013: G8 Open Data Charter</p>
-					<p>refs: http://en.wikipedia.org/wiki/Open_Data_in_the_United_Kingdom</p>
-					<p>http://www.worldbank.org/en/news/speech/2013/06/15/remarks-world-bank-managing-director-closing-plenary-g8-conference</p>
-					<p>https://www.gov.uk/government/publications/open-data-charter</p>
-					<p>[still some grey clouds: http://addressing.me/2013/the-address-mess/]</p>
+					<ul class="centred-list">
+						<li><strong>the dark ages</strong> public data not open by default</li>
+						<li><strong>2006</strong> The Guardian newspaper<br/>launches &quot;free our data&quot; campaign</li>
+						<li><strong>2007-2009</strong> significant political moves</li>
+						<li><strong>2010</strong> data.gov.uk launched<br/>(similar initiatives elsewhere)</li>
+						<li><strong>2011</strong> ODI announced</li>
+					</ul>
 				</section>
 				<section>
-					<h2>Open Data Charter</h2>
-					<p>Five principles</p>
-					<p>Open Data by Default
-					Quality and Quantity
-					Useable by All
-					Releasing Data for Improved Governance
-					Releasing Data for Innovation</p>
+					<h2>Open Data in the UK</h2>
+					<h3>Another (Brief) History Lesson</h3>
+					<ul class="centred-list">
+						<li><strong>2012</strong> cultural shift towards presumption to publish; ODI official launch</li>
+						<li><strong>2013</strong> &quot;open is the new normal&quot;</li>
+						<li><strong>2013</strong> World Bank open procurement</li>
+						<li><strong>2013</strong> G8 Open Data Charter</li>
+						<li>still some grey clouds<br/><a href="http://addressing.me/2013/the-address-mess/">http://addressing.me/2013/the-address-mess/</a></li>
+						<li>sources:
+							<a href="http://en.wikipedia.org/wiki/Open_Data_in_the_United_Kingdom">wikipedia</a>,
+							<a href="http://www.worldbank.org/en/news/speech/2013/06/15/remarks-world-bank-managing-director-closing-plenary-g8-conference">worldbank.org</a>,
+							<a href="https://www.gov.uk/government/publications/open-data-charter">gov.uk</a>
+					</ul>
+				</section>
+				<section>
+					<h2>G8 Open Data Charter</h2>
+					<h3>Five principles</h3>
+					<ul>
+						<li>Open Data by Default</li>
+						<li>Quality and Quantity</li>
+						<li>Useable by All</li>
+						<li>Releasing Data for Improved Governance</li>
+						<li>Releasing Data for Innovation</li>
+					</ul>
+				</section>
+				<section>
+					<h2>The Business of<br/>Open Data</h2>
+					<p><strong>is selling data your primary business?</strong></p>
+					<p><strong>no</strong> => open data</p>
+					<p><strong>yes</strong> => open data, but may need to be more selective</p>
+				</section>
+				<section>
+					<h2>Business Reasons for <br/>Open Data</h2>
+					<ul>
+						<li>driving traffic to existing channels</li>
+						<li>open innovation</li>
+						<li>data quality improvements</li>
+						<li>transforming your own operations</li>
+					</ul>
 				</section>
 				<section>
 					<h2>Applications</h2>
-					<p>[refer back to ODI startups for examples: prescribing analytics; cost of retrofit/honest buildings; placr]</p>
+					<p>[prescribing analytics]</p>
+					<p>[selling data is not core business for the NHS]</p>
 				</section>
 				<section>
-					<h2>The Business of Open Data</h2>
-					<p>pivotal question: is selling data your primary business?</p>
-					<p>[no => open data]</p>
-					<p>[yes => open data, but may need to be more selective]</p>
-				</section>
-				<section>
-					<h2>The Business of Open Data</h2>
-					<p>[explore business model canvas for those that answered yes]</p>
-				</section>
-				<section>
-					<h2>What Happens Next?</h2>
-					<h3>Open is necessary but not sufficient</h3>
-				</section>
-				<section>
-					<h2>web data must be<br/>accessible and usable<br/>at scale</h2>
+					<h2>Open is necessary but not sufficient</h2>
 				</section>
 				<section>
 					<h2>Accessible and Usable<br/>at Scale</h2>
-					<p>accessible to all, findable</p>
-					<p>usable by all, legally and technically</p>
+					<p class="fragment"><strike>accessible to all</strike>, findable</p>
+					<p class="fragment">usable by all, <strike>legally</strike> and technically</p>
 				</section>
 				<section>
-					<h2>Further Requirements</h2>
+					<h2>[Further Issues]</h2>
 					<p>[can it be discovered? Is it's meaning clear? Can the meaning be discovered?]</p>
-					<p>[scale is the key thing here]</p>
+					<p>are all these things possible at Web scale?</p>
 				</section>
 
 				<section id="linked-data">
 					<h2>== Part 4 ==</h2>
 					<h2>A Web of Open Data</h2>
 				</section>
-				<section><h2>revisit the previous discussion on formats for Web data: to what extent are they discoverable and usable? (do a table of these, expanding on various criteria, including are they first class citizens of the Web? Include JSON)</h2></section>
-				<section><h2>a universal data model: the triple and the graph: give an example of a graph without URIs; show how this maps to CSV, XML, JSON; what are the limitations?</h2></section>
-				<section><h2>a webby approach to data: RDF + URIs: context/meaning, discovery, provenance, descriptions of other data, painless data merging</h2></section>
-				<section><h2>RDF serialisations: pros and cons (n-triples as entry level; turtle more compact; RDF/XML the legacy choice; RDFa for embedded data; each has advantages; what about RDF/JSON and JSON-LD?)</h2></section>
-				<section><h2>The Linked Data Principles: data in the Web; a first class citizen</h2></section>
-				<section><h2>Vocabs: how to define them; different models: e.g. schema.org vs web of vocabs?</h2></section>
-				<section><h2>Advantages of a distributed approach to data management (reduce duplication of effort; establish authority, track provenance; allow all the things that make the Web powerful)</h2></section>
-				<section><h2>Current applications</h2></section>
+				<section>
+					<h2>[How Webby is Web Data?]</h2>
+					<table>
+						<col width="25%" />
+						<col width="25%" />
+						<col width="25%" />
+						<col width="25%" />
+						<tr>
+							<th>format</th>
+							<th>open standard?</th>
+							<th>native links?</th>
+							<th>context included?</th>
+						</tr>
+						<tr>
+							<td>Excel</td>
+							<td>no</td>
+							<td>no</td>
+							<td>no</td>
+						</tr>
+						<tr>
+							<td>CSV</td>
+							<td>yes</td>
+							<td>no</td>
+							<td>convention</td>
+						</tr>
+						<tr>
+							<td>JSON</td>
+							<td>yes?</td>
+							<td>no</td>
+							<td>no</td>
+						</tr>
+						<tr>
+							<td>XML</td>
+							<td>yes</td>
+							<td>not really</td>
+							<td>partly</td>
+						</tr>
+					</table>
+				</section>
+				<section>
+					<h2>Web Data Formats<br/>without Native Links</h2>
+					<p>...are like HTML without the anchor tag &lt;a&gt;</p>
+					<p>imagine implementing a browser without it!</p>
+				</section>
+				<section>
+					<h2>A Universal Data Model for the Web?</h2>
+					<h3>Requirements</h3>
+					<ul>
+						<li>able to model tabular, tree-like, key-value data</li>
+						<li>links as a first-class citizen</li>
+						<li>able to provide context</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Modelling Everything<br/>as a Graph</h2>
+					<p><img src="2013-06-bangalore-yahoo-ss-data-and-the-web/nodes-edge.svg"></p>
+				</section>
+				<section>
+					<h2>Modelling Everything<br/>as a Graph</h2>
+					<table class="code" style="margin-top: 1.4em;">
+						<col width="33%" />
+						<col width="33%" />
+						<col width="33%" />
+						<tr>
+							<th>name</th>
+							<th><span style="border: 4px red dashed; padding: 4px">affiliation</span></th>
+							<th>location</th>
+						</tr>
+						<tr>
+							<td><span style="border: 4px red dashed; padding: 4px">Tom</span></td>
+							<td><span style="border: 4px red dashed; padding: 4px">ODI</span></td>
+							<td>London</td>
+						</tr>
+						<tr>
+							<td>Peter</td>
+							<td>Yahoo!</td>
+							<td>Barcelona</td>
+						</tr>
+					</table>
+				</section>
+				<section>
+					<h2>Modelling Everything<br/>as a Graph</h2>
+					<p>
+						<pre class="code">
+{
+  "speakers" :
+  [
+    {
+      "name" : "Tom",
+      "affiliation" : "ODI",
+      "location" : "London"
+    },
+    {
+      "name" : "Peter",
+      "affiliation" : "Yahoo!",
+      "location" : "Barcelona"
+    }
+  ]
+}</pre>
+					</p>
+				</section>
+				<section>
+					<h2>Modelling Everything<br/>as a Graph</h2>
+					<pre class="code">
+&lt;speakers&gt;
+  &lt;speaker&gt;
+    &lt;name&gt;Tom&lt;/name&gt;
+    &lt;affiliation&gt;ODI&lt;/affiliation&gt;
+    &lt;location&gt;London&lt;/location&gt;
+  &lt;/speaker&gt;
+  &lt;speaker&gt;
+    &lt;name&gt;Peter&lt;/name&gt;
+    &lt;affiliation&gt;Yahoo!&lt;/affiliation&gt;
+    &lt;location&gt;Barcelona&lt;/location&gt;
+  &lt;/speaker&gt;
+&lt;/speakers&gt;</pre>
+				</section>
+				<section>
+					<h2>A Universal Data Model for the Web?</h2>
+					<h3>Requirements</h3>
+					<ul>
+						<li><strike>able to model tabular, tree-like, key-value data</strike></li>
+						<li>links as a first-class citizen</li>
+						<li>able to provide context</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Links as a<br/>First-class Citizen</h2>
+					<pre class="code">
+|  name  |       homepage       |
+|  tom   | http://tomheath.com/ |
+</pre>
+					<pre class="code">
+{
+  "name" : "tom",
+  "homepage" : "http://tomheath.com/"
+}
+</pre>
+					<pre class="code">
+&lt;name&gt;Tom&lt;/name&gt;
+&lt;homepage&gt;http://tomheath.com/&lt;/homepage&gt;
+</pre>
+				</section>
+				<section>
+					<h2>RDF: A Universal Data Model for the Web</h2>
+					<p>an RDF <strong>graph</strong> consists of one or more RDF <strong>triples</strong></p>
+				</section>
+				<section>
+					<h2>An RDF Triple</h2>
+					<p><img src="2013-06-bangalore-yahoo-ss-data-and-the-web/s-p-o.svg"></p>
+				</section>
+				<section>
+					<h2>Where&apos;s the Web?!?</h2>
+				</section>
+				<section>
+					<h2>An RDF Triple</h2>
+					<p><img src="2013-06-bangalore-yahoo-ss-data-and-the-web/triple-with-uris.svg"></p>
+				</section>			
+				<section>
+					<h2>[describe how RDF distinguishes between literals and resources]</h2>
+				</section>
+				<section>
+					<h2>[RDF serialisations]</h2>
+					<p>pros and cons (n-triples as entry level; turtle more compact; RDF/XML the legacy choice; RDFa for embedded data; each has advantages; what about RDF/JSON and JSON-LD?)</p>
+				</section>
+				<section>
+					<h2>[The Linked Data Principles: data in the Web; a first class citizen]</h2>
+				</section>
+				<section>
+					<h2>[Vocabs: how to define them]</h2>
+				</section>
+				<section>
+					<h2>[different perspectives: schema.org vs web of vocabs?]</h2>
+				</section>
+				<section>
+					<h2>[a webby approach to data: RDF + URIs]</h2>
+					<p>context/meaning, discovery, provenance, descriptions of other data, painless data merging</p>
+				</section>
+				<section>
+					<h2>A Universal Data Model for the Web?</h2>
+					<h3>Requirements</h3>
+					<ul>
+						<li><strike>able to model tabular, tree-like, key-value data</strike></li>
+						<li><strike>links as a first-class citizen</strike></li>
+						<li><strike>able to provide context</strike></li>
+					</ul>
+				</section>
+				<section><h2>[Advantages of a distributed approach to data management (reduce duplication of effort; establish authority, track provenance; allow all the things that make the Web powerful)]</h2></section>
+				<section><h2>[Current applications]</h2><p>and why we shouldn't get too hung up about applications</p></section>
 
 				<section id="future"><h2>== Part 5 ==</h2><h2>Future Directions and Research Challenges</h2></section>
 				<section><h2>outlook for the Web of data: what happens next? has been debate about the technology stack, but the trends are indisputable and this is the best technology stack available</h2></section>
@@ -266,7 +539,7 @@
 				<section>
 			    <h3>Questions?</h3><br>
 				  <p>Dr Tom Heath · Open Data Institute</p>
-				  <img width="97" height="40" src="brand/odi_logo.png" alt="ODI" style="border:none;"></a><br>
+				  <img class="logo" src="brand/odi-logo-lg.png" alt="ODI" style="border:none;"><br>
 				  <a href="mailto:tom.heath@theodi.org">tom.heath@theodi.org</a>
 				</section>
 				</div>
