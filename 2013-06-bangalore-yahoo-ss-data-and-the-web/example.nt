@@ -1,0 +1,3 @@
+<http://tomheath.com/id/me> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+<http://tomheath.com/id/me> <http://xmlns.com/foaf/0.1/homepage> <http://tomheath.com/> .
+<http://tomheath.com/id/me> <http://xmlns.com/foaf/0.1/name> "Tom Heath" .
