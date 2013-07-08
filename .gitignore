@@ -4,3 +4,6 @@ brand/.DS_Store
 .DS_Store
 
 /_site/
+
+# RubyMine brings the cruft
+.idea/
