@@ -1,69 +1,76 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
+<head>
+    <meta charset="utf-8">
 
-		<title>{{ page.title }}</title>
+    <title>{{ page.title }}</title>
 
-		<meta name="description" content="{{ page.description }}">
-		<meta name="author" content="{{ page.author }}">
+    <meta name="description" content="{{ page.description }}">
+    <meta name="author" content="{{ page.author }}">
 
-	    <meta name="apple-mobile-web-app-capable" content="yes"/>
-	    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
 
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-	    <link rel="stylesheet" href="reveal.js/css/reveal.min.css">
-	    <link rel="stylesheet" href="reveal.js/css/theme/sky.css" id="theme">
+    <link rel="stylesheet" href="reveal.js/css/reveal.min.css">
+    <link rel="stylesheet" href="reveal.js/css/theme/default.css" id="theme">
 
-	    <!-- For syntax highlighting -->
-	    <link rel="stylesheet" href="reveal.js/css/zenburn.css">
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="reveal.js/css/zenburn.css">
 
-	    <!--[if lt IE 9]>
-	    <script src="lib/js/html5shiv.js"></script>
-	    <![endif]-->
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
 
-	</head>
+</head>
 
-	<body>
+<body>
 
-		<div class="reveal">
+<div class="reveal">
 
-			<div class="slides">
+    <div class="slides">
 
-				{{ content }}
-        
-			</div>
-				
-			<div id="brand">
-				<a class="image" href="http://theodi.org"><img height="40" style="position:fixed; left:10px; bottom:50px; z-index:30;" src="brand/odi_logo.svg" alt="ODI"></a>
-				<br>
-				<a class="image" href="http://creativecommons.org/licenses/by-sa/3.0/"><img width="97" height="34" style="position:fixed; left:10px; bottom:10px; z-index:30;" src="brand/licence.png" alt="Creative Commons"></a>
-			</div>
-		</div>
+        {{ content }}
 
-		<script src="reveal.js/js/head.min.js"></script>	
-		<script src="reveal.js/js/reveal.min.js"></script>
+    </div>
 
-		<script>
+    <div id="brand">
+        <a class="image" href="http://theodi.org"><img height="40"
+                                                       style="position:fixed; left:10px; bottom:50px; z-index:30;"
+                                                       src="brand/odi_logo_white.svg" alt="ODI"></a>
+        <br>
+        <a class="image" href="http://creativecommons.org/licenses/by-sa/3.0/"><img width="97" height="34"
+                                                                                    style="position:fixed; left:10px; bottom:10px; z-index:30;"
+                                                                                    src="brand/licence.png"
+                                                                                    alt="Creative Commons"></a>
+    </div>
+</div>
 
-		    Reveal.initialize({
-		        controls: true,
-		        progress: true,
-		        history: true,
-		        center: true,
+<script src="reveal.js/js/head.min.js"></script>
+<script src="reveal.js/js/reveal.min.js"></script>
 
-		        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-		        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+<script>
 
-		        dependencies: [
-              { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-		        ]
-		    });
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
 
-		</script>
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        dependencies: [
+            { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function () {
+                return !!document.body.classList;
+            } }
+        ]
+    });
+
+</script>
 
 
-	</body>
+</body>
 </html>
