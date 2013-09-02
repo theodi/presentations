@@ -1,0 +1,122 @@
+---
+layout: reveal
+title: Open Data Flow
+author: ODI Tech Team
+description: Bringing the Open Source revolution to Open Data
+---
+
+{% include standard_title.html %}
+
+<section id="open-data-institute">
+    <h2>The Open Data Institute</h2>
+    <ul>
+        <li>launched October 2012</li>
+        <li>non-profit</li>
+        <li>funded by
+            <ul>
+                <li>UK Government</li>
+                <li>matched by others</li>
+            </ul>
+        </li>
+        <li>dedicated to Open Data</li>
+        <ul>
+            <li>increasing supply</li>
+            <li>increasing demand</li>
+            <li>education and training</li>
+        </ul>
+    </ul>
+</section>
+
+<section id="open-data-management">
+  <aside class="notes">
+    Consider the world of Open Data, where we have a load of data, but very little collaboration. If
+    I use your dataset and find an error, the only way to get it fixed is to tell you about it, and hope you 
+    sort it out. Compared to the open source world, this is a pre-sourceforge level of collaboration. We can 
+    do better.
+  </aside>
+</section>
+
+<section id="git-and-github">
+  <aside class="notes">
+    Git and GitHub. How github has revolutionised the process of contributing to OSS projects.
+    If you have some code, I can fork it, make my own changes, then hit a single button to merge those
+    changes back upstream. This makes contribution incredibly simple, so that the admin overhead of doing
+    this becomes almost zero. This allows projects to draw on a wider pool of contributors than otherwise
+    would have been available.
+  </aside>
+</section>
+
+<section id="github-flow">
+  <aside class="notes">
+    Github use a collaboration process they call 'Github Flow' (not to be confused with 'Git flow', which is
+    more complex).
+    Wouldn't it be great if we could do this with open data?
+    This often gets referred to as 'git for data', though in my view git is unimportant. It's all about flow.
+    Github's revolution was not that they used git - it's that they built powerful, simple workflow tools on
+    top of it.
+  </aside>
+</section>
+
+<section id="tools">
+  <aside class="notes">
+    This is not a new idea; people have been talking about it for years. Only problem is there are a few
+    problems when it comes to handling data in git, and other systems designed for source code. Various
+    projects out there looking at building replacements that handle data better, like Dat and R&amp;Wbase.
+    I think we can get further with existing tools, however. If we can bend git to our will, and use it to work
+    with simple data in useful ways, then we can get this revolution started early.
+  </aside>
+</section>
+
+<section id="git-is-line-oriented">
+  <aside class="notes">
+    So we know what we're up against, let's look at some problems with git when working with things like CSVs.
+    First, it's line-oriented, built for source code. This is OK when adding a row, or changing a few cells,
+    but add a column and suddenly you have a change on every line.
+    Let's look at a bit of test data. This is a small CSV file, and I've made some changes. First thing that you can
+    see is that I've obviously added a column. However, it's hard to see if anything else has changed, because the diff is
+    utterly useless.
+  </aside>
+</section>
+
+<section id="word-diff">
+  <aside class="notes">
+    There are some things we can improve here though. First thing to realise is that we don't really care what git does
+    internally; how it stores our changes, and so on. As long as we can see what's going on, git can do what it wants inside.
+    That means that this is a tooling problem, so we can tinker with the tooling around the edges to try to fix our problems.
+  </aside>
+</section>
+
+<section id="">
+</section>
+
+<section id="">
+</section>
+
+<section id="">
+</section>
+
+<section id="">
+</section>
+
+<section id="">
+</section>
+
+<section id="">
+</section>
+
+<section id="">
+</section>
+
+<section id="">
+</section>
+
+<section id="">
+</section>
+
+<section id="">
+</section>
+
+<section id="">
+</section>
+
+{% include odi_tech_team.html %}
