@@ -85,35 +85,57 @@ description: Bringing the Open Source revolution to Open Data
     see is that I've obviously added a column. However, it's hard to see if anything else has changed, because the diff is
     utterly useless.
   </aside>
+  <img src='open-data-flow/naive_diff.png'/>
 </section>
 
-<section id="word-diff">
+<section id="git-cli">
   <aside class="notes">
     There are some things we can improve here though. First thing to realise is that we don't really care what git does
     internally; how it stores our changes, and so on. As long as we can see what's going on, git can do what it wants inside.
     That means that this is a tooling problem, so we can tinker with the tooling around the edges to try to fix our problems.
+    Let's start with the git tool that *everyone* has; the command line.
   </aside>
+  <h2>git CLI</h2>
+  <ul>
+    <li><code>git diff --word-diff</code></li>
+    <li>~/.config/git/attributes
+        <pre><code>*.csv	diff=csv</code></pre>
+    </li>
+    <li>~/.gitconfig
+        <pre><code>[color]
+  ui = true
+[alias]
+  diffcsv = diff --word-diff
+[diff "csv"]
+  wordRegex = ...?</code></pre>
+    </li>
+  </ul>
 </section>
 
-<section id="">
+<section id="word-diff">
+  <img src='open-data-flow/word_regex_dot.png'/>
+  <p>
+    <code>wordRegex=.</code>
+  </p>
 </section>
 
-<section id="">
+<section id="csv-diff">
+  <img src='open-data-flow/csv_diff.png'/>
+  <p>
+    <code>wordRegex=[^,\n]+[,\n]|[,]</code>
+  </p>
 </section>
 
-<section id="">
-</section>
-
-<section id="">
-</section>
-
-<section id="">
-</section>
-
-<section id="">
-</section>
-
-<section id="">
+<section id="csv-my-git">
+  <h2>csv-my-git</h2>
+  <p>
+    Automatically configure your local git installation for CSV
+  </p>
+  <pre><code>curl -L http://theodi.github.io/csv-my-git/install.sh | bash
+git diffcsv test.csv</code></pre>
+  <p>
+    <a href='https://github.com/theodi/csv-my-git'>https://github.com/theodi/csv-my-git</a>
+  </p>
 </section>
 
 <section id="">
