@@ -138,10 +138,38 @@ git diffcsv test.csv</code></pre>
   </p>
 </section>
 
-<section id="">
+<section id="gitlab">
+  <aside class="notes">
+    This is all very well, but what makes github flow really usable is... github. How can we get CSV diffs
+    into Github? Unfortunately, their core display code isn't open source, but we have the next best thing: Gitlab.
+  </aside>
+  <h2>Gitlab</h2>
+  <p>
+    Open Source GitHub-alike
+    <br/>
+    <img src='open-data-flow/gitlab_logo.png'/>
+  </p><p>
+    <a href='http://gitlab.org/'>http://gitlab.org/</a>
+  </p>
 </section>
 
-<section id="">
+<section id="coophx">
+  <aside class="notes">
+    So, all we need to do is change the views for files and diffs to add CSV support. Files are pretty easy, but CSV is harder,
+    mainly because just working out the diffs is non-trivial. Coopyhx to the rescue.
+  </aside>
+  <img src='open-data-flow/coopyhx.png' height='500px'/>
+  <br/>
+  <small><a href='http://paulfitz.github.io/coopyhx/'>http://paulfitz.github.io/coopyhx/</a></small>
+</section>
+
+<section id="gitlab-diffs">
+  <aside class="notes">
+    With the coopyhx javascript library doing all the hard work, adding diff rendering is actually really easy.
+  </aside>
+  <img src='open-data-flow/gitlab_diff.png' height='500px'/>
+</section>
+
 <section id="github-csvs">
   <aside class="notes">
     We published this on our blog a few weeks ago, and a few days later, github announced CSV support in their web interface!
