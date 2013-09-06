@@ -15,7 +15,9 @@
 section.logo-background {
   width: 100%; 
   height: 100%; 
-  background-size: cover; 
+  background-size: 80%;
+  background-position: top center;
+  background-repeat: no-repeat;
   background-image: url(../../../../brand/odi_dynamic_logo.png);
 }
 
