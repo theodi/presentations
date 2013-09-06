@@ -2,25 +2,17 @@
 layout: reveal
 title: Running Around Naked
 author: ODI Tech Team
-description: How Open Development helps us be better programmers
+description: How open development helps us be better programmers
 ---
 
-<section id="titlepage">
-    <aside class="notes">
-        Sam
-    </aside>
-    <h1>Running Around Naked</h1>
-
-    <h3>how open development helps us be better programmers</h3>
-    <hr/>
-    <p>Open Data Institute Tech Team · <a href="https://twitter.com/ukoditech">@ukoditech</a></p>
-</section>
+{% include odi_logo.html %}
+{% include standard_title.html %}
 
 <section id="open-data-institute">
     <aside class="notes">
         Sam
 
-        The ODI was founded late last year, we are a non-profit dedicated to the spread of open data
+        The ODI was founded late last year, as a non-profit dedicated to the spread of open data
     </aside>
     <h2>The Open Data Institute</h2>
     <ul>
@@ -45,9 +37,11 @@ description: How Open Development helps us be better programmers
     <aside class="notes">
         Sam
 
-        There is an art exhibit around the office, particularly the Crisp Machine.
+        There is an art exhibit around our office. We see here the Vending Machine, which scans the BBC News RSS feed
+        for any of a whole list of terms related to the recession, and when it gets a hit it dispenses crisps. We are
+        all quite attached to the machine.
 
-        This is not just about Open Data, it's about Open Culture
+        This is not just about Open Data, it's about the philosophy of Open Culture.
     </aside>
     <h2>Open Culture</h2>
     <img src='open-development/vending-machine.png' style='max-height: 550px'/>
@@ -165,10 +159,12 @@ description: How Open Development helps us be better programmers
     <section>
         <aside class="notes">
             Sam
+
+            This is a tweet of mine from earlier this year
         </aside>
-        <h2>Git and Github</h2>
+        <h2>Git and GitHub</h2>
         <blockquote>
-            How did anybody ever do anything before Github?
+            How did anybody ever do anything before GitHub?
         </blockquote>
         <small><a href="https://twitter.com/pikesley/status/303100904037556225">https://twitter.com/pikesley/status/303100904037556225</a>
         </small>
@@ -177,8 +173,10 @@ description: How Open Development helps us be better programmers
         <aside class="notes">
             Does everybody understand what we mean by Version Control? For those of you who don't, Version Control is a
             bit like Google Documents, in that it retains past versions of our code, and also allows us to collaborate
-            very easily. Git is our current Weapon Of Choice, it's a massive improvement over previous tools such as
-            Subversion. In particular, the branching and merging model is extremely nice
+            very easily.
+
+            Git is our current Weapon Of Choice - in previous tools like Subversion, operations such as branching and
+            merging were extremely expensive and painful. With Git, these things become a positive pleasure.
         </aside>
 
         <h2>Git</h2>
@@ -196,8 +194,8 @@ description: How Open Development helps us be better programmers
     <section id="github">
         <aside class="notes">
             Github has changed pretty much everything. It's difficult to conceive now of how we did ANYTHING before
-            Github existed. As an example, on Good Friday this year I was collaborating over Github with a guy in Brazil
-            to fix up some tools. The future is here
+            Github existed. As an example, on Good Friday this year I was sitting at my flat, collaborating over Github
+            with some guy in Brazil to fix up somebody else's tool. The future is here, and it's amazing.
         </aside>
         <h2>GitHub</h2>
 
@@ -214,7 +212,8 @@ description: How Open Development helps us be better programmers
 
     <section id="github-theodi">
         <aside class="notes">
-            Here's our Github page, with some of our projects. The particular thing that Github do that we really love
+            Here's our Github page, with some of our projects. That number is actually out-of-date now, we have over
+            100 repos, which is remarkable for 7 months work. The particular thing that Github do that we really love
             is...
         </aside>
         <img src='open-development/github.png'/>
@@ -223,8 +222,8 @@ description: How Open Development helps us be better programmers
 
     <section id="pull-requests">
         <aside class="notes">
-            This is how Github work themselves, if you're interested I seriously recommend watching this presentation by
-            Zach Holman. The mechanism is...
+            The Pull Request model. This is how Github work themselves, if you're interested I seriously recommend
+            watching this presentation by Zach Holman. The mechanism is...
         </aside>
         <h2>Pull Requests</h2>
 
@@ -276,7 +275,7 @@ description: How Open Development helps us be better programmers
 
     <section id="pull-request-files">
         <aside class="notes">
-            And here are the actual changes within the code
+            And here are the actual changes within the code, all highlighted
         </aside>
         <img src='open-development/pull_request_3.png'/>
         <small><a href='https://github.com/theodi/member-directory/pull/72'>https://github.com/theodi/member-directory/pull/72</a>
@@ -287,7 +286,7 @@ description: How Open Development helps us be better programmers
         <aside class="notes">
             A PR is not just about "here's my code", it's also way to facilitate a discussion. We usually open a PR on
             the first commit, and as you can see here, a further commit has been made halfway through, with a
-            description of what's changed. It's like a comment threat, but nice
+            description of what's changed. It's like a comment thread, but without the shouting.
         </aside>
         <img src='open-development/pull_request_4.png'/>
         <small><a href='https://github.com/theodi/member-directory/pull/72'>https://github.com/theodi/member-directory/pull/72</a>
@@ -309,7 +308,7 @@ description: How Open Development helps us be better programmers
         <aside class="notes">
             James
         </aside>
-        <h2>Behaviour-driven development</h2>
+        <h2>Behaviour-Driven Development</h2>
         <ul>
             <li>Natural-language behaviour definition</li>
             <li>Written with stakeholders</li>
@@ -338,8 +337,8 @@ description: How Open Development helps us be better programmers
     <section id="continuous-deployment">
         <aside class="notes">
             Sam Continuous deployment has been a Holy Grail for me for a long time, but it's always been too scary to
-            attempt. We're very fortunate here in that we've started from scratch, so this has been baked in from the
-            beginning
+            attempt. We're very fortunate at the ODI in that we've started from scratch, so this has been baked in from
+            the beginning.
         </aside>
         <h2>Continuous Deployment</h2>
     </section>
@@ -362,9 +361,11 @@ description: How Open Development helps us be better programmers
 
     <section id="master-builder">
         <aside class="notes">
-            Previously our Jenkins setup was a bit Heath-Robinson, we recently discovered a lovely tool for managing
+            Previously our Jenkins setup was a bit Heath-Robinson, but we recently discovered a lovely tool for managing
             this stuff. So we now have a robot to manage what Jenkins does, and then publish documentation and so on.
-            This is a work in progress - it's all a work in progress - and it will do more stuff in the future
+            This is a work in progress - it's all a work in progress - and it will do more stuff in the future.
+
+            And we're always flexible - we've recently been trialling Travis, which is CI-as-a-Service.
         </aside>
         <h2>Master Builder</h2>
 
@@ -411,8 +412,10 @@ description: How Open Development helps us be better programmers
             We can now describe our infrastructure as code. Executable Infrastructure is a beautiful thing. This ties
             in nicely with the short-lived, frequently-merged branches from the Git Flow model, and it means we can
             deploy to production many, many times per day without ever thinking about it. As soon as the PR is merged,
-            the robots take over. Deployments should not be like going to the dentist - we've done this on a Friday
-            afternoon without any real terror
+            the robots take over.
+
+            Deployments should not be like going to the dentist - we've done this on a Friday afternoon without any real
+            terror.
         </aside>
         <h2>Chef</h2>
 
@@ -432,8 +435,10 @@ description: How Open Development helps us be better programmers
 
     <section id="cucumber-chef">
         <aside class="notes">
-            And it's all testable. This describes what I want this server to do, which provides a lovely safety-harness
-            when I'm making changes. If your machines are Identical, Repeatable and Disposable, you'll have a good time
+            And it's all testable. Test-driven Executable Infrastructure is an even more beautiful thing. This describes
+            what I want this server to do, which provides a lovely safety-harness when I'm making changes.
+
+            If your machines are Identical, Repeatable and Disposable, you'll have a good time.
         </aside>
         <img src="open-development/cuke-chef.png"/>
     </section>
@@ -477,8 +482,10 @@ description: How Open Development helps us be better programmers
 
 <section id="blogging">
     <aside class="notes">
-        Sam There _should_ be a tech team blog post every week, and we also publish weeknotes, wherein we describe what
-        we've been up to and what new things we've discovered
+        Sam
+
+        There _should_ be a tech team blog post every week, and we also publish weeknotes, wherein we describe what
+        we've been up to and what new things we've discovered.
     </aside>
 
     <h2>Blogging</h2>
@@ -497,7 +504,7 @@ description: How Open Development helps us be better programmers
         <aside class="notes">
             We also have a completely open IRC channel. This is where we work (because we're often a distibuted team)
             but this is open to anybody. Here you can see two people who don't actually work at the ODI having a
-            discussion that's only tangentially-related to ODI stuff
+            discussion that's only tangentially-related to ODI stuff.
         </aside>
         <img src='open-development/irc.png' style='max-height: 500px'/>
         <a href='irc://irc.freenode.net/theodi'>irc.freenode.net #theodi</a>
@@ -506,7 +513,7 @@ description: How Open Development helps us be better programmers
     <section id="odibot">
         <aside class="notes">
             We also have a robot in the IRC channel, who can remind us when stand-ups are happening, describe things
-            that have happened in Github, and show us pictures of Admiral Ackbar. He will do more in the future
+            that have happened in Github, and show us pictures of Admiral Ackbar. He will do more in the future.
         </aside>
         <img src='open-development/odibot.png'/>
     </section>
@@ -519,13 +526,9 @@ description: How Open Development helps us be better programmers
         </aside>
         <h2>Dashboards</h2>
     </section>
-    <section id="leftronic">
-        <img src='open-development/leftronic.png'/>
-        <small><a href='http://leftronic.com/share/g/OqF269'>http://leftronic.com/share/g/OqF269</a></small>
-    </section>
     <section id="dashing">
         <img src="open-development/dashing.png"/>
-        <small><a href='http://dashboards.theodi.org/'>http://dashboards.theodi.org/</a></small>
+        <small><a href='http://dashboards.theodi.org/'>http://dashboards.theodi.org/tech</a></small>
     </section>
 </section>
 
@@ -539,7 +542,8 @@ description: How Open Development helps us be better programmers
 
     <section id="certificate-issues">
         <aside class="notes">
-            So all of this working in the open allows things like this to happen
+            So all of this working in the open allows things like this to happen. This came about when the certificate
+            was not much more than an idea on Jeni's laptop
         </aside>
         <img src='open-development/certificate-issues.png'/>
         <small><a href='https://github.com/theodi/open-data-certificate/issues'>https://github.com/theodi/open-data-certificate/issues</a>
@@ -559,7 +563,7 @@ description: How Open Development helps us be better programmers
         James
     </aside>
 
-    <h2>Working in the open</h2>
+    <h2>Working In The Open</h2>
     <ul>
         <li>stops us cutting corners</li>
         <li>catches more mistakes</li>
@@ -584,35 +588,4 @@ description: How Open Development helps us be better programmers
     </small>
 </section>
 
-<section id='contact'>
-    <a href='http://twitter.com/panoramadata'><img
-            src='http://4a8c0405bbd8695bba65-04d82222e939dc67ec2f359e102c9add.r65.cf3.rackcdn.com/sites/default/files/styles/square_small_thumbnail/public/6405153701_50d45f316d_o.jpg?itok=fwQa4EK2'
-            alt='Ulrich Atz'/></a>
-    <a href='http://twitter.com/pezholio'><img
-            src='http://4a8c0405bbd8695bba65-04d82222e939dc67ec2f359e102c9add.r65.cf3.rackcdn.com/sites/default/files/styles/square_small_thumbnail/public/stuart.jpg?itok=pxH74KgJ'
-            alt='Stuart Harrison'/></a>
-    <a href='http://twitter.com/tommyh'><img
-            src='http://4a8c0405bbd8695bba65-04d82222e939dc67ec2f359e102c9add.r65.cf3.rackcdn.com/sites/default/files/styles/square_small_thumbnail/public/tom_pic_bw.png?itok=XPesp59a'
-            alt='Tom Heath'/></a>
-    <a href='http://twitter.com/pikesley'><img
-            src='http://4a8c0405bbd8695bba65-04d82222e939dc67ec2f359e102c9add.r65.cf3.rackcdn.com/sites/default/files/styles/square_small_thumbnail/public/sam.jpg?itok=9DAC-cTb'
-            alt='Sam Pikesley'/></a>
-    <a href='http://twitter.com/floppy'><img
-            src='http://4a8c0405bbd8695bba65-04d82222e939dc67ec2f359e102c9add.r65.cf3.rackcdn.com/sites/default/files/styles/square_small_thumbnail/public/james.jpg?itok=_4-xKauv'
-            alt='James Smith'/></a>
-    <a href='http://twitter.com/jenit'><img
-            src='http://4a8c0405bbd8695bba65-04d82222e939dc67ec2f359e102c9add.r65.cf3.rackcdn.com/sites/default/files/styles/square_small_thumbnail/public/jeni_tennison_grs_7892_square_monochrome_400x.jpg?itok=aS4gtBO6'
-            alt='Jeni Tennison'/></a>
-
-    <p>
-        Open Data Institute Tech Team<br/>
-        <a href="https://twitter.com/ukoditech">@ukoditech</a><br/>
-        <a href="mailto:info@theodi.org">info@theodi.org</a><br/>
-    </p>
-    <img width="" height="" src="brand/odi_logo_transparent_white.svg" alt="ODI"
-         style="border:none; box-shadow: none; padding: 10px; background-color: transparent"></a><br>
-
-    <p>
-        <a href='http://theodi.github.io/open-development/talk'>http://theodi.github.io/presentations/open-development.html</a>
-    </p>
-</section>
+{% include odi_tech_team.html %}
