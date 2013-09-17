@@ -3,6 +3,18 @@
 
     <h3>{{page.description}}</h3>
     <hr/>
-    <p>Open Data Institute Tech Team · <a href="https://twitter.com/ukoditech">@ukoditech</a></p>
+    <p>
+      {% if page.author == nil %}
+        Open Data Institute Tech Team
+      {% else %}
+        {{page.author}}
+      {% endif %}
+      ·
+      {% if page.twitter == nil %}
+        <a href="https://twitter.com/ukoditech">@ukoditech</a></p>
+      {% else %}
+        <a href="https://twitter.com/{{page.twitter}}">@{{page.twitter}}</a></p>
+      {% endif %}
+      
 </section>
 
