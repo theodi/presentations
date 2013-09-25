@@ -21,6 +21,15 @@ section.logo-background {
   background-image: url(../../../brand/odi_dynamic_logo.png);
 }
 
+ul.centred-list {
+  list-style: none;
+  text-align: center;
+}
+ul.centred-list li {
+  margin: 0.8em;
+}
+
+
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
@@ -52,7 +61,7 @@ body {
   margin: 0 0 20px 0;
   color: black;
   font-family: "Helvetica Neue", "Helvetica", sans-serif;
-  line-height: 0.9em;
+  line-height: 1.1em;
   letter-spacing: 0.02em;
   text-transform: none;
   text-shadow: none; }
