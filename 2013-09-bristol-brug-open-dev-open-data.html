@@ -1,76 +1,195 @@
 ---
 layout: reveal
-title: Running Around Naked
-author: ODI Tech Team
-description: How open development helps us be better programmers
+title: Open^3
+description: Open Development, Open Data, and the Open Data Institute
+author: Tom Heath
+twitter: tommyh
 ---
 
 {% include odi_logo.html %}
+
 {% include standard_title.html %}
 
-<section id="open-data-institute">
-    <aside class="notes">
-        Sam
 
-        The ODI was founded late last year, as a non-profit dedicated to the spread of open data
-    </aside>
-    <h2>The Open Data Institute</h2>
-    <ul>
-        <li>launched October 2012</li>
-        <li>non-profit</li>
-        <li>funded by
-            <ul>
-                <li>UK Government</li>
-                <li>matched by others</li>
-            </ul>
-        </li>
-        <li>dedicated to Open Data</li>
-        <ul>
-            <li>increasing supply</li>
-            <li>increasing demand</li>
-            <li>education and training</li>
-        </ul>
-    </ul>
-</section>
+<style type="text/css">
+@import url(https://fonts.googleapis.com/css?family=Quicksand:400,700,400italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
 
-<section id="open-culture">
-    <aside class="notes">
-        Sam
+reveal {
+  font-family: "Open Sans", sans-serif;
+  font-size: 36px;
+  font-weight: 200;
+  letter-spacing: 0.6em;
+  color: #333333; }
 
-        There is an art exhibit around our office. We see here the Vending Machine, which scans the BBC News RSS feed
-        for any of a whole list of terms related to the recession, and when it gets a hit it dispenses crisps. We are
-        all quite attached to the machine.
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  margin: 0 0 20px 0;
+  color: #333333;
+  font-family: "Quicksand", sans-serif;
+  line-height: 1.2em;
+  letter-spacing: -0.08em;
+  text-transform: uppercase;
+  text-shadow: none;
+ }
+</style>
 
-        This is not just about Open Data, it's about the philosophy of Open Culture.
-    </aside>
-    <h2>Open Culture</h2>
-    <img src='open-development/vending-machine.png' style='max-height: 550px'/>
+
+<section>
+	<h2>WTF is the<br/>Open Data Institute?</h2>
+	<ul class="centred-list">
+		<li>non-profit, non-partisan</li>
+		<li>founded 2012 by Tim Berners-Lee and Nigel Shadbolt</li>
+		<li>&quot;helping others be successful with open data&quot;</li>
+		<li>economic, social and environmental value</li>
+	</ul>
+  <aside class="notes"></aside>
 </section>
 
 <section>
-    <section id="tech-team">
-        <aside class="notes">
-            James
-        </aside>
-        <h2>ODI Tech Team</h2>
-        <ul>
-            <li>started January 2013</li>
-            <li>mixture of skills
-                <ul>
-                    <li>data science</li>
-                    <li>statistics</li>
-                    <li>public data</li>
-                    <li>devops</li>
-                    <li>engineering</li>
-                </ul>
-            </li>
-            <li>building tools for open data</li>
-            <li>showing best practice</li>
-            <li>open culture in code</li>
-        </ul>
-    </section>
+	<h2>WTF is<br/>open data?</h2>
+  <aside class="notes"></aside>
+</section>
 
-    <section id="who-are-we">
+<section>
+  <aside class="notes">the simplest definition of open data is this one...</aside>
+	<p>
+		<blockquote>Open data is information that is available for anyone to use, for any purpose,<br/>at no cost.</blockquote>
+		&mdash;&nbsp;<a href="http://opendefinition.org/">http://theodi.org/guide/what-open-data</a>
+	</p>
+</section>
+
+<section>
+  <aside class="notes"></aside>
+	<ul class="centred-list">
+		<li><strong>open data</strong><br/>must have have a <em>licence</em> to say it is open</li>
+		<li><strong>the license</strong><br/>may impose some constraints:<br/><em>attribution</em> and/or <em>share-alike</em></li>
+	</ul>
+</section>
+
+<section>
+  <aside class="notes"></aside>
+	<p>
+		<blockquote>A piece of data or content is open if anyone is free to use, reuse, and redistribute it &mdash; subject only, at most, to the requirement to attribute and/or share-alike.</blockquote>
+		&mdash;&nbsp;<a href="http://opendefinition.org/">http://opendefinition.org/</a>
+	</p>
+</section>
+
+<section>
+	<h2>So What?</h2>
+  <aside class="notes">why should you care? 1) because open data frees you up to build cool things without having to pay for the data or collect it yourself; 2) because your clients/customers will probably start to care.</aside>
+</section>
+
+
+<section>
+  <p><img src='2013-09-bristol-brug-open-dev-open-data/OSMinecraft.png'></p>
+  <small><a href='http://www.ordnancesurvey.co.uk/innovate/developers/minecraft-map-britain.html'>http://www.ordnancesurvey.co.uk/innovate/developers/minecraft-map-britain.html</a></small>
+  <aside class="notes">so thinking about some examples of interesting data sets and how these have been used...</aside>
+</section>
+
+<section>
+  <aside class="notes"></aside>
+  <p><img src='2013-09-bristol-brug-open-dev-open-data/prescribinganalytics.png'></p>
+  <small><a href='http://prescribinganalytics.com/'>http://prescribinganalytics.com/</a></small>
+</section>
+
+<section>
+  <aside class="notes"></aside>
+  <p><img src='2013-09-bristol-brug-open-dev-open-data/smtm.png'></p>
+  <small><a href='http://smtm.labs.theodi.org/'>http://smtm.labs.theodi.org/</a></small>
+</section>
+
+<section>
+  <aside class="notes"></aside>
+  <p><img src='2013-09-bristol-brug-open-dev-open-data/telefonicafootfall.png'></p>
+  <small><a href='http://dynamicinsights.telefonica.com/488/smart-steps'>http://dynamicinsights.telefonica.com/488/smart-steps</a></small>
+</section>
+
+<section>
+	<h2>Good Open Data</h2>
+	<ul class="centred-list">
+    <li><strong>can be linked to</strong><br/>so that it can be easily shared and talked about</li>
+    <li><strong>is available in a standard, structured format</strong><br/>so that it can be easily processed</li>
+    <li><strong>has guaranteed availability and consistency over time</strong><br/>so that others can rely on it</li>
+    <li><strong>is traceable, through any processing</strong><br/>so others can work out whether to trust it</li>
+  </ul>
+  <aside class="notes"></aside>
+</section>
+
+<section>
+	<h2>Open Data Certificates</h2>
+  <aside class="notes"></aside>
+</section>
+
+<section>
+  <p><img src="2013-09-bristol-brug-open-dev-open-data/certificates.png"></p>
+  <small><a href="https://certificates.theodi.org/">https://certificates.theodi.org/</a></small>
+   <aside class="notes"></aside>
+</section>
+
+<section>
+	<h3>legal, technical,<br/>social, practical...</h3>
+  <aside class="notes"></aside>
+</section>
+
+<section>
+	<h2>The ODI: Redux</h2>
+  <aside class="notes"></aside>
+</section>
+
+<section>
+	<ul class="centred-list">
+		<li>non-profit, non-partisan</li>
+		<li>founded 2012 by Tim Berners-Lee and Nigel Shadbolt</li>
+		<li>multiple funding sources</li>
+		<li><strong>&quot;helping others be successful with open data&quot;</strong></li>
+	</ul>
+  <aside class="notes"></aside>
+</section>
+
+<section>
+	<ul class="centred-list">
+		<li>incubating startups</li>
+		<li>training</li>
+		<li>community building</li>
+		<li>research and policy</li>
+		<li><strong>software and service development</strong></li>
+	</ul>
+  <aside class="notes"></aside>
+</section>
+
+<section>
+	<h2>Where&apos;s the Ruby to?</h2>
+  <aside class="notes"></aside>
+</section>
+
+<section>
+	<h2>Open Development<br/>at the ODI</h2>
+  <aside class="notes"></aside>
+</section>
+
+<section id="tech-team">
+		<aside class="notes"></aside>
+		<h2>ODI Tech Team</h2>
+		<ul class="centred-list">
+				<li><strong>started January 2013</strong></li>
+				<li><strong>mixture of skills</strong><br/>
+					data science<br/>
+					statistics<br/>
+					public data<br/>
+					devops<br/>
+					engineering<br/></li>
+				<li><strong>building tools for open data</strong></li>
+				<li><strong>showing best practice</strong></li>
+				<li><strong>open culture in code</strong></li>
+		</ul>
+</section>
+
+    <!-- <section id="who-are-we">
         <img src='open-development/who-are-we.jpg'/>
         <aside class="notes">
             Started by defining principles
@@ -83,21 +202,31 @@ description: How open development helps us be better programmers
         <aside class="notes">
             how does that translate into practice?
         </aside>
-    </section>
+    </section> -->
 
-    <section id='open-by-default'>
-        <h2>Open By Default</h2>
-        <ul>
-            <li>encourage public engagement</li>
-            <li>plan in the open</li>
-            <li>comments, forks, contributions</li>
-        </ul>
-        <blockquote>
-            There are more good ideas in the world than there are in the ODI
-        </blockquote>
-    </section>
+<section id='open-by-default'>
+		<h2>Open By Default</h2>
+		<ul>
+				<li>encourage public engagement</li>
+				<li>plan in the open</li>
+				<li>comments, forks, contributions</li>
+		</ul>
+		<blockquote>
+				There are more good ideas in the world than there are in the ODI
+		</blockquote>
+</section>
 
-    <section id='borrow-mercilessly'>
+
+<section>
+    <aside class="notes"></aside>
+    <blockquote>... being Open By Default is exhilarating. But I suspect
+        that streaking at a cricket match is exhilarating, too.
+        And sometimes it does feel like we're running around naked...</blockquote>
+    <small>Sam Pikesley - <a href='http://www.theodi.org/blog/better-living-through-openness'>http://www.theodi.org/blog/better-living-through-openness</a>
+    </small>
+</section>
+
+    <!-- <section id='borrow-mercilessly'>
         <h2>Borrow Mercilessly</h2>
         <ul>
             <li>We will build on other's work</li>
@@ -116,40 +245,43 @@ description: How open development helps us be better programmers
             <li>Adapt to suit, or move on</li>
             <li>Continuous improvement</li>
         </ul>
-    </section>
+    </section> -->
 
-    <section id='share-everything'>
-        <h2>Share Everything</h2>
-        <ul>
-            <li>Document and discuss experiences</li>
-            <li>Create reusable components
-                <ul>
-                    <li>Eat your own dogfood</li>
-                </ul>
-            </li>
-            <li>Share learning to help others</li>
-        </ul>
-    </section>
+<section id='share-everything'>
+		<h2>Share Everything</h2>
+		<ul>
+				<li>Document and discuss experiences</li>
+				<li>Create reusable components
+						<ul>
+								<li>Eat your own dogfood</li>
+						</ul>
+				</li>
+				<li>Share learning to help others</li>
+		</ul>
+</section>
 
-    <section id='be-ourselves'>
+    <!-- <section id='be-ourselves'>
         <h2>Be Ourselves</h2>
         <ul>
             <li>We are all individuals</li>
             <li>We work as a team and in a community because we have common purpose</li>
             <li>Express individual opinions, considerately.</li>
         </ul>
-    </section>
+    </section> -->
 
-    <section id='practicalities'>
-        <h2>Practicalities</h2>
-        <ul>
-            <li>Agile Approach</li>
-            <li>Open Tools</li>
-            <li>Open Communication</li>
-            <li>Open Collaboration</li>
-        </ul>
-    </section>
+<section>
+		<h2>Practicalities</h2>
+		<ul>
+				<li>Agile Approach</li>
+				<li>Open Tools</li>
+				<li>Open Communication</li>
+				<li>Open Collaboration</li>
+		</ul>
 </section>
+
+
+
+
 
 <section id='open-tools'>
     <h2>Open Tools</h2>
@@ -168,46 +300,6 @@ description: How open development helps us be better programmers
         </blockquote>
         <small><a href="https://twitter.com/pikesley/status/303100904037556225">https://twitter.com/pikesley/status/303100904037556225</a>
         </small>
-    </Section>
-    <section id='git'>
-        <aside class="notes">
-            Does everybody understand what we mean by Version Control? For those of you who don't, Version Control is a
-            bit like Google Documents, in that it retains past versions of our code, and also allows us to collaborate
-            very easily.
-
-            Git is our current Weapon Of Choice - in previous tools like Subversion, operations such as branching and
-            merging were extremely expensive and painful. With Git, these things become a positive pleasure.
-        </aside>
-
-        <h2>Git</h2>
-
-        <p>
-            <a href='http://git-scm.com'>http://git-scm.com</a>
-        </p>
-        <ul>
-            <li>Distributed version control</li>
-            <li>Extremely cheap branching</li>
-            <li>Extremely good merging</li>
-        </ul>
-    </section>
-
-    <section id="github">
-        <aside class="notes">
-            Github has changed pretty much everything. It's difficult to conceive now of how we did ANYTHING before
-            Github existed. As an example, on Good Friday this year I was sitting at my flat, collaborating over Github
-            with some guy in Brazil to fix up somebody else's tool. The future is here, and it's amazing.
-        </aside>
-        <h2>GitHub</h2>
-
-        <p>
-            <a href='http://github.com'>http://github.com</a>
-        </p>
-
-        <ul>
-            <li>Git hosting</li>
-            <li>Issue tracking</li>
-            <li>Wikis for documentation</li>
-        </ul>
     </section>
 
     <section id="github-theodi">
@@ -219,88 +311,6 @@ description: How open development helps us be better programmers
         <img src='open-development/github.png'/>
         <small><a href='http://github.com/theodi'>http://github.com/theodi</a></small>
     </section>
-
-    <section id="pull-requests">
-        <aside class="notes">
-            The Pull Request model. This is how Github work themselves, if you're interested I seriously recommend
-            watching this presentation by Zach Holman. The mechanism is...
-        </aside>
-        <h2>Pull Requests</h2>
-
-        <p>
-            Fork (or branch) and Pull
-        </p>
-
-        <p>
-            <a href='http://zachholman.com/talk/how-github-uses-github-to-build-github/'>How GitHub Uses GitHub to Build
-                GitHub</a>
-        </p>
-        <blockquote>
-            I've added something to your code, and I want you to merge it upstream.
-        </blockquote>
-    </section>
-
-    <section id="workflow">
-        <h2>Workflow</h2>
-        <ul>
-            <li>Clone the repository</li>
-            <li>Create a branch</li>
-            <li>Write some code (with tests!)</li>
-            <li>Publish branch</li>
-            <li>Open a pull request back to master</li>
-        </ul>
-        <aside class="notes">
-            GitHub are calling this "GitHub Flow".
-            Important aspects: short-lived branches, minimal merges. We shall return to this theme later
-        </aside>
-    </section>
-
-    <section id="pull-request-description">
-        <aside class="notes">
-            Here's an example, here James has opened a PR on some of Jeni's code
-        </aside>
-        <img src='open-development/pull_request_1.png'/>
-        <small><a href='https://github.com/theodi/member-directory/pull/72'>https://github.com/theodi/member-directory/pull/72</a>
-        </small>
-    </section>
-
-    <section id="pull-request-commits">
-        <aside class="notes">
-            Here we can see the files that have been changed
-        </aside>
-        <img src='open-development/pull_request_2.png'/>
-        <small><a href='https://github.com/theodi/member-directory/pull/72'>https://github.com/theodi/member-directory/pull/72</a>
-        </small>
-    </section>
-
-    <section id="pull-request-files">
-        <aside class="notes">
-            And here are the actual changes within the code, all highlighted
-        </aside>
-        <img src='open-development/pull_request_3.png'/>
-        <small><a href='https://github.com/theodi/member-directory/pull/72'>https://github.com/theodi/member-directory/pull/72</a>
-        </small>
-    </section>
-
-    <section id="pull-request-discussion">
-        <aside class="notes">
-            A PR is not just about "here's my code", it's also way to facilitate a discussion. We usually open a PR on
-            the first commit, and as you can see here, a further commit has been made halfway through, with a
-            description of what's changed. It's like a comment thread, but without the shouting.
-        </aside>
-        <img src='open-development/pull_request_4.png'/>
-        <small><a href='https://github.com/theodi/member-directory/pull/72'>https://github.com/theodi/member-directory/pull/72</a>
-        </small>
-    </section>
-
-    <section id="pull-request-merge">
-        <aside class="notes">
-            And then the PR is merged. And this is the last place any humans touch the code, but more of that later...
-        </aside>
-        <img src='open-development/pull_request_5.png'/>
-        <small><a href='https://github.com/theodi/member-directory/pull/72'>https://github.com/theodi/member-directory/pull/72</a>
-        </small>
-    </section>
 </section>
 
 <section>
@@ -308,7 +318,7 @@ description: How open development helps us be better programmers
         <aside class="notes">
             James
         </aside>
-        <h2>Behaviour-Driven Development</h2>
+        <h2>Behaviour-Driven<br/>Development</h2>
         <ul>
             <li>Natural-language behaviour definition</li>
             <li>Written with stakeholders</li>
@@ -319,11 +329,6 @@ description: How open development helps us be better programmers
     <section id="cucumber">
         <img src='open-development/cucumber.png' style='max-height: 500px'/>
         <small><a href='http://cukes.info'>http://cukes.info</a></small>
-    </section>
-
-    <section id="relish">
-        <img src='open-development/relish.png' style='max-height: 500px'/>
-        <small><a href='https://relishapp.com/theodi'>https://relishapp.com/theodi</a></small>
     </section>
 </section>
 
@@ -340,7 +345,7 @@ description: How open development helps us be better programmers
             attempt. We're very fortunate at the ODI in that we've started from scratch, so this has been baked in from
             the beginning.
         </aside>
-        <h2>Continuous Deployment</h2>
+        <h2>Continuous<br/>Deployment</h2>
     </section>
 
     <section id="jenkins">
@@ -359,37 +364,6 @@ description: How open development helps us be better programmers
         <img src="open-development/good-to-merge.png"/>
     </section>
 
-    <section id="master-builder">
-        <aside class="notes">
-            Previously our Jenkins setup was a bit Heath-Robinson, but we recently discovered a lovely tool for managing
-            this stuff. So we now have a robot to manage what Jenkins does, and then publish documentation and so on.
-            This is a work in progress - it's all a work in progress - and it will do more stuff in the future.
-
-            And we're always flexible - we've recently been trialling Travis, which is CI-as-a-Service.
-        </aside>
-        <h2>Master Builder</h2>
-
-        <p>
-            <small><a href="https://github.com/theodi/master-builder">https://github.com/theodi/master-builder</a>
-            </small>
-        </p>
-        <ul>
-            <li>Written using the <a href="https://wiki.jenkins-ci.org/display/JENKINS/Job+DSL+Plugin">Jenkins Job
-                DSL</a></li>
-            <li>Monitors all branches of all our projects</li>
-            <li>Creates all the Jenkins jobs</li>
-            <li>Tags selected branches</li>
-            <li>Also does:
-                <ul>
-                    <li>Coverage</li>
-                    <li>Documentation</li>
-                    <li>Github status</li>
-                    <li>Notifications</li>
-                </ul>
-            </li>
-        </ul>
-
-    </section>
 
     <section id="cattle-not-pets">
         <aside class="notes">
@@ -574,18 +548,10 @@ description: How open development helps us be better programmers
     </ul>
 </section>
 
-<section id='naked'>
-    <aside class="notes">
-        James
-    </aside>
 
-    <blockquote>
-        ... being Open By Default is exhilarating. But I suspect
-        that streaking at a cricket match is exhilarating, too.
-        And sometimes it does feel like we're running around naked...
-    </blockquote>
-    <small>Sam Pikesley - <a href='http://www.theodi.org/blog/better-living-through-openness'>http://www.theodi.org/blog/better-living-through-openness</a>
-    </small>
-</section>
+
+<!-- mention that the slides are data too! -->
+
+
 
 {% include odi_tech_team.html %}
