@@ -1,0 +1,145 @@
+---
+layout: reveal
+title: Identical, Repeatable, Disposable
+author: Sam Pikesley
+twitter: pikesley
+description: Test-Driven Infrastructure with Cucumber-chef
+---
+
+{% include odi_logo.html %}
+{% include standard_title.html %}
+
+<section id="who_am_i">
+    <h1>Who am I?</h1>
+    <ul>
+        <li class="fragment">
+            DevOps Engineer at <a href="http://theodi.org/">the Open Data Institute</a>
+        </li>
+        <li class="fragment">
+            What is DevOps?
+        </li>
+        <li class="fragment">
+            It's about culture. It's not a deliverable
+        </li>
+        <li class="fragment">
+            So I now prefer to be known as Head Of Robots
+        </li>
+    </ul>
+</section>
+
+<section id="behaviour_driven_development">
+    <section>
+        <h1>Behaviour-Driven Development</h1>
+    </section>
+    <section id="cucumber">
+        <h1>Cucumber</h1>
+        <ul>
+            <li>
+                Allows us to express requirements in something very close to plain English (using <a
+                    href="https://github.com/cucumber/cucumber/wiki/Gherkin">Gherkin</a>)
+            </li>
+            <li>
+                Executable specification
+            </li>
+            <li>
+                Write the test first!
+            </li>
+            <li>
+                Red - Green - Refactor
+            </li>
+        </ul>
+        <small><a href="http://cukes.info/">http://cukes.info/</a></small>
+    </section>
+    <section>
+        <h2>A Cucumber feature</h2>
+           <pre><code data-trim class="gherkin">Feature: Sign in to the member directory
+  As a member, I need to sign in to the system to modify my account details
+
+  Scenario: Successful signin
+    Given that I have a membership number and password
+    When I visit the sign in page
+    And I enter my membership number and password
+    And the password is correct
+    When I click sign in
+    Then I should have signed in successfully</code></pre>
+        <small>From <a href="https://github.com/theodi/member-directory/blob/master/features/signin.feature">https://github.com/theodi/member-directory/blob/master/features/signin.feature</a></small>
+    </section>
+    <section>
+        <h2>Step definitions</h2>
+        <pre><code data-trim class="gherkin">Given /^that I have a membership number and password$/ do
+  member = Member.create(
+    :email => 'sam@foobar.com',
+  )
+  member.confirm!
+  @membership_number = member.membership_number
+  @password = 'p4ssw0rd'
+end
+
+When /^I enter my membership number and password$/ do
+  fill_in('member_membership_number', :with => @membership_number)
+end
+
+Then /^I should have signed in successfully$/ do
+  page.should have_content "Signed in successfully"
+end</code></pre>
+        <small>From <a href="https://github.com/theodi/member-directory/blob/master/features/step_definitions/signin_steps.rb">https://github.com/theodi/member-directory/blob/master/features/step_definitions/signin_steps.rb</a></small>
+    </section>
+    <section>
+        <h1>Cucumber extensions</h1>
+    </section>
+    <section>
+        <h1>Aruba</h1>
+        <p>Pre-baked step definitions (and some other stuff)</p>
+        <pre><code data-trim class="gherkin">Scenario: one without postcodes
+  When I successfully run `noodile sample.csv`
+  Then a file named "outputs/complete.no.postcodes.csv" should exist</code></pre>
+        <pre><code data-trim class="gherkin">Then /^a file named "([^"]*)" should exist$/ do |file|
+  check_file_presence([file], true)
+end</code></pre>
+        <pre><code data-trim class="gherkin">def check_file_presence(paths, expect_presence)
+  prep_for_fs_check do
+    paths.each do |path|
+      if expect_presence
+        File.should be_file(path)
+      else
+        File.should_not be_file(path)
+      end
+    end
+  end
+end</code></pre>
+        <small><a href="https://github.com/cucumber/aruba">https://github.com/cucumber/aruba</a></small>
+    </section>
+</section>
+
+<section id="what_is_chef">
+    <h1>Chef</h1>
+    <ul>
+        <li>
+            Infrastructure as code
+        </li>
+        <li>
+            Describe your (desired) infrastructure with a Ruby DSL
+        </li>
+        <li>
+            Key concepts
+            <ul>
+                <li>
+                    <em>Recipes</em> which are contained inside <em>cookbooks</em>
+                </li>
+                <li>
+                    <em>Roles</em>
+                </li>
+                <li>
+                    <em>Environments</em>
+                </li>
+                <li>
+                    <em>Data bags</em>
+                </li>
+                <li>
+                    <em>Knife</em>, the command-line tool which drives it all
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <small><a href="http://www.opscode.com/chef/">http://www.opscode.com/chef/</a></small>
+</section>
