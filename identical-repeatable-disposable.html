@@ -10,15 +10,25 @@ description: Test-Driven Infrastructure with Cucumber-chef
 {% include standard_title.html %}
 
 <section id="who_am_i">
+    <aside class="notes">
+        <p>
+            Hello, I'm Sam from the ODI and I'm here to talk to you about Test-Driven Infrastructure with Cucumber-chef.
+        </p>
+
+        <p>
+            My job title is DevOps Engineer, but DevOps isn't really a job. What I'm actually good at is automation,
+            so my unofficial role is now Head Of Robots
+        </p>
+    </aside>
     <h1>Who am I?</h1>
     <ul>
-        <li class="fragment">
+        <li>
             DevOps Engineer at <a href="http://theodi.org/">the Open Data Institute</a>
         </li>
-        <li class="fragment">
+        <li>
             What is DevOps?
         </li>
-        <li class="fragment">
+        <li>
             It's about culture. It's not a deliverable
         </li>
         <li class="fragment">
@@ -29,30 +39,69 @@ description: Test-Driven Infrastructure with Cucumber-chef
 
 <section id="behaviour_driven_development">
     <section>
+        <aside class="notes">
+            <p>
+                So let's talk about behaviour-driven development
+            </p>
+            <p>
+                Dan North (instigator of BDD) says: <em>"BDD is a second-generation, outside-in, pull-based,
+                multiple-stakeholder, multiple-scale, high-automation, agile methodology. It describes a cycle of
+                interactions with well-defined outputs, <strong>resulting in the delivery of working, tested software
+                    that matters</strong>"</em>
+            </p>
+            <p>
+                Now some of that text appears to me to be indistinguishable from advanced trolling, but the important
+                thing there is that we come away with comprehensively-tested software that we actually want
+            </p>
+            <p>
+                And we have some great BDD tools
+            </p>
+        </aside>
         <h1>Behaviour-Driven Development</h1>
+        <ul>
+            <li class="fragment">
+                Dan North (instigator of BDD) says: <em>"BDD is a second-generation, outside-in, pull-based,
+                multiple-stakeholder, multiple-scale, high-automation, agile methodology. It describes a cycle of
+                interactions with well-defined outputs, <strong>resulting in the delivery of working, tested software
+                    that matters</strong>"</em>
+                (<a href="http://en.wikipedia.org/wiki/Behavior-driven_development#History">Wikipedia</a>)
+            </li>
+        </ul>
     </section>
     <section id="cucumber">
+        <aside class="notes">
+            <p>
+                Cucumber is our weapon of choice for BDD. We can write our specifications in a very tightly-constrained
+                dialect of English (or over 40 other spoken languages). This specification is executable. Let's see an
+                example
+            </p>
+        </aside>
         <h1>Cucumber</h1>
+        <h4><a href="http://cukes.info/">http://cukes.info/</a></h4>
         <ul>
             <li>
                 Allows us to express requirements in something very close to plain English (using <a
                     href="https://github.com/cucumber/cucumber/wiki/Gherkin">Gherkin</a>)
             </li>
             <li>
-                Executable specification
-            </li>
-            <li>
-                Write the test first!
-            </li>
-            <li>
-                Red - Green - Refactor
+                Executable Specification
             </li>
         </ul>
-        <small><a href="http://cukes.info/">http://cukes.info/</a></small>
     </section>
     <section>
-        <h2>A Cucumber feature</h2>
-           <pre><code data-trim class="gherkin">Feature: Sign in to the member directory
+        <aside class="notes">
+            <p>
+                This is a part of a feature file from one of our projects. As you can see, this is entirely readable by
+                normal people, and it captures our requirements in an extremely succinct way. Gherkin is designed to be
+                usable by non-technical stakeholders
+            </p>
+
+            <p>
+                So, we have our feature, now what do we do? Well we can run cucumber on this feature...
+            </p>
+        </aside>
+        <h1>Write a feature</h1>
+               <pre><code data-trim class="gherkin">Feature: Sign in to the member directory
   As a member, I need to sign in to the system to modify my account details
 
   Scenario: Successful signin
@@ -62,11 +111,60 @@ description: Test-Driven Infrastructure with Cucumber-chef
     And the password is correct
     When I click sign in
     Then I should have signed in successfully</code></pre>
-        <small>From <a href="https://github.com/theodi/member-directory/blob/master/features/signin.feature">https://github.com/theodi/member-directory/blob/master/features/signin.feature</a></small>
+
+        <small>
+            From
+            <a href="https://github.com/theodi/member-directory/blob/master/features/signin.feature">
+                https://github.com/theodi/member-directory/blob/master/features/signin.feature
+            </a>
+        </small>
     </section>
     <section>
-        <h2>Step definitions</h2>
-        <pre><code data-trim class="gherkin">Given /^that I have a membership number and password$/ do
+        <aside class="notes">
+            <p>
+                And it fails, of course, because at this point we have nothing. But note the helpful message, "express
+                the regexp above with the code you wish you had". So let's see how we go about that
+            </p>
+        </aside>
+        <h1>Watch it fail</h1>
+        <pre><code data-trim class="gherkin">cucumber features/signin.feature -f progress
+UUUUUU
+
+1 scenario (1 undefined)
+6 steps (6 undefined)
+0m0.004s
+
+You can implement step definitions for undefined steps with these snippets:
+
+When(/^I enter my membership number and password$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then(/^I should have signed in successfully$/) do
+  pending # express the regexp above with the code you wish you had
+end</code></pre>
+    </section>
+    <section>
+        <aside class="notes">
+            <p>
+                So we write some step definitions. First we capture the text from the feature with the regular
+                expression. Then we start driving out the code. Note that the outside-in nature of this approach forces
+                us to think about our interfaces first - the text leads to the definition which shapes the underlying
+                objects. This is powerful stuff
+            </p>
+            <p>
+                These step defs represent the end of a process - when we're actually doing this for real, we proceed in
+                small increments, running the tests at each stage. We follow the red - green - refactor cycle where we
+                have a failing test, we write just enough code to make the test pass, then we refactor what we've
+                written, but with the benefit of a safety net
+            </p>
+        </aside>
+        <h1>Define the steps</h1>
+        <p>
+            Drive out the code required to make the tests pass
+        </p>
+
+        <pre><code data-trim class="step_definitions">Given /^that I have a membership number and password$/ do
   member = Member.create(
     :email => 'sam@foobar.com',
   )
@@ -82,21 +180,31 @@ end
 Then /^I should have signed in successfully$/ do
   page.should have_content "Signed in successfully"
 end</code></pre>
-        <small>From <a href="https://github.com/theodi/member-directory/blob/master/features/step_definitions/signin_steps.rb">https://github.com/theodi/member-directory/blob/master/features/step_definitions/signin_steps.rb</a></small>
+
+        <small>
+            From
+            <a href="https://github.com/theodi/member-directory/blob/master/features/step_definitions/signin_steps.rb">
+                https://github.com/theodi/member-directory/blob/master/features/step_definitions/signin_steps.rb
+            </a>
+        </small>
     </section>
     <section>
+        <aside class="notes"
         <h1>Cucumber extensions</h1>
     </section>
     <section>
         <h1>Aruba</h1>
-        <p>Pre-baked step definitions (and some other stuff)</p>
+        <h4>Pre-baked step definitions (and some other stuff)</h4>
+
         <pre><code data-trim class="gherkin">Scenario: one without postcodes
   When I successfully run `noodile sample.csv`
   Then a file named "outputs/complete.no.postcodes.csv" should exist</code></pre>
-        <pre><code data-trim class="gherkin">Then /^a file named "([^"]*)" should exist$/ do |file|
+
+        <pre><code data-trim class="step_definitions">Then /^a file named "([^"]*)" should exist$/ do |file|
   check_file_presence([file], true)
 end</code></pre>
-        <pre><code data-trim class="gherkin">def check_file_presence(paths, expect_presence)
+
+        <pre><code data-trim>def check_file_presence(paths, expect_presence)
   prep_for_fs_check do
     paths.each do |path|
       if expect_presence
@@ -107,39 +215,108 @@ end</code></pre>
     end
   end
 end</code></pre>
+
         <small><a href="https://github.com/cucumber/aruba">https://github.com/cucumber/aruba</a></small>
     </section>
 </section>
-
 <section id="what_is_chef">
-    <h1>Chef</h1>
-    <ul>
-        <li>
-            Infrastructure as code
-        </li>
-        <li>
-            Describe your (desired) infrastructure with a Ruby DSL
-        </li>
-        <li>
-            Key concepts
-            <ul>
-                <li>
-                    <em>Recipes</em> which are contained inside <em>cookbooks</em>
-                </li>
-                <li>
-                    <em>Roles</em>
-                </li>
-                <li>
-                    <em>Environments</em>
-                </li>
-                <li>
-                    <em>Data bags</em>
-                </li>
-                <li>
-                    <em>Knife</em>, the command-line tool which drives it all
-                </li>
-            </ul>
-        </li>
-    </ul>
-    <small><a href="http://www.opscode.com/chef/">http://www.opscode.com/chef/</a></small>
+    <section data-background="identical-repeatable-disposable/robot.jpg">
+        <h1>Robot-powered Infrastructure</h1>
+        <blockquote>All watched over by machines of loving grace</blockquote>
+        <small>Richard Brautigan</small>
+        <div class="photo-credit">
+            <a href="http://www.flickr.com/photos/t0msk/3148160756/lightbox/">Robot</a> by
+            <a href="http://www.flickr.com/photos/t0msk/">t0msk</a>
+            <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/">(CC BY-NC-SA 2.0)</a>
+        </div>
+    </section>
+    <section>
+        <h1>Chef</h1>
+        <ul>
+            <li>
+                Infrastructure as code
+            </li>
+            <li>
+                Describe your (desired) infrastructure with a Ruby DSL
+            </li>
+            <li>
+                Key concepts
+                <ul>
+                    <li>
+                        <em>Recipes</em> which are contained inside <em>cookbooks</em>
+                    </li>
+                    <li>
+                        <em>Roles</em>
+                    </li>
+                    <li>
+                        <em>Environments</em>
+                    </li>
+                    <li>
+                        <em>Data bags</em>
+                    </li>
+                    <li>
+                        <em>Knife</em>, the command-line tool which drives it all
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <small><a href="http://www.opscode.com/chef/">http://www.opscode.com/chef/</a></small>
+    </section>
+    <section>
+        <h1>Simple abstractions</h1>
+
+        <p>
+            For example, this:
+        </p>
+        <pre><code data-trim class="chef">package 'nginx' do
+  action :install
+end</code></pre>
+        <p>
+            installs stock nginx. Under the hood, Chef works out from the host OS whether it needs <em>apt</em> or
+            <em>yum</em> or whatever, but we don't need to care about that
+        </p>
+    </section>
+    <section>
+        <h1>Elegant idempotency</h1>
+        <ul>
+            <li class="fragment">
+                <a href="http://en.wikipedia.org/wiki/Idempotence#Computer_science_meaning">Wikipedia says</a> "In
+                computer science, the term idempotent is used... to describe an operation that will produce the
+                same results if executed once or multiple times"
+            </li>
+            <li class="fragment">
+                OpsCode's resources (e.g. <em>package</em>) are guaranteed to be idempotent
+            </li>
+            <li class="fragment">
+                But we can also cast aside the safety net and dive right in...
+            </li>
+          </ul>
+    </section>
+    <section>
+        <h1>Raw scripts</h1>
+        <pre><code data-trim class="chef">script 'Bundling the gems' do
+  interpreter 'bash'
+  cwd current_release_directory
+  user running_deploy_user
+  code <<-EOF
+    bundle install \
+     --without=development \
+     --quiet \
+     --path #{bundler_depot}
+  EOF
+end</code></pre>
+        <ul>
+            <li>
+                This is valid Chef
+            </li>
+            <li>
+                No guarantees here - you're on your own
+            </li>
+            <li>
+                This might be a good way in if you're wanting to try out Chef
+            </li>
+        </ul>
+    </section>
 </section>
+
+{% include odi_tech_team.html %}
