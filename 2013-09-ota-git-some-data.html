@@ -1,0 +1,467 @@
+---
+layout: reveal
+title: Git Yo'self Some Data
+author: ODI Tech Team
+description: How we can (and can't) use open source tooling for open data
+author: James Smith
+twitter: floppy
+---
+
+{% include odi_logo.html %}
+
+{% include standard_title.html %}
+
+<section>
+	<h2>WTF is the<br/>Open Data Institute?</h2>
+	<ul class="centred-list">
+		<li>non-profit, non-partisan</li>
+		<li>founded 2012 by Tim Berners-Lee and Nigel Shadbolt</li>
+		<li>&quot;helping others be successful with open data&quot;</li>
+		<li>economic, social and environmental value</li>
+	</ul>
+  <aside class="notes"></aside>
+</section>
+
+<section>
+	<h2>WTF is<br/>open data?</h2>
+  <aside class="notes"></aside>
+</section>
+
+<section>
+  <aside class="notes">the simplest definition of open data is this one...</aside>
+	<p>
+		<blockquote>Open data is information that is available for anyone to use, for any purpose,<br/>at no cost.</blockquote>
+		&mdash;&nbsp;<a href="http://opendefinition.org/">http://theodi.org/guide/what-open-data</a>
+	</p>
+</section>
+
+<section>
+  <aside class="notes"></aside>
+	<ul class="centred-list">
+		<li><strong>open data</strong><br/>must have have a <em>licence</em> to say it is open</li>
+		<li><strong>the license</strong><br/>may impose some constraints:<br/><em>attribution</em> and/or <em>share-alike</em></li>
+	</ul>
+</section>
+
+<section>
+  <aside class="notes"></aside>
+	<p>
+		<blockquote>A piece of data or content is open if anyone is free to use, reuse, and redistribute it &mdash; subject only, at most, to the requirement to attribute and/or share-alike.</blockquote>
+		&mdash;&nbsp;<a href="http://opendefinition.org/">http://opendefinition.org/</a>
+	</p>
+</section>
+
+<section>
+	<h2>So What?</h2>
+  <aside class="notes">why should you care? 1) because open data frees you up to build cool things without having to pay for the data or collect it yourself; 2) because your clients/customers will probably start to care.</aside>
+</section>
+
+
+<section>
+  <p><img src='2013-09-bristol-brug-open-dev-open-data/OSMinecraft.png'></p>
+  <small><a href='http://www.ordnancesurvey.co.uk/innovate/developers/minecraft-map-britain.html'>http://www.ordnancesurvey.co.uk/innovate/developers/minecraft-map-britain.html</a></small>
+  <aside class="notes">so thinking about some examples of interesting data sets and how these have been used...</aside>
+</section>
+
+<section>
+  <aside class="notes"></aside>
+  <p><img src='2013-09-bristol-brug-open-dev-open-data/prescribinganalytics.png'></p>
+  <small><a href='http://prescribinganalytics.com/'>http://prescribinganalytics.com/</a></small>
+</section>
+
+<section>
+  <aside class="notes"></aside>
+  <p><img src='2013-09-bristol-brug-open-dev-open-data/smtm.png'></p>
+  <small><a href='http://smtm.labs.theodi.org/'>http://smtm.labs.theodi.org/</a></small>
+</section>
+
+<section>
+  <aside class="notes"></aside>
+  <p><img src='2013-09-bristol-brug-open-dev-open-data/telefonicafootfall.png'></p>
+  <small><a href='http://dynamicinsights.telefonica.com/488/smart-steps'>http://dynamicinsights.telefonica.com/488/smart-steps</a></small>
+</section>
+
+<section>
+  <aside class="notes"></aside>
+  <h2>Data you can get<br/>!= Open Data</h2>
+  <ul>
+    <li>Twitter Firehose</li>
+    <li>Google Maps</li>
+    <li>... and most others</li>
+  </ul>
+</section>
+
+<section>
+	<h2>Good Open Data</h2>
+	<ul class="centred-list">
+    <li><strong>can be linked to</strong><br/>so that it can be easily shared and talked about</li>
+    <li><strong>is available in a standard, structured format</strong><br/>so that it can be easily processed</li>
+    <li><strong>has guaranteed availability and consistency over time</strong><br/>so that others can rely on it</li>
+    <li><strong>is traceable, through any processing</strong><br/>so others can work out whether to trust it</li>
+  </ul>
+  <aside class="notes"></aside>
+</section>
+
+<section>
+	<h2>Open Data Certificates</h2>
+  <aside class="notes"></aside>
+</section>
+
+<section>
+  <p><img src="2013-09-bristol-brug-open-dev-open-data/certificates.png"></p>
+  <small><a href="https://certificates.theodi.org/">https://certificates.theodi.org/</a></small>
+   <aside class="notes"></aside>
+</section>
+
+<section id='shared-resources'>
+  <h2>Open Data enables...</h2>
+  <ul>
+    <li>cooperation</li>
+    <li>collaboration</li>
+    <li>building shared resources</li>
+    <li>public goods</li>
+  </ul>
+  <h3>...or at least the <em>idea</em> does</h3>
+</section>
+
+<section id="open-data-management">
+  <h2>Data Collaboration</h2>
+  <aside class="notes">
+    Consider the world of Open Data, where we have a load of data, but very little collaboration. 
+    Most data is dropped into central datastores, and that's it.
+    If I use your dataset and find an error, the only way to get it fixed is to tell you about it, 
+    and hope you can be bothered to sort it out.
+  </aside>
+  <img src='open-data-flow/collaboration.jpg'><br/>
+  <small>Image from <a href='http://blog.mindjet.com/2013/05/collaboration-mistakes-and-how-to-avoid-them/'>MindJet</a></small>
+</section>
+
+<section id="open-source">
+  <aside class="notes">
+    collboration; reuse; serendipity!
+  </aside>
+  <h1>I &hearts; Open Source!</h1>
+</section>
+
+<section id="git-and-github">
+  <aside class="notes">
+    Git and GitHub. How github has revolutionised the process of contributing to OSS projects.
+    If you have some code, I can fork it, make my own changes, then hit a single button to merge those
+    changes back upstream. This makes contribution incredibly simple, so that the admin overhead of doing
+    this becomes almost zero. This allows projects to draw on a wider pool of contributors than otherwise
+    would have been available.
+  </aside>
+  <img src='open-data-flow/github.png' height='500'><br/>
+  <small><a href='http://octodex.github.com/notocat/'>Not Octocat</a> by <a href='https://github.com/cameronmcefee'>Cameron McEfee</a></small>
+</section>
+
+<section id="github-flow">
+  <aside class="notes">
+    Github use a collaboration process they call 'Github Flow' (not to be confused with 'Git flow', which is
+    more complex).
+    Wouldn't it be great if we could do this with open data?
+  </aside>
+  <h3>GitHub Flow</h3>
+  <img src='open-data-flow/github_flow.png' height='400'><br/>
+  <small>from <a href='http://zachholman.com/talk/how-github-uses-github-to-build-github/'>How Github uses GitHub to build GitHub</a> by <a href='http://github.com/holman'>Zach Holman</a></small>
+</section>
+
+<section id="sourceforge">
+  <aside class="notes">
+    Unfortunately, compared to the open source world, this is a pre-sourceforge level of 
+    collaboration. We can do better.
+  </aside>
+  <img src='git-some-data/sourceforge.png' height='500'><br/>
+  <small><a href='http://sourceforge.net'>SourceForge.net</a> (in 2000)</small>  
+</section>
+
+<section id="github-for-x">
+  <aside class="notes">
+    This often gets referred to as 'git for data', though in my view git is unimportant. It's all about flow.
+    Github's revolution was not that they used git - it's that they built powerful, simple workflow tools on
+    top of it.
+    This is not a new idea; people have been talking about it for years. Only problem is there are a few
+    problems when it comes to handling data in git, and other systems designed for source code.
+    I think we can get a long way with existing tools, however. If we can bend git to our will, 
+    and use it to work with simple data in useful ways, then we can get this revolution started.
+  </aside>
+  <h2>GitHub ALL the things!</h2>
+  <pre><code>
+> %w{teachers accountants governments dogs cats hamsters DATA}.each do |x|
+>   puts "GitHub for #{x}!"
+> end
+
+GitHub for teachers!
+GitHub for accountants!
+GitHub for governments!
+GitHub for dogs!
+GitHub for cats!
+GitHub for hamsters!
+GitHub for DATA!
+  </code></pre>
+</section>
+
+<section id="test-data">
+  <aside class="notes">
+  </aside>
+  <img src='git-some-data/test_data.png'/>
+</section>
+
+<section id="test-data-edited">
+  <aside class="notes">
+  </aside>
+  <img src='git-some-data/test_data_edited.png'/>
+</section>
+
+<section id="git-is-line-oriented">
+  <aside class="notes">
+    So we know what we're up against, let's look at some problems with git when working with things like CSVs.
+    First, it's line-oriented, built for source code. This is OK when adding a row, or changing a few cells,
+    but add a column and suddenly you have a change on every line.
+    Let's look at a bit of test data. This is a small CSV file, and I've made some changes. First thing that you can
+    see is that I've obviously added a column. However, it's hard to see if anything else has changed, because the diff is
+    utterly useless.
+  </aside>
+  <img src='open-data-flow/naive_diff.png' height='500px'/>
+  <h1>er...</h1>
+</section>
+
+<section id="git-cli">
+  <aside class="notes">
+    There are some things we can improve here though. First thing to realise is that we don't really care what git does
+    internally; how it stores our changes, and so on. As long as we can see what's going on, git can do what it wants inside.
+    That means that this is a tooling problem, so we can tinker with the tooling around the edges to try to fix our problems.
+    Let's start with the git tool that *everyone* has; the command line.
+  </aside>
+  <h2>Git CLI</h2>
+  <ul>
+    <li><code>git diff --word-diff</code></li>
+    <li>~/.config/git/attributes
+        <pre><code>*.csv	diff=csv</code></pre>
+    </li>
+    <li>~/.gitconfig
+        <pre><code>[color]
+  ui = true
+[alias]
+  diffcsv = diff --word-diff
+[diff "csv"]
+  wordRegex = ...?</code></pre>
+    </li>
+  </ul>
+</section>
+
+<section id="word-diff">
+  <img src='open-data-flow/word_regex_dot.png'/>
+  <p>
+    <code>wordRegex=.</code>
+  </p>
+</section>
+
+<section id="csv-diff">
+  <img src='open-data-flow/csv_diff.png'/>
+  <p>
+    <code>wordRegex=[^,\n]+[,\n]|[,]</code>
+  </p>
+</section>
+
+<section id="csv-my-git">
+  <h2>csv-my-git</h2>
+  <p>
+    Automatically configure your local git installation for CSV
+  </p>
+  <pre><code>curl -L http://theodi.github.io/csv-my-git/install.sh | bash
+git diffcsv test.csv</code></pre>
+  <p>
+    <a href='https://github.com/theodi/csv-my-git'>https://github.com/theodi/csv-my-git</a>
+  </p>
+</section>
+
+<section id="gitlab">
+  <aside class="notes">
+    This is all very well, but what makes github flow really usable is... github. How can we get CSV diffs
+    into Github? Unfortunately, their core display code isn't open source, but we have the next best thing: Gitlab.
+  </aside>
+  <h2>Gitlab</h2>
+  <p>
+    Open Source GitHub-alike
+    <br/>
+    <img src='open-data-flow/gitlab_logo.png'/>
+  </p><p>
+    <a href='http://gitlab.org/'>http://gitlab.org/</a>
+  </p>
+</section>
+
+<section id="gitlab-views">
+  <h2>File &amp; diff views</h2>
+</section>
+
+<section id="coophx">
+  <aside class="notes">
+    So, all we need to do is change the views for files and diffs to add CSV support. Files are pretty easy, but CSV is harder,
+    mainly because just working out the diffs is non-trivial. Coopyhx to the rescue.
+  </aside>
+  <img src='open-data-flow/coopyhx.png' height='500px'/>
+  <br/>
+  <small><a href='http://paulfitz.github.io/coopyhx/'>http://paulfitz.github.io/coopyhx/</a></small>
+</section>
+
+<section id="gitlab-diffs">
+  <aside class="notes">
+    With the coopyhx javascript library doing all the hard work, adding diff rendering is actually really easy.
+  </aside>
+  <img src='open-data-flow/gitlab_diff.png' height='500px'/>
+</section>
+
+<section id="github-csvs">
+  <aside class="notes">
+    We published this on our blog a few weeks ago, and a few days later, github announced CSV support in their web interface!
+  </aside>
+  <h2>GitHub</h2>
+  <img src='open-data-flow/github_csv.png'>
+</section>
+
+<section id="github-csv-filtering">
+  <img src='open-data-flow/github_csv_filter.png'>
+</section>
+
+<section id="github-csv-diffs">
+  <img src='open-data-flow/github_csv_diff.png'>
+</section>
+
+<section id="winning">
+  <h1>Winning!</h1>
+</section>
+
+<section id="standards">
+  <h1>Standards</h1>
+  <h3>(de facto or otherwise)</h3>
+</section>
+
+<section id="dataprotocols">
+  <img src='git-some-data/dataprotocols.png'>
+  <br/>
+  <a href='http://dataprotocols.org'>http://dataprotocols.org</a>
+</section>
+
+<section id="git-viewer">
+  <img src='open-data-flow/git_viewer.png'>
+</section>
+
+<section id="data-kitten">
+  <h2>Data Kitten</h2>
+  <img src='git-some-data/data_kitten.gif'>
+  <br/>
+  <small><a href='https://github.com/theodi/data_kitten'>https://github.com/theodi/data_kitten</a></small>
+</section>
+
+<section id="data-ecosystem">
+  <h2>Data Ecosystem</h2>
+  <ul>
+    <li>Dependency Tracking</li>
+    <li>Validation &amp; Testing</li>
+    <li>Quality Metrics</li>
+    <li>Visualisation</li>
+    <li>Conversion &amp; Decoration</li>
+  </ul>
+</section>
+
+<section id="crowdsourcing">
+  <h2>Crowdsourcing!</h2>
+  <img src='git-some-data/github_forms.png' style='height: 400px'/>
+  <br/>
+  <a href='https://github.com/benbalter/github-forms'>https://github.com/benbalter/github-forms</a>
+</section>
+
+<section id="datasets">
+  <img src='git-some-data/datasets.png'>
+  <br/>
+  <a href='https://github.com/datasets'>https://github.com/datasets</a>
+</section>
+
+<section id="chicago">
+  <img src='git-some-data/chicago.png'>
+  <br/>
+  <a href='https://github.com/Chicago'>https://github.com/Chicago</a>
+</section>
+
+<section id="san-francisco">
+  <img src='git-some-data/san_francisco.png'>
+  <br/>
+  <a href='http://sfmoci.github.io/openlaw/'>http://sfmoci.github.io/openlaw/</a>
+</section>
+
+<section id="zomg">
+  <h1>ZOMG GIT FIXES EVERYTHING</h1>
+</section>
+
+<section id="limitations">
+  <h1>Limitations</h1>
+  <p>
+    Adding a large file (50m lines)
+  </p>
+  <h2>13m 40s</h2>
+  <p>
+    Changing a single line
+  </p>
+  <h2>8m 30s</h2>
+  <small>figures by <a href='http://maxogden.github.io/slides/okcon'>Max Ogden</a></small>
+</section>
+
+<section id="dat">
+  <h1>Dat</h1>
+  <pre><code>
+# make a new dat store
+dat init
+# put a JSON object into dat
+echo '{"hello": "world"}' | dat
+# stream the most recent of all rows
+dat cat
+# pipe dat into itself (increments revisions)
+dat cat | dat
+# start a dat server
+dat serve
+# delete the dat folder (removes all data + history)
+rm -rf .dat
+  </code></pre>
+  <a href='https://github.com/maxogden/dat'>https://github.com/maxogden/dat</a>
+</section>
+
+<section id="rawbase">
+  <h2>R&amp;Wbase</h2>
+  <img src='git-some-data/rawbase.png' style='height: 350px'/><br/>
+  <a href='http://rawbase.github.io/'>http://rawbase.github.io/</a>
+</section>
+
+<section id="issues">
+  <h2>Where Next?</h2>
+  <ul>
+    <li>Server-side diff calculation</li>
+    <li>Merging</li>
+    <li>Conflict resolution</li>
+    <li>CSV dialect support</li>
+    <li>More tools!</li>
+  </ul>
+</section>
+
+<section id="contribute">
+  <h2>Contribute!</h2>
+  <ul>
+    <li>ODI blog post:
+      <ul>
+        <li><a href='http://theodi.org/blog/adapting-git-simple-data'>http://theodi.org/blog/adapting-git-simple-data</a></li>
+      </ul>
+    </li>
+    <li>Gitlab fork:
+      <ul>
+        <li><a href='http://github.com/theodi/gitlabhq'>http://github.com/theodi/gitlabhq</a></li>
+      </ul>
+    </li>
+    <li>Git CLI configurator:
+      <ul>
+        <li><a href='http://github.com/theodi/csv-my-git'>http://github.com/theodi/csv-my-git</a></li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+{% include odi_tech_team.html %}

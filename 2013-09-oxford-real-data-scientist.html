@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Will the real data scientist please stand up?</title>
+
+		<meta name="description" property="dc:description" content="An honest critique of data science and the data scientist"/>
+		<meta name="author" property="dc:creator" content="Tom Heath"/>
+
+	    <meta name="apple-mobile-web-app-capable" content="yes"/>
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	    <link rel="stylesheet" href="reveal.js/css/reveal.min.css">
+	    <link rel="stylesheet" href="reveal.js/css/theme/sky.css" id="theme">
+
+	    <!-- For syntax highlighting -->
+	    <link rel="stylesheet" href="reveal.js/css/zenburn.css">
+
+	    <!--[if lt IE 9]>
+	    <script src="lib/js/html5shiv.js"></script>
+	    <![endif]-->
+
+		<style type="text/css">
+			body #odi-presentation  {
+				background-color: #FFFFFF;
+			}
+			#odi-presentation .logo {
+				border: none;
+				box-shadow: none;
+			}
+			
+			#odi-presentation table {
+				width: 100%;
+			}
+			#odi-presentation td, #odi-presentation th {
+				text-align: center;
+			}
+			#odi-presentation th {
+				font-weight: bold;
+			}
+			#odi-presentation p {
+				margin: 0.8em 0 0.8em 0;
+			}
+			#odi-presentation li {
+				margin: 0.4em 0 0.4em 0;
+			}
+			#odi-presentation blockquote {
+				padding: 0.8em;
+			}
+			#odi-presentation .quote-source {
+				font-size: smaller;
+			}
+			#odi-presentation ul.centred-list {
+				list-style: none;
+				text-align: center;
+			}
+			#odi-presentation ul.centred-list li {
+				margin: 0.8em;
+			}
+			#odi-presentation .code {
+				font-family: courier;
+				border: 1px solid gray;
+				padding: 0.8em;
+			}
+			#odi-presentation .red-box {
+				border: 2px red dashed; padding: 4px;
+			}
+		</style>
+
+	</head>
+
+	<body id="odi-presentation">
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+					
+				<section id="titlepage">
+				  <h2>Will the Real<br/>Data Scientist<br/>Please Stand Up!</h2>
+				  <p>Dr Tom Heath · Head of Research · Open Data Institute</p>
+				  <p><a href="mailto:tom.heath@theodi.org">tom.heath@theodi.org</a> · <a href="https://twitter.com/tommyh">@tommyh</a></p>
+				  <p>Digital Research 2013, Oxford, 10/09/2013</p>
+				  <hr>
+				  <span style="font-size: medium">
+				    <p>You can access the slides at <a href="http://theodi.github.io/presentations/"> <code class="url">http://theodi.github.io/presentations/</code></a>.</p>
+				    <p>Use arrows to navigate. Press 'f' for fullscreen. Press the <code>Escape</code> key to see all slides.</p>
+				  </span>
+				</section>
+
+
+				<section>
+					<h2>Background</h2>
+				  <ul class="centred-list">
+						<li class="fragment"><strong>PhD in Social Network-driven Recommender Systems</strong></li>
+						<li class="fragment"><strong>Heavily involved in Linked Data community</strong></li>
+				    <li class="fragment"><strong>Senior Research/Data Scientist at Talis</strong></li>
+				    <li class="fragment"><strong>Data Scientist at Open Data Institute</strong></li>
+				    <li class="fragment"><strong>Head of Research at Open Data Institute</strong></li>
+				  </ul>
+				</section>
+
+
+				<section>
+					<h2>The Open Data Institute</h2>
+				  <ul class="centred-list">
+						<li class="fragment"><strong>non-profit, non-partisan</strong></li>
+						<li class="fragment"><strong><em>&quot;helping others be successful<br/>with open data&quot;</em></strong></li>
+				    <li class="fragment"><strong>startups, training</strong></li>
+				    <li class="fragment"><strong>tech services<br/></strong>(e.g. <a href="http://certificates.theodi.org/">http://certificates.theodi.org/</a>)</li>
+				    <li class="fragment"><strong>research, policy</strong></li>
+				  </ul>
+				</section>
+
+				<section>
+					<h2>Data Scien(ce|tist):<br/>An Honest Critique</h2>
+				</section>
+
+
+				<section>
+					<h2>Data Science:<br/>Why all the fuss?</h2>
+				</section>
+
+
+				<section>
+					<h2>Why all the Fuss?</h2>
+				  <ul class="centred-list">
+				    <li>
+							<strong>&quot;the new oil&quot;<br/>
+							&quot;the new raw material&quot;</strong>
+						</li>
+				    <li class="fragment">
+							<strong>differences</strong><br/>
+							data is a non-rival good<br/>
+							marginal cost of distribution<br/>
+							falling cost of analysis
+						</li>
+						<li class="fragment">
+							<strong>a more level playing field</strong><br/>
+							more like gold than oil?
+						</li>
+						<li class="fragment"><strong>everyone wants a piece of the action</strong></li>
+				  </ul>
+				</section>
+
+
+				<section>
+					<h2>The Rise of the<br/>Data Scientist</h2>
+				  <ul class="centred-list">
+				    <li class="fragment"><strong><em>&quot;<a href="http://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century/">Sexiest job title of the 21st Century</a>&quot;</em></strong></li>
+				    <li class="fragment"><strong>recruitment bun-fight</strong></li>
+				    <li class="fragment"><strong><em>&quot;i gotta get me one of them there<br/>data scientists&quot;</em></strong></li>
+				    <li class="fragment"><strong>intentions are good</strong></li>
+				  </ul>
+				</section>
+
+
+				<section>
+					<h2>Pros of the Concept <em>&quot;Data Science&quot;</em></h2>
+				  <ul class="centred-list">
+				    <li class="fragment"><strong>shines the spotlight on data</strong></li>
+						<li class="fragment"><strong>highlights the potential for value</strong></li>
+						<li class="fragment"><strong>a unifying label for what we already do</strong></li>
+						<li class="fragment"><strong>a focal point for our aspirations</strong></li>
+				  </ul>
+				</section>
+
+				<section>
+					<h2>Cons of the Concept &quot;Data Science&quot;</h2>
+				  <ul class="centred-list">
+						<li class="fragment"><strong>a catch-all label for what we already do</strong></li>
+						<li class="fragment"><strong>a focal point for our confusion!</strong></li>
+				  </ul>
+				</section>
+
+				<section>
+					<h2>What is Data Science?</h2>
+					<ul class="centred-list">
+						<li class="fragment"><strong>often defined in terms of attributes of <br/>the data scientist</strong></li>
+					</ul>
+					<span class="fragment">
+						<blockquote>Data science isn't just about the existence of data, or making guesses about what that data might mean; it's about testing hypotheses and making sure that the conclusions you're drawing from the data are valid.</blockquote>
+						<p class="quote-source">&mdash;&nbsp;<a href="http://radar.oreilly.com/2010/06/what-is-data-science.html" title="">http://radar.oreilly.com/2010/06/what-is-data-science.html</a></p>
+					</span>
+					<ul class="centred-list">
+						<li class="fragment"><strong>just sounds like science, right?</strong></li>
+					</ul>					
+				</section>
+
+
+
+				<section>
+					<h2>The Naming Problem</h2>
+				  <ul class="centred-list">
+						<li class="fragment"><strong>biological science, computer science, <br/>political science, sports science...</strong></li>
+						<li class="fragment"><strong>the discipline is the focus, not the tool</strong></li>
+						<li class="fragment"><strong>where does this leave data science?</strong></li>
+				  </ul>
+				</section>
+
+
+				<section>
+					<h2>Two Interpretations of<br/>Data Science</h2>
+				  <ul class="centred-list">
+					  <li class="fragment"><strong>the science of data?</strong></li>
+				    <li class="fragment"><strong>science with data?</strong></li>
+				  </ul>
+				</section>
+
+
+				<section>
+					<h2>Interpretation 1:<br/>The Science of Data</h2>
+				</section>
+
+
+				<section>
+					<h2>(Open) Data<br/>Research Topics</h2>
+				  <ul class="centred-list">
+						<li><strong>Organising and Publishing</strong></li>
+				    <li class="fragment">what is a meaningful definition of a collection/data set?</li>
+				    <li class="fragment">how should data sets be described on the Web?</li>
+				    <li class="fragment">how can we best extract (and aggregate)<br/>these descriptions?</li>
+				    <li class="fragment">how do licensing choices affect<br/>the data ecosystem?</li>
+				  </ul>
+				</section>
+
+
+				<section>
+					<h2>(Open) Data<br/>Research Topics</h2>
+				  <ul class="centred-list">
+						<li><strong>Discovery, Comprehension and Use</strong></li>
+				    <li class="fragment">how do we prioritise data discovery<br/>(i.e. crawler optimisation)?</li>
+				    <li class="fragment">can we meaningfully summarise large data sets?</li>
+				    <li class="fragment">what are the optimal indexing schemes for data?</li>
+				    <li class="fragment">how linked can data be?</li>
+				    <li class="fragment">are there novel cognitive architectures that can underpin our interactions with data?</li>
+				  </ul>
+				</section>
+
+
+				<section>
+					<h2>Interpretation 2:<br/>Science with Data</h2>
+					<ul class="centred-list">
+				    <li class="fragment"><strong>duh!</strong></li>
+					</ul>
+				</section>
+
+
+				<section>
+					<h2>Give the People what they Want!</h2>
+					<ul class="centred-list">
+				    <li class="fragment">actionable, data-driven insights and answers...</li>
+				    <li class="fragment">...to significant problems</li>
+				    <li class="fragment">could be business/organisational/societal</li>
+				    <li class="fragment">amounts to evidence-based everything</li>
+				    <li class="fragment">c.f. the <em>&quot;growth hacker&quot;</em></li>
+					</ul>
+				</section>
+
+
+				<section>
+					<h2>How?</h2>
+					<ul class="centred-list">
+						<li class="fragment">identify the problem/question</li>
+						<li class="fragment">design research/analysis protocol</li>
+						<li class="fragment">identify the required data</li>
+						<li class="fragment">operational change to ensure the data is collected!</li>
+						<li class="fragment">perform the analysis</li>
+						<li class="fragment">report back to &apos;client&apos;</li>
+						<li class="fragment">close the loop through organisational change</li>
+						<!-- <li class="fragment">this is about more than data, it&apos;s about organisational transformation!</li> -->
+					</ul>
+				</section>
+
+
+				<section>
+					<h2>An Example</h2>
+					<p><img src="2013-06-bangalore-yahoo-ss-data-and-the-web/prescribinganalytics.png" alt="Prescribing Analytics screenshot"/></p>
+					<ul class="centred-list">
+				    <li>potential &pound;200 million saving / year</li>
+					</ul>
+					<p class="quote-source">&mdash;&nbsp;<a href="http://prescribinganalytics.com/" title="Prescribing Analytics">http://prescribinganalytics.com/</a></p>
+				</section>
+
+
+				<section>
+					<h2>Caveats</h2>
+				  <ul class="centred-list">
+				    <li class="fragment"><strong>there has to be a research question</strong><br/>(otherwise it's &apos;just&apos; engineering)</li>
+				    <li class="fragment"><strong>careful of the obsession with e.g. machine learning</strong></li>
+				  </ul>
+				</section>
+
+
+				<section>
+					<h2>Training Priorities</h2>
+				  <ul class="centred-list">
+				    <li><strong>statistics, experimental design, communication, business nous</strong></li>
+				  </ul>
+				</section>
+
+
+				<section>
+					<h2>Lessons for the<br/>Research Community</h2>
+				  <ul class="centred-list">
+				    <li class="fragment"><strong>a different style of large scale data crunching</strong></li>
+				    <li class="fragment"><strong>nurturing communities</strong></li>
+				  </ul>
+				</section>
+
+
+				<section>
+					<h2>Key Challenges for<br/>Data Scientists</h2>
+				</section>
+
+
+				<section>
+					<h2>Access to Data</h2>
+				  <ul class="centred-list">
+				    <li class="fragment"><strong>this is not a lab environment</strong></li>
+				    <li class="fragment">work with the data you can scrounge, and/or petition effectively within the business to start collecting what you need</li>
+				  </ul>
+				</section>
+
+
+				<section>
+					<h2>Data Quality</h2>
+				  <ul class="centred-list">
+				    <li class="fragment"><strong>again, not a lab environment</strong></li>
+				    <li class="fragment"><strong>e.g. how testable/tested is your cleansing code?</strong></li>
+				  </ul>
+				</section>
+
+
+				<section>
+					<h2>Domain Specialism</h2>
+				  <ul class="centred-list">
+				    <li class="fragment"><strong>meaningful questions come from domain problems, not the existence of data</strong></li>
+				  </ul>
+				</section>
+
+
+				<section>
+					<h2>Questions?</h2>
+					<p><a href="http://theodi.github.io/presentations/2013-09-oxford-real-data-scientist.html">http://theodi.github.io/presentations/2013-09-oxford-real-data-scientist.html</a></p>
+				</section>
+
+
+				<section>
+				  <p>Dr Tom Heath · Head of Research · Open Data Institute</p>
+				  <p><img src="brand/odi-logo-lg.png" alt="ODI" style="border:none;"></a></p>
+				  <p><a href="mailto:tom.heath@theodi.org">tom.heath@theodi.org</a> · <a href="https://twitter.com/tommyh">@tommyh</a></p>
+				</section>
+				</div>
+				
+				<div id="brand">
+				<a class="image" href="http://theodi.org"><img height="40" style="position:fixed; left:10px; bottom:50px; z-index:30;" src="brand/odi_logo.svg" alt="ODI"></a>
+				<br>
+				<a class="image" href="http://creativecommons.org/licenses/by-sa/3.0/"><img width="97" height="34" style="position:fixed; left:10px; bottom:10px; z-index:30;" src="brand/licence.png" alt="Creative Commons"></a>
+				</div>
+		</div>
+
+		<script src="reveal.js/js/head.min.js"></script>	
+		<script src="reveal.js/js/reveal.min.js"></script>
+
+		<script>
+
+		    Reveal.initialize({
+		        controls: false,
+		        progress: true,
+		        history: true,
+		        center: true,
+
+		        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+		        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+		        dependencies: [
+		        ]
+		    });
+
+		</script>
+
+
+	</body>
+</html>
