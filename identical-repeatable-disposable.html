@@ -13,6 +13,9 @@ description: Test-Driven Infrastructure with Cucumber-chef
     <aside class="notes">
         <p>
             Hello, I'm Sam from the ODI and I'm here to talk to you about Test-Driven Infrastructure with Cucumber-chef.
+            Some of this will of necessity be a little hand-wavy, and it may seem to weave around a little because we're
+            going to cover a lot of ground, but stay with me and I hope it will all come together and make sense by the
+            end
         </p>
 
         <p>
@@ -36,7 +39,6 @@ description: Test-Driven Infrastructure with Cucumber-chef
         </li>
     </ul>
 </section>
-
 <section id="behaviour_driven_development">
     <section>
         <aside class="notes">
@@ -191,24 +193,49 @@ end</code></pre>
     <section>
         <aside class="notes">
             <p>
-
+                I hope you can appreciate some of the power of cucumber here. There also exist some extensions to
+                cucumber, one I've used personally is Aruba
             </p>
         </aside>
         <h1>Cucumber extensions</h1>
     </section>
     <section>
+        <aside class="notes">
+            <p>
+                Aruba is designed for building command-line apps. The smart people behind this recognised that there
+                a fairly small number of common operations that you're likely to be testing when writing such an app,
+                such as checking console output, checking for the existence of files, etc, so as long as your specs
+                conform to their patterns, a lot of the heavy lifting has been done for you
+            </p>
+            <p>
+                So here we see a typical scenario
+            </p>
+            <p>
+                The text gets matched by this pre-baked Aruba step def, in particular this regex captures the filename
+                and passes it into the block, which hands it off to this check_file_presence method
+            </p>
+            <p>
+                And then the actual work is done by this pure-Ruby method inside Aruba
+            </p>
+            <p>
+                There are other cucumber extensions such as cucumber-rails which do similar things
+            </p>
+            <p>
+                This is relevant in the context of cucumber-chef, which we'll get to in a bit
+            </p>
+        </aside>
         <h1>Aruba</h1>
         <h4>Pre-baked step definitions (and some other stuff)</h4>
 
-        <pre><code data-trim class="gherkin">Scenario: one without postcodes
+        <pre><code data-trim class="gherkin fragment">Scenario: one without postcodes
   When I successfully run `noodile sample.csv`
   Then a file named "outputs/complete.no.postcodes.csv" should exist</code></pre>
 
-        <pre><code data-trim class="step_definitions">Then /^a file named "([^"]*)" should exist$/ do |file|
+        <pre><code data-trim class="step_definitions fragment">Then /^a file named "([^"]*)" should exist$/ do |file|
   check_file_presence([file], true)
 end</code></pre>
 
-        <pre><code data-trim>def check_file_presence(paths, expect_presence)
+        <pre><code data-trim class="fragment">def check_file_presence(paths, expect_presence)
   prep_for_fs_check do
     paths.each do |path|
       if expect_presence
@@ -225,6 +252,11 @@ end</code></pre>
 </section>
 <section id="what_is_chef">
     <section data-background="identical-repeatable-disposable/robot.jpg">
+        <aside class="notes">
+            <p>
+                So, enter the robots
+            </p>
+        </aside>
         <h1>Robot-powered Infrastructure</h1>
         <blockquote>All watched over by machines of loving grace</blockquote>
         <small>Richard Brautigan</small>
@@ -235,6 +267,107 @@ end</code></pre>
         </div>
     </section>
     <section>
+        <aside class="notes">
+            <p>
+                First, let us take a step back and look at how we used to do this stuff. We'd order servers from Compaq
+                or somebody, wait two weeks for them to arrive, take them down to the datacentre and rack them, then
+                install the OS and everything else by hand following whatever unmaintained documentation you had from
+                last time, and only find out which steps you'd forgotten or what you'd screwed up when it started
+                exploding
+            </p>
+            <p>
+                Or maybe you had some brittle, lashed-together shell scripts, but things like that get out of date real
+                quick
+            </p>
+            <p>
+               What you've got here is a SNOWFLAKE
+            </p>
+        </aside>
+        <h1>Things used to suck</h1>
+        <ul>
+            <li>
+                Physical iron, in a datacentre, with everything hand-installed
+            </li>
+            <li>
+                Crappy documentation (if you were lucky)
+            </li>
+            <li>
+                Maybe some hacky bash scripts
+            </li>
+            <li class="fragment">
+                SNOWFLAKE!
+            </li>
+        </ul>
+    </section>
+    <section data-background="identical-repeatable-disposable/cows.jpg">
+        <aside class="notes">
+            <p>
+                If you recall, the title of this talk is
+            </p>
+            <ul>
+                <li>
+                    Identical
+                </li>
+                <li>
+                    Repeatable
+                </li>
+                <li>
+                    Disposable
+                </li>
+            </ul>
+            <p>
+                These are all very desirable aims. The snowflake server I've just described ticks none of these boxes.
+                If that server ever died, it would be very difficult it rebuild it. If it's been up for a long time and
+                is in a remote DC, chances are people are scared to even reboot it - I have root on a box that has an
+                uptime of more than three and a half years and it's a monumental snowflake
+            </p>
+        </aside>
+        <h1>Treat your servers as cattle, not as pets</h1>
+
+        <h2 class="fragment"><em>Identical</em></h2>
+        <h2 class="fragment"><em>Repeatable</em></h2>
+        <h2 class="fragment"><em>Disposable</em></h2>
+        <div class="photo-credit">
+            <a href="http://www.flickr.com/photos/pikesley/2879361159/lightbox/">Cows</a> by
+            <a href="http://www.flickr.com/photos/pikesley/">pikesley</a>
+            <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/">(CC BY-NC-SA 2.0)</a>
+        </div>
+    </section>
+    <section>
+        <aside class="notes">
+            <p>
+                So what do we do now? Well, now we have configuration-management tools. My weapon of choice is Chef
+            </p>
+
+            <p>
+                Using Chef, we can describe our infrastructure using a very nice Ruby Domain-Specific-Language, and
+                Chef will attempt to converge our servers towards that goal
+            </p>
+
+            <p>
+                Chef is based around a few key concepts - this is of necessity a bit hand-wavy:
+            </p>
+            <ul>
+                <li>
+                    Nodes which are the servers we're configuring
+                </li>
+                <li>
+                    Recipes which contain the DSL instructions
+                </li>
+                <li>
+                    Roles which contain a list of recipes (or other roles) and some other configuration stuff
+                </li>
+                <li>
+                    Environments such as production, staging, QA etc
+                </li>
+                <li>
+                    Data bags where we can store common configuration stuff
+                </li>
+                <li>
+                    Knife, the command-line tool which drives the whole thing
+                </li>
+            </ul>
+        </aside>
         <h1>Chef</h1>
         <ul>
             <li>
@@ -246,6 +379,9 @@ end</code></pre>
             <li>
                 Key concepts
                 <ul>
+                    <li>
+                        <em>Nodes</em>
+                    </li>
                     <li>
                         <em>Recipes</em> which are contained inside <em>cookbooks</em>
                     </li>
@@ -267,6 +403,13 @@ end</code></pre>
         <small><a href="http://www.opscode.com/chef/">http://www.opscode.com/chef/</a></small>
     </section>
     <section>
+        <aside class="notes">
+            <p>
+                So let's look at a very simple section of a cookbook - this installs stock nginx using whatever the
+                underlying package manager is for the current OS. It might be apt, it might be yum, it might build it
+                from the FreeBSD ports tree, it doesn't matter. This is extremely portable
+            </p>
+        </aside>
         <h1>Simple abstractions</h1>
 
         <p>
@@ -281,14 +424,24 @@ end</code></pre>
         </p>
     </section>
     <section>
+        <aside class="notes">
+            <p>
+                We also get idempotency, at least if we're using the built-in resources. Idempotency is a concept that
+                comes from maths - an operation is idempotent if it produces the same results if executed once or more
+                than once. If we think back to whatever hacky provisioning scripts we had back in the bad old days, there's a fair chance that those weren't safe to run more than once, so if they crapped out halfway through, you'd be pretty screwed
+            </p>
+            <p>
+                But we're also free to do pretty much whatever we want...
+            </p>
+        </aside>
         <h1>Elegant idempotency</h1>
         <ul>
-            <li class="fragment">
+            <li>
                 <a href="http://en.wikipedia.org/wiki/Idempotence#Computer_science_meaning">Wikipedia says</a> "In
                 computer science, the term idempotent is used... to describe an operation that will produce the
                 same results if executed once or multiple times"
             </li>
-            <li class="fragment">
+            <li>
                 OpsCode's resources (e.g. <em>package</em>) are guaranteed to be idempotent
             </li>
             <li class="fragment">
@@ -297,16 +450,24 @@ end</code></pre>
           </ul>
     </section>
     <section>
+        <aside class="notes">
+            <p>
+                This is just a shell script wrapped in a Chef resource. This is potentially very dangerous, there's
+                nothing stopping us placing a forkbomb in there
+            </p>
+
+            <p>
+                However, this is how many people start out with Chef - wrap a tiny piece of one of your existing scripts
+                in a Chef resource and learn to trust it
+            </p>
+        </aside>
         <h1>Raw scripts</h1>
         <pre><code data-trim class="chef">script 'Bundling the gems' do
   interpreter 'bash'
   cwd current_release_directory
   user running_deploy_user
   code <<-EOF
-    bundle install \
-     --without=development \
-     --quiet \
-     --path #{bundler_depot}
+  bundle install --without=development --quiet --path #{bundler_depot}
   EOF
 end</code></pre>
         <ul>
@@ -316,8 +477,79 @@ end</code></pre>
             <li>
                 No guarantees here - you're on your own
             </li>
-            <li>
+            <li class="fragment">
+                There's nothing to stop you putting <pre><code class="bash">:(){ :|:& };:</code></pre> in there <em>(DON'T DO
+                THIS!)</em>
+            </li>
+            <li class="fragment">
                 This might be a good way in if you're wanting to try out Chef
+            </li>
+        </ul>
+    </section>
+</section>
+<section id="test-driven_infrastructure">
+    <section>
+        <aside class="notes">
+            <p>
+                So we can do behaviour-driven development with Cucumber, and infrastructure-as-code with Chef. Can you see where we're heading with this?
+            </p>
+        </aside>
+        <h1>Test-driven Infrastructure</h1>
+    </section>
+    <section>
+        <aside class="notes">
+            <p>
+                Yes, inevitably, we have cucumber-chef. We get a test-lab, which we can spin up on VirtualBox under
+                Vagrant (previous versions of cuke-chef only worked on AWS). This gives us a Chef server, the same as we
+                would have in our real infrastructure. It's also got all the plumbing necessary to spin up ephemeral
+                Linux instances using LXC, and, like with Aruba, some domain-specific step definitions
+            </p>
+            <p>
+                We can examine these pieces one at a time
+            </p>
+        </aside>
+        <h1>
+            Cucumber-chef
+        </h1>
+        <ul>
+            <li>
+                Test lab
+                <ul>
+                    <li>
+                        Chef server
+                    </li>
+                    <li>
+                        LXC test instances
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Set of cucumber step definitions
+            </li>
+        </ul>
+    </section>
+    <section>
+        <aside class="notes">
+            <p>
+                The Chef server is the central piece of a Chef setup, everything goes through this
+            </p>
+        </aside>
+        <h1>The Chef server</h1>
+        <img src="identical-repeatable-disposable/chef-server.jpg" />
+    </section>
+    <section>
+        <h1>LXC</h1>
+        <ul>
+            <li>
+                <a href="http://en.wikipedia.org/wiki/LXC">Wikipedia says</a>: <em>"LXC (LinuX Containers) is an
+                operating system-level virtualization method for running multiple isolated Linux systems (containers) on
+                a single control host."</em>
+            </li>
+            <li>
+                This is what Heroku uses
+            </li>
+            <li>
+                Docker is also based on LXC
             </li>
         </ul>
     </section>
