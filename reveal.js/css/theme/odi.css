@@ -178,9 +178,10 @@ body {
 
 .reveal .photo-credit {
     font-size: 0.4em;
+    top: -100px;
+    right: -200px;
     position: absolute;
-    bottom: -200px;
-    right: -115px;
+    text-align: right;
 }
 
 .reveal p {
