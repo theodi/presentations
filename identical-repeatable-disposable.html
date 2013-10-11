@@ -14,13 +14,17 @@ description: Test-Driven Infrastructure with Cucumber-chef
         <p>
             Hello, I'm Sam from the ODI and I'm here to talk to you about Test-Driven Infrastructure with Cucumber-chef.
             Some of this will of necessity be a little hand-wavy, and it may seem to weave around a little because we're
-            going to cover a lot of ground, but stay with me and I hope it will all come together and make sense by the
+            going to cover a lot of ground and we only have limited time together, but stay with me and I hope it will
+            all come together and make sense by the
             end
         </p>
 
         <p>
-            My job title is DevOps Engineer, but DevOps isn't really a job. What I'm actually good at is automation,
-            so my unofficial role is now Head Of Robots
+            My job title is DevOps Engineer, but DevOps isn't really a job, it's about the culture of an organisation
+        </p>
+        {% include click.html %}
+        <p>
+            What I'm actually good at is automation, so my unofficial role is now Head Of Robots
         </p>
     </aside>
     <h1>Who am I?</h1>
@@ -29,7 +33,7 @@ description: Test-Driven Infrastructure with Cucumber-chef
             DevOps Engineer at <a href="http://theodi.org/">the Open Data Institute</a>
         </li>
         <li>
-            What is DevOps?
+            <a href="http://whatisdevops.com/">http://whatisdevops.com/</a>
         </li>
         <li>
             It's about culture. It's not a deliverable
@@ -45,15 +49,12 @@ description: Test-Driven Infrastructure with Cucumber-chef
             <p>
                 So let's talk about behaviour-driven development
             </p>
+            {% include click.html %}
             <p>
-                Dan North (instigator of BDD) says: <em>"BDD is a second-generation, outside-in, pull-based,
-                multiple-stakeholder, multiple-scale, high-automation, agile methodology. It describes a cycle of
-                interactions with well-defined outputs, <strong>resulting in the delivery of working, tested software
-                    that matters</strong>"</em>
+                Dan North (instigator of BDD) says: <em>"BDD is a second-generation, outside-in, pull-based, multiple-stakeholder, multiple-scale, high-automation, agile methodology. It describes a cycle of interactions with well-defined outputs, <strong>resulting in the delivery of working, tested software that matters</strong>"</em>
             </p>
             <p>
-                Now some of that text appears to me to be indistinguishable from advanced trolling, but the important
-                thing there is that we come away with comprehensively-tested software that we actually want
+                Now some of that text appears to me to be indistinguishable from advanced trolling, but the important thing there is that we come away with comprehensively-tested software that very likely tackles the problem we set out to solve
             </p>
             <p>
                 And we have some great BDD tools
@@ -62,10 +63,7 @@ description: Test-Driven Infrastructure with Cucumber-chef
         <h1>Behaviour-Driven Development</h1>
         <ul>
             <li class="fragment">
-                Dan North (instigator of BDD) says: <em>"BDD is a second-generation, outside-in, pull-based,
-                multiple-stakeholder, multiple-scale, high-automation, agile methodology. It describes a cycle of
-                interactions with well-defined outputs, <strong>resulting in the delivery of working, tested software
-                    that matters</strong>"</em>
+                Dan North (instigator of BDD) says: <em>"BDD is a second-generation, outside-in, pull-based, multiple-stakeholder, multiple-scale, high-automation, agile methodology. It describes a cycle of interactions with well-defined outputs,<strong>resulting in the delivery of working, tested software that matters</strong>"</em>
                 (<a href="http://en.wikipedia.org/wiki/Behavior-driven_development#History">Wikipedia</a>)
             </li>
         </ul>
@@ -73,17 +71,14 @@ description: Test-Driven Infrastructure with Cucumber-chef
     <section id="cucumber">
         <aside class="notes">
             <p>
-                Cucumber is our weapon of choice for BDD. We can write our specifications in a very tightly-constrained
-                dialect of English (or over 40 other spoken languages). This specification is executable. Let's see an
-                example
+                Cucumber is our weapon of choice for BDD. We can write our specifications in a very tightly-constrained dialect of English (or over 40 other spoken languages). This specification is executable. Let's see an example
             </p>
         </aside>
         <h1>Cucumber</h1>
         <h4><a href="http://cukes.info/">http://cukes.info/</a></h4>
         <ul>
             <li>
-                Allows us to express requirements in something very close to plain English (using <a
-                    href="https://github.com/cucumber/cucumber/wiki/Gherkin">Gherkin</a>)
+                Allows us to express requirements in something very close to plain English (using <a href="https://github.com/cucumber/cucumber/wiki/Gherkin">Gherkin</a>)
             </li>
             <li>
                 Executable Specification
@@ -93,9 +88,7 @@ description: Test-Driven Infrastructure with Cucumber-chef
     <section>
         <aside class="notes">
             <p>
-                This is a part of a feature file from one of our projects. As you can see, this is entirely readable by
-                normal people, and it captures our requirements in an extremely succinct way. Gherkin is designed to be
-                usable by non-technical stakeholders
+                This is a part of a feature file from one of our projects. As you can see, this is entirely readable by normal people, and it captures our requirements in an extremely succinct way. Gherkin is designed to be usable by non-technical stakeholders
             </p>
 
             <p>
@@ -116,16 +109,13 @@ description: Test-Driven Infrastructure with Cucumber-chef
 
         <small>
             From
-            <a href="https://github.com/theodi/member-directory/blob/master/features/signin.feature">
-                https://github.com/theodi/member-directory/blob/master/features/signin.feature
-            </a>
+            <a href="https://github.com/theodi/member-directory/blob/master/features/signin.feature"> https://github.com/theodi/member-directory/blob/master/features/signin.feature</a>
         </small>
     </section>
     <section>
         <aside class="notes">
             <p>
-                And it fails, of course, because at this point we have nothing. But note the helpful message, "express
-                the regexp above with the code you wish you had". So let's see how we go about that
+                And it fails, of course, because at this point we have no code at all. But note the helpful, friendly message, "express the regexp above with the code you wish you had". So let's see how we go about that
             </p>
         </aside>
         <h1>Watch it fail</h1>
@@ -149,16 +139,10 @@ end</code></pre>
     <section>
         <aside class="notes">
             <p>
-                So we write some step definitions. First we capture the text from the feature with the regular
-                expression. Then we start driving out the code. Note that the outside-in nature of this approach forces
-                us to think about our interfaces first - the text leads to the definition which shapes the underlying
-                objects. This is powerful stuff
+                So we write some step definitions. First we capture the text from the feature with the regular expression. Then we start driving out the code. Note that the outside-in nature of this approach forces us to think about our interfaces first - the text leads to the definition which shapes the underlying objects. This is powerful stuff
             </p>
             <p>
-                These step defs represent the end of a process - when we're actually doing this for real, we proceed in
-                small increments, running the tests at each stage. We follow the red - green - refactor cycle where we
-                have a failing test, we write just enough code to make the test pass, then we refactor what we've
-                written, but with the benefit of a safety net
+                These step defs here represent the end of a process - when we're actually doing this for real, we proceed in small increments, running the tests at each stage. We follow the red - green - refactor cycle where we have a failing test, we write just enough code to make the test pass, then we refactor what we've written, but now we have a safety net
             </p>
         </aside>
         <h1>Define the steps</h1>
@@ -185,16 +169,13 @@ end</code></pre>
 
         <small>
             From
-            <a href="https://github.com/theodi/member-directory/blob/master/features/step_definitions/signin_steps.rb">
-                https://github.com/theodi/member-directory/blob/master/features/step_definitions/signin_steps.rb
-            </a>
+            <a href="https://github.com/theodi/member-directory/blob/master/features/step_definitions/signin_steps.rb"> https://github.com/theodi/member-directory/blob/master/features/step_definitions/signin_steps.rb</a>
         </small>
     </section>
     <section>
         <aside class="notes">
             <p>
-                I hope you can appreciate some of the power of cucumber here. There also exist some extensions to
-                cucumber, one I've used personally is Aruba
+                I hope you can appreciate some of the power of cucumber here. There also exist some extensions to cucumber, one I'm particularly fond of is Aruba
             </p>
         </aside>
         <h1>Cucumber extensions</h1>
@@ -202,18 +183,17 @@ end</code></pre>
     <section>
         <aside class="notes">
             <p>
-                Aruba is designed for building command-line apps. The smart people behind this recognised that there
-                a fairly small number of common operations that you're likely to be testing when writing such an app,
-                such as checking console output, checking for the existence of files, etc, so as long as your specs
-                conform to their patterns, a lot of the heavy lifting has been done for you
+                Aruba is designed for building command-line apps. The smart people behind this recognised that there a fairly small number of common operations that you're likely to be testing when writing such an app, such as checking console output, hecking for the existence of files, etc, so as long as your specs conform to their patterns, a lot of the heavy lifting has been done for you
             </p>
+            {% include click.html %}
             <p>
                 So here we see a typical scenario
             </p>
+            {% include click.html %}
             <p>
-                The text gets matched by this pre-baked Aruba step def, in particular this regex captures the filename
-                and passes it into the block, which hands it off to this check_file_presence method
+                The text gets matched by this pre-baked Aruba step def, in particular this regex captures the filename and passes it into the block, which hands it off to this check_file_presence method
             </p>
+            {% include click.html %}
             <p>
                 And then the actual work is done by this pure-Ruby method inside Aruba
             </p>
@@ -269,16 +249,12 @@ end</code></pre>
     <section>
         <aside class="notes">
             <p>
-                First, let us take a step back and look at how we used to do this stuff. We'd order servers from Compaq
-                or somebody, wait two weeks for them to arrive, take them down to the datacentre and rack them, then
-                install the OS and everything else by hand following whatever unmaintained documentation you had from
-                last time, and only find out which steps you'd forgotten or what you'd screwed up when it started
-                exploding
+                First, let us take a step back and look at how we used to do this stuff. We'd order servers from Compaq or somebody, wait two weeks for them to arrive, take them down to the datacentre and rack them, then install the OS and everything else by hand following whatever unmaintained documentation you had from last time, and only find out which steps you'd forgotten or what you'd screwed up when it started exploding
             </p>
             <p>
-                Or maybe you had some brittle, lashed-together shell scripts, but things like that get out of date real
-                quick
+                Or maybe you had some brittle, lashed-together shell scripts, but things like that get out of date real quick
             </p>
+            {% include click.html %}
             <p>
                What you've got here is a SNOWFLAKE
             </p>
@@ -306,27 +282,30 @@ end</code></pre>
             </p>
             <ul>
                 <li>
+                    {% include click.html %}
+
                     Identical
                 </li>
                 <li>
+                    {% include click.html %}
                     Repeatable
                 </li>
                 <li>
+                    {% include click.html %}
                     Disposable
                 </li>
             </ul>
             <p>
-                These are all very desirable aims. The snowflake server I've just described ticks none of these boxes.
-                If that server ever died, it would be very difficult it rebuild it. If it's been up for a long time and
-                is in a remote DC, chances are people are scared to even reboot it - I have root on a box that has an
-                uptime of more than three and a half years and it's a monumental snowflake
+                These are all very desirable aims. The snowflake server I've just described ticks none of these boxes. If that server ever died, you'd have a horrible time attempting to rebuild it. If it's been up for a long time and is in a remote DC, chances are people are scared to even reboot it - I have root on a box that has an uptime of more than three and a half years and it's a monumental snowflake
             </p>
         </aside>
         <h1>Treat your servers as cattle, not as pets</h1>
 
-        <h2 class="fragment"><em>Identical</em></h2>
-        <h2 class="fragment"><em>Repeatable</em></h2>
-        <h2 class="fragment"><em>Disposable</em></h2>
+        <ul>
+            <li class="fragment"><em>Identical</em></li>
+            <li class="fragment"><em>Repeatable</em></li>
+            <li class="fragment"><em>Disposable</em></li>
+        </ul>
         <div class="photo-credit">
             <a href="http://www.flickr.com/photos/pikesley/2879361159/lightbox/">Cows</a> by
             <a href="http://www.flickr.com/photos/pikesley/">pikesley</a>
@@ -336,12 +315,11 @@ end</code></pre>
     <section>
         <aside class="notes">
             <p>
-                So what do we do now? Well, now we have configuration-management tools. My weapon of choice is Chef
+                So what do we do now? Well, now we have ephemeral cloud servers and configuration-management tools. My weapon of choice is Chef
             </p>
 
             <p>
-                Using Chef, we can describe our infrastructure using a very nice Ruby Domain-Specific-Language, and
-                Chef will attempt to converge our servers towards that goal
+                Using Chef, we can describe our infrastructure using a very nice Ruby Domain-Specific-Language, and Chef will attempt to converge our servers towards that goal
             </p>
 
             <p>
@@ -405,9 +383,7 @@ end</code></pre>
     <section>
         <aside class="notes">
             <p>
-                So let's look at a very simple section of a cookbook - this installs stock nginx using whatever the
-                underlying package manager is for the current OS. It might be apt, it might be yum, it might build it
-                from the FreeBSD ports tree, it doesn't matter. This is extremely portable
+                So let's look at a very simple section of a cookbook - this installs stock nginx using whatever the underlying package manager is for the current OS. It might be apt, it might be yum, it might build it from the FreeBSD ports tree, it doesn't matter. This is extremely portable
             </p>
         </aside>
         <h1>Simple abstractions</h1>
@@ -419,17 +395,15 @@ end</code></pre>
   action :install
 end</code></pre>
         <p>
-            installs stock nginx. Under the hood, Chef works out from the host OS whether it needs <em>apt</em> or
-            <em>yum</em> or whatever, but we don't need to care about that
+            installs stock nginx. Under the hood, Chef works out from the host OS whether it needs <em>apt</em> or <em>yum</em> or whatever, but we don't need to care about that
         </p>
     </section>
     <section>
         <aside class="notes">
             <p>
-                We also get idempotency, at least if we're using the built-in resources. Idempotency is a concept that
-                comes from maths - an operation is idempotent if it produces the same results if executed once or more
-                than once. If we think back to whatever hacky provisioning scripts we had back in the bad old days, there's a fair chance that those weren't safe to run more than once, so if they crapped out halfway through, you'd be pretty screwed
+                We also get idempotency, at least if we're using the built-in resources. Idempotency is a concept that comes from maths - an operation is idempotent if it produces the same results if executed once or more than once. If we think back to whatever hacky provisioning scripts we had back in the bad old days, there's a fair chance that those weren't safe to run more than once, so if they crapped out halfway through, you'd be pretty screwed
             </p>
+            {% include click.html %}
             <p>
                 But we're also free to do pretty much whatever we want...
             </p>
@@ -437,9 +411,7 @@ end</code></pre>
         <h1>Elegant idempotency</h1>
         <ul>
             <li>
-                <a href="http://en.wikipedia.org/wiki/Idempotence#Computer_science_meaning">Wikipedia says</a> "In
-                computer science, the term idempotent is used... to describe an operation that will produce the
-                same results if executed once or multiple times"
+                <a href="http://en.wikipedia.org/wiki/Idempotence#Computer_science_meaning">Wikipedia says</a> "In computer science, the term idempotent is used... to describe an operation that will produce the same results if executed once or multiple times"
             </li>
             <li>
                 OpsCode's resources (e.g. <em>package</em>) are guaranteed to be idempotent
@@ -452,10 +424,13 @@ end</code></pre>
     <section>
         <aside class="notes">
             <p>
-                This is just a shell script wrapped in a Chef resource. This is potentially very dangerous, there's
-                nothing stopping us placing a forkbomb in there
+                This is just a shell script wrapped in a Chef resource
             </p>
-
+            {% include click.html %}
+            <p>
+                This is potentially very dangerous, there's nothing stopping us placing a forkbomb in there
+            </p>
+            {% include click.html %}
             <p>
                 However, this is how many people start out with Chef - wrap a tiny piece of one of your existing scripts
                 in a Chef resource and learn to trust it
@@ -495,14 +470,15 @@ end</code></pre>
             </p>
         </aside>
         <h1>Test-driven Infrastructure</h1>
+        <blockquote>
+            TDD allows me to demonstrate my incompetence in the tests *as well* as in the code. Awesome.
+        </blockquote>
+        <small><a href="https://twitter.com/pikesley/status/348078826015817728">Sam, on Twitter</a></small>
     </section>
     <section>
         <aside class="notes">
             <p>
-                Yes, inevitably, we have cucumber-chef. We get a test-lab, which we can spin up on VirtualBox under
-                Vagrant (previous versions of cuke-chef only worked on AWS). This gives us a Chef server, the same as we
-                would have in our real infrastructure. It's also got all the plumbing necessary to spin up ephemeral
-                Linux instances using LXC, and, like with Aruba, some domain-specific step definitions
+                Yes, inevitably, we have cucumber-chef. We get a test-lab, which we can spin up on VirtualBox under Vagrant (previous versions of cuke-chef only worked on AWS). This gives us a Chef server, the same as we would have in our real infrastructure. It's also got all the plumbing necessary to spin up ephemeral Linux instances using LXC, and, like with Aruba, some domain-specific step definitions
             </p>
             <p>
                 We can examine these pieces one at a time
@@ -531,13 +507,21 @@ end</code></pre>
     <section>
         <aside class="notes">
             <p>
-                The Chef server is the central piece of a Chef setup, everything goes through this
+                The Chef server is the central piece of a Chef setup, it holds the cookbooks ans stuff. Everything goes through this
             </p>
         </aside>
         <h1>The Chef server</h1>
         <img src="identical-repeatable-disposable/chef-server.jpg" />
     </section>
     <section>
+        <aside class="notes">
+            <p>
+                If we're testing a Rails app or whatever, and we want to test from a clean state each time, we can simply purge the database and away we. Testing infrastructure provisioning is a bit different - we want to start from a completely clean machine. LXC provides lightweight, disposable Linux instances that are good enough for our purposes
+            </p>
+            <p>
+                Please don't think that LXC is some kind of toy, this is how Heroku works. If you're interested in finding out more, I recommend looking at Dokku, which effectively gives you a mini-Heroku of your very own
+            </p>
+        </aside>
         <h1>LXC</h1>
         <ul>
             <li>
@@ -546,13 +530,327 @@ end</code></pre>
                 a single control host."</em>
             </li>
             <li>
-                This is what Heroku uses
+                This is how Heroku works
             </li>
             <li>
                 Docker is also based on LXC
             </li>
+            <li>
+                <a href="http://progrium.com/blog/2013/06/19/dokku-the-smallest-paas-implementation-youve-ever-seen/">Dokku</a>, a Heroku of your own
+            </li>
         </ul>
     </section>
+    <section>
+        <aside class="notes">
+            <p>
+                 And similar to what we saw with Aruba, we get a collection of pre-baked step definitions capturing typical Chef-type operations. I wrote some of these and had them accepted into the project
+            </p>
+            <p>
+                We'll look at these in more depth in the example that follows
+            </p>
+        </aside>
+        <h1>Step definitions</h1>
+        <p>Things like</p>
+        <pre><code data-trim class="step_definitions">And /^I run "([^\"]*)"$/ do |command|
+  @result    = @connection.exec(command, :silence => true)
+  @output    = @result.output
+  @exit_code = @result.exit_code
+end
+
+Then /^I should( not)? see "([^\"]*)" in the output$/ do |boolean, string|
+  if (!boolean)
+    @output.should =~ /#{string}/
+  else
+    @output.should_not =~ /#{string}/
+  end
+end</code></pre>
+    </section>
+</section>
+<section id="cuke-chef-example">
+    <section>
+        <aside class="notes">
+            <p>
+                So let's look at a concrete example
+            </p>
+        </aside>
+        <h1>A cucumber-chef example</h1>
+    </section>
+    <section>
+        <aside class="notes">
+            <p>
+                When we're testing infrastructure provisioning, we're quite likely to want more than one node, so we'll have database nodes, web nodes, etc. The Labfile allows us to describe this ecosystem - this allows to meaningfully test things like Chef search, where we can dynamically populate configuration files with the address of our database node or whatever
+            </p>
+        </aside>
+        <h1>Ecosystems</h1>
+
+        <p>
+            The Labfile
+        </p>
+      <pre><code data-trim class="ruby">ecosystem "odc" do
+  container "web-certificate-01" do
+    distro "ubuntu"
+    release "precise"
+    persist true
+    ip "192.168.98.30"
+    mac "00:00:5e:16:89:b5"
+    chef_client (
+      {
+        :environment => "odc-production",
+        :run_list => [
+          "role[certificate]"
+        ]
+      }
+    )
+  end
+end</code></pre>
+    </section>
+    <section>
+        <aside class="notes">
+            <p>
+                Now we can express the desired state of our new node in the familiar Gherkin syntax. Note the extra step right at the beginning, we need to ssh into the LXC node to run the tests there, using something called ZTK which I don't fully understand
+            </p>
+        </aside>
+        <h1>Features</h1>
+        <pre><code data-trim class="gherkin">Feature: webserver
+  Background:
+    * I ssh to "web-certificate-01"
+
+  Scenario: Core dependencies are installed
+    * package "git" should be installed
+
+  Scenario: Ruby 1.9.3 is installed
+    When I run "su - certificate -c 'ruby -v'"
+    Then I should see "1.9.3" in the output
+
+  Scenario: configuration stuff is correct
+    * file "current/config/database.yml" should exist
+    When I run "cat current/config/database.yml"
+    Then I should see "host: 192.168.98.20" in the output</code></pre>
+    </section>
+    <section>
+        <aside class="notes">
+            <p>
+                And here's where the magic happens. I actually wrote this code, sorry it's a bit ugly, but we have to get down to the bare metal somewhere. What it's doing is working out which package manager the underlying OS uses, by trying dpkg and then yum, then running that command remotely through the ZTK connection object, then examining the result to see if the package name appears in the list of installed packages
+            </p>
+        </aside>
+        <h1>Step definitions</h1>
+        <pre><code data-trim class="step_definitions">Then /^package "([^\"]*)" should be installed$/ do |package|
+  command = ""
+  if (dpkg = @connection.exec("which dpkg 2> /dev/null",
+            silence: true).output).length > 0
+    command = "#{dpkg.chomp} --get-selections"
+  elsif (yum = @connection.exec("which yum 2> /dev/null",
+            silence: true).output).length > 0
+    command = "#{yum.chomp} -q list installed"
+  end
+
+  @result = @connection.exec(command, :silence => true)
+  @result.output.should =~ /#{package}/
+end</code></pre>
+    </section>
+    <section>
+        <aside class="notes">
+            <p>
+                Now obviously, being good software craftsmen, we ran the tests first, watched them fail, then set about fixing the underlying code. But let's cut to the chase here and look at the end of our red - green - refactor process: in the Labfile we assigned the 'certificate' role to the node. Here is a snippet of the file describing that role, and in the run_list we see that it includes another role, called 'base'. And then in the base role, we call the default recipe from the git cookbook which actually installs Git. So this test now passes
+            </p>
+        </aside>
+        <h1>Making it pass</h1>
+        <p>Add the recipe to the role</p>
+        <pre><code data-trim class="ruby">name 'certificate'
+  default_attributes 'user'              => 'certificate',
+                     'group'             => 'certificate',
+                     'migration_command' => 'bundle exec rake db:migrate'
+
+  run_list "role[base]",
+           "recipe[chef-client::cron]</code></pre>
+        <pre><code data-trim class="ruby">name "base"
+  run_list "recipe[git]"</code></pre>
+        <p>
+            And now this test passes
+        </p>
+    </section>
+    <section>
+        <aside class="notes">
+            <p>
+                So where do these cookbooks actually come from? Well, OpsCode maintain a list of community cookbooks, and we can manage them with a tool called librarian-chef, which is a bit like bundler
+            </p>
+            <p>
+                So as we can see here, the default source is the community cookbooks site, but we can also specify versions, or, as with everything else now, we can pull directly from Github
+            </p>
+            <p>
+                There's another tool called Berkshelf which is very popular, but which I don't understand
+            </p>
+        </aside>
+        <h1>Librarian</h1>
+        <ul>
+            <li>
+                Tool for managing cookbooks
+            </li>
+            <li>
+                A bit like bundler
+            </li>
+            <li>
+                Driven by the Cheffile
+                </li>
+            </ul>
+                <pre><code data-trim class="ruby">site 'http://community.opscode.com/api/v1'
+
+cookbook 'chef-client'
+cookbook 'apt', '= 1.9.0'
+cookbook 'git'
+cookbook 'mongodb', :github => 'edelight/chef-mongodb'
+cookbook 'mysql'
+cookbook 'fail2ban', :github => 'opscode-cookbooks/fail2ban'</code></pre>
+    </section>
+</section>
+<section id="putting_it_into_production">
+    <section>
+        <aside class="notes">
+            <p>
+                 So this is all very well, but in order to be useful, this stuff needs to get in front of some actual people
+            </p>
+        </aside>
+        <h1>Putting it into production</h1>
+    </section>
+    <section>
+        <aside class="notes">
+            <p>
+                Now we come to possibly my favourite tool of all, Vagrant
+                </p>
+            {% include click.html %}
+<p>
+            It started as a way to spin up highly-disposable VirtualBox nodes, which can be provisioned from your live Chef server, so all of your developers can have an environment which mirrors production exactly, which is amazing enough, and of course the cucumber-chef server runs as a Vagrant node
+                </p>
+            {% include click.html %}
+            <p>
+                But since version 1.1 it can now control cloud nodes, too. In an ideal world, we'd be able tu use an identical Vagrantfile for development and any cloud service, but unfortunately there are quite a lot of wrinkles in the way the various cloud providers work. I lost an entire week trying to write a Vagrant plugin to implement this, but I got lost in callback Hell and it never happened. Maybe one day
+            </p>
+            {% include click.html %}
+
+            <p>
+                I encourage everybody to go play with Vagrant, it's incredible
+            </p>
+        </aside>
+        <h1>
+            Vagrant
+        </h1>
+        <ul>
+            <li class="fragment">
+                Started as a wrapper around VirtualBox
+            </li>
+            <li class="fragment">
+                Since 1.1, can drive cloud servers too
+            </li>
+            <li class="fragment">
+                <a href="http://www.vagrantup.com/">http://www.vagrantup.com/</a>
+            </li>
+        </ul>
+    </section>
+    <section>
+        <aside class="notes">
+            <p>
+                 Vagrant is driven with the Vagrantfile, here's a section from one of ours. Note that we specify the Chef environment and run_list there, when this node spins up, it's able to provision itself completely automatically. If there's more than one node in the Vagrantfile, and we're careful about the ordering, so that things like database servers come first, we can just type 'vagrant up' and watch a whole platform spring into life. This is some sort of Ops Nirvana
+            </p>
+            <p>
+                We had a situation where we needed to up the RAM on a MySQL node. We have another tool, called hoppler, which knows how to restore database backups out of Rackspace Cloudfiles, so we arranged some downtime, took the existing node down using Vagrant. This caused the app to go into a tailspin because it suddenly had no database, but we were in a maintenance window, so no big deal. We edited the Vagrantfile to give it more RAM, then span it up. It came back with the correct databases restored onto it but a different IP address because it was now a fresh node, but we have Chef cronned to run every 5 minutes, so on the next run it ran its search, discovered the new node, populated the config files correctly, and the whole thing came back. We had about 20 minutes of downtime, but it was completely handled by our robots
+            </p>
+            <p>
+                Remember: if your infrastructure is identical, repeatable and disposable, you're going to have a good time
+            </p>
+        </aside>
+        <h1>The Vagrantfile</h1>
+        <pre><code data-trim class="ruby">Vagrant.configure("2") do |config|
+  config.vm.define :certificate_theodi_org_01 do |config|
+
+  config.vm.provider :rackspace do |rs|
+    rs.flavor   = /512MB/
+    rs.image    = /Precise/
+    rs.auth_url = "https://lon.identity.api.rackspacecloud.com/v2.0"
+  end
+
+  config.vm.provision :chef_client do |chef|
+    chef.environment     = "odc-production"
+    chef.chef_server_url = "https://chef.theodi.org"
+      chef.run_list      = [
+      "role[certificate]"
+    ]
+  end
+end</code></pre>
+    </section>
+    <section>
+        <aside class="notes">
+            <p>
+                I'd just like to wrap up with a brief word about how Chef helps us to do deployments. We don't have any
+                fancy branching schemes, we operate using pull-requests: I check out the code, make a feature branch,
+                implement the changes I want (with tests of course), publish the branch and issue a pull-request, which
+                basically says "here are my changes, please integrate them". We have another robot which notices that
+                new branch and builds it in our Jenkins server, and if it builds successfully there then a green badge
+                appears on the pull-request page. Somebody else can then merge the pull-request into master, which then
+                gets built once more in Jenkins and if that's successful, then we have a special tag called CURRENT
+                which moves up to the just-built master. Then on the next Chef run, that goes goes live
+            </p>
+
+            <p>
+                So as soon as a thing is done, it's released. This takes so much of the pain out of deployments. We now
+                happily deploy on Friday afternoons with no terrors, because even if everything catches fire, we're
+                faced with a tiny rollback. Deployment should not
+            </p>
+        </aside>
+        <h1>Continuous deployment</h1>
+        <ul>
+            <li>
+                Pull-request-based development (Gitflow)
+            </li>
+            <li>
+                Continuous integration (<a href="http://jenkins.theodi.org/">http://jenkins.theodi.org/</a>)
+            </li>
+            <li>
+                Every Chef run checks for new code and deploys
+            </li>
+            <li>
+                If it's ready, it goes live
+            </li>
+        </ul>
+    </section>
+</section>
+<section id="questions">
+    <aside class="notes">
+        <p>
+            OK, that's the end. Has anybody got any questions?
+        </p>
+    </aside>
+    <h1>
+        Questions?
+    </h1>
+</section>
+<section id="further_reading">
+    <aside class="notes">
+        <p>
+            Here's a rather haphazard selection of further reading
+        </p>
+    </aside>
+    <h1>
+        Further reading
+    </h1>
+    <ul>
+        <li>
+            <a href="http://pragprog.com/book/hwcuc/the-cucumber-book">The Cucumber Book</a>
+        </li>
+        <li>
+            <a href="http://shop.oreilly.com/product/0636920020042.do">Test-Driven Infrastructure with Chef</a>
+            (massively out-of-date, Second Edition expected soon)
+        </li>
+        <li>
+            <a href="https://github.com/theodi/odi-chef">The ODI's Chef repo</a>
+        </li>
+        <li>
+            <a href="http://blog.brattyredhead.com/blog/2013/04/05/devops-consulting-why-i-don-slash-t/">Devops
+                Consulting: Why I Don't</a> - Sascha Bates' take on what DevOps is and isn't
+        </li>
+        <li>
+            <a href="http://lab.hakim.se/reveal-js/#/">reveal.js</a>, the thing driving this presentation
+        </li>
+    </ul>
 </section>
 
 {% include odi_tech_team.html %}
