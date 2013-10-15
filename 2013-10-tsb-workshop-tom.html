@@ -1,0 +1,184 @@
+---
+layout: reveal
+title: The (Open) Data Consumer's Checklist
+description: Key considerations for users of open data
+author: Tom Heath and Ulrich Atz
+---
+
+
+{% include odi_logo.html %}
+
+{% include standard_title.html %}
+
+
+<style type="text/css">
+@import url(https://fonts.googleapis.com/css?family=Quicksand:400,700,400italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
+
+reveal {
+  font-family: "Open Sans", sans-serif;
+  font-size: 36px;
+  font-weight: 200;
+  letter-spacing: 0.6em;
+  color: #333333; }
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  margin: 0 0 20px 0;
+  color: #333333;
+  font-family: "Quicksand", sans-serif;
+  line-height: 1.2em;
+  letter-spacing: -0.08em;
+  text-transform: uppercase;
+  text-shadow: none;
+ }
+.reveal.quote-source {
+	font-size: smaller;
+}
+</style>
+
+
+<section id="overview">
+	<h2>Overview of today</h2>
+    <ol>
+      <li>an example data set</li>
+      <li>the general case</li>
+      <li>open data certificates (if we have time)</li>
+      <li>questions</li>
+    </ol>
+</section>
+
+<section id="content">
+  <p>
+		<a class="stretch" href="http://data.ordnancesurvey.co.uk/datasets/code-point-open"><img src="2013-10-TSB-workshop/os-code-point.png" style="border:none;"></a><br/>
+		<!-- <a href="https://certificates.theodi.org/datasets/353/certificates/11801" class="quote-source">https://certificates.theodi.org/datasets/353/certificates/11801</a> -->
+	</p>
+  <aside class="notes">
+   Follow link - Explain License - Format - Coverage - Quality - Release cycle (?)      
+  </aside>
+</section>
+
+<section id="handout">
+	<h3>Considerations for the<br/>general case</h3>
+    <ol class="fragment">
+      <li style="color:#D60303">Accessibility</li>
+      <li style="color:#2254F4">Ownership and licensing</li>
+			<li style="color:#0DBC37">Form</li>
+			<li style="color:#FF6700">Quality</li>
+			<li style="color:#B13198">Support</li>
+    </ol>
+</section>
+
+
+<section id="handout1">
+	<h3 style="color:#D60303">Accessibility (1/5)</h3>
+    <ul class="fragment centred-list">
+      <li><strong>is the data already available?</strong><br/>
+      if so, where?</li>
+      <li><strong>how can you access it?</strong><br/>
+      dumps? an <em>api</em>?</li>
+			<li><strong>in what format is the data published?</strong><br/>
+			csv? xml? json? pdf?!</li>
+    </ul>
+</section>
+
+<section id="handout2">
+	<h3 style="color:#2254F4">Ownership and licensing (2/5)</h3>
+    <ul class="fragment centred-list">
+      <li><strong>who publishes the data?</strong></li>
+      <li><strong>are they the originator of the data?</strong></li>
+			<li><strong>under what licence is the data published?</strong></li>
+			<li><strong>does it contain personal data?</strong></li>
+    </ul>
+</section>
+
+<section id="handout3">
+	<h3 style="color:#0DBC37">Form (3/5)</h3>
+    <ul class="fragment centred-list">
+      <li><strong>prior processing</strong><br/>
+      is the data in raw or summary form?<br/>
+      how has it been processed?</li>
+			<li><strong>form</strong><br/>
+			shape, granularity, etc.<br/>
+			how will these affect your analysis/product/application?<br/>
+			is the form compatible with other data you are using?</li>
+			<li><strong>transformations</strong><br/>
+			what syntactic and semantic transformations<br/>will you need to make?</li>
+    </ul>
+</section>
+
+<section id="handout4">
+	<h3 style="color:#FF6700">Quality (4/5)</h3>
+    <ul class="fragment centred-list">
+      <li><strong>currency and regularity</strong><br/>
+      how current is the data?<br/>
+      how regularly is it updated?<br/>
+			or how long will it be published?<br/>
+			what is the commitment by the publisher?</li>
+			<li><strong>comprehensibility</strong><br/>
+			do you understand all the fields and their context?</li>
+			<li><strong>accuracy</strong><br/>
+			what do you know about the accuracy of the data?<br/>
+			how is missing data handled?</li>
+    </ul>
+</section>
+
+<section id="handout5">
+	<h3 style="color:#B13198">Support (5/5)</h3>
+    <ul class="fragment centred-list">
+			<li><strong>(how) is the data set documented?</strong></li>
+			<li><strong>does the metadata make sense?</strong></li>
+      <li><strong>is there a place you can report errors in the data?</strong></li>
+			<li><strong>does the publisher offer support in any way?</strong></li>
+    </ul>
+</section>
+
+
+<section id="certificate1">
+  <h2>Open Data Certificates</h2>
+  <ul class="centred-list">
+		<li><strong>the first robust quality badge for open data</strong></li>
+		<li><strong>helps...</strong><br/>
+			<strong>publishers</strong> certify their data<br/>
+			<strong>users</strong> find and use it<br/>
+			<strong>policy makers</strong> benchmark<br/></li>
+		<li><a href="http://certificates.theodi.org">http://certificates.theodi.org</a></li>
+		<!-- <li>example: the <a href="https://certificates.theodi.org/datasets/353/certificates/11801">OS Code-Point Data.</a></li> -->
+</section>
+
+<section id="certificate2">
+	<img class="stretch" src="2013-10-TSB-workshop/cert-levels.png" style="border:none; box-shadow:none;"></a>
+</section>
+
+
+<section id="takeaways" data-background="#FF6700">
+  <h3 style="color:white">Quick, what are the three most important questions?</h3>	
+  <br>
+  <ol style="color:white">
+    <li class="fragment">How can you <em>use</em> the data?</li>
+    <li class="fragment">Is the <em>quality</em> sufficient and appropriate?</li>
+    <li class="fragment">Will the data be <em>available</em> in the future?</li>
+  </ol>
+
+</section>
+
+
+<section>
+  <h2>Questions?</h2><br>
+  <img height="320;" src="brand/odi_dynamic_logo.png" alt="ODI" style="border:none; box-shadow:none;"> 
+  <hr>
+  <p style="text-align:center">Tom Heath and Ulrich Atz · Open Data Institute</p>
+  <p style="text-align:center; font-size: smaller">
+		<a href="mailto:tom.heath@theodi.org">tom.heath@theodi.org</a> ·
+		<a href="https://twitter.com/tommyh">@tommyh</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+		<a href="mailto:ulrich.atz@theodi.org">ulrich.atz@theodi.org</a> ·
+		<a href="https://twitter.com/statshero">@statshero</a>
+	</p>
+ 
+</section>
+
+{% include odi_tech_team.html %}
