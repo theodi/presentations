@@ -184,6 +184,21 @@ body {
     text-align: right;
 }
 
+.reveal .attribution {
+    font-size: 0.4em;
+    margin-left: 50%;
+    margin-top: 400px;
+    position: fixed;
+    text-align: right;
+	background-color: rgba(255,255,255,0.5);
+	padding: 2px;
+	line-height: 1em;
+}
+
+.reveal .colourslide {
+	color: white;
+}
+
 .reveal p {
     text-align: justify;
 }
