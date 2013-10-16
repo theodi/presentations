@@ -175,6 +175,11 @@ body {
     transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
 }
 
+
+/*********************************************
+ * OTHER
+ *********************************************/
+
 .reveal .photo-credit {
     font-size: 0.4em;
     top: -100px;
@@ -186,7 +191,7 @@ body {
 .reveal .attribution {
     font-size: 0.4em;
     margin-left: 50%;
-    margin-top: 400px;
+    margin-top: 360px;
     position: fixed;
     text-align: right;
 	background-color: rgba(255,255,255,0.5);
