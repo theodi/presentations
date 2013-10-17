@@ -206,3 +206,18 @@ body {
 .reveal p {
     text-align: justify;
 }
+
+.reveal .quote {
+	text-align: left;
+	font-style: italic;
+}
+
+.reveal .quoteattr {
+	font-size:50%;
+	text-align: right;
+}
+
+.reveal table td.align-center, th.align-center {
+	text-align: center !important;
+}
+
