@@ -77,7 +77,7 @@ description: Test-Driven Infrastructure with Cucumber-chef
             <li class="fragment">
                 Dan North (instigator of BDD) says: <em>"BDD is a second-generation, outside-in, pull-based,
                 multiple-stakeholder, multiple-scale, high-automation, agile methodology. It describes a cycle of
-                interactions with well-defined outputs,<strong>resulting in the delivery of working, tested software
+                interactions with well-defined outputs, <strong>resulting in the delivery of working, tested software
                     that matters</strong>"</em>
                 (<a href="http://en.wikipedia.org/wiki/Behavior-driven_development#History">Wikipedia</a>)
             </li>
@@ -705,6 +705,11 @@ end</code></pre>
                 right at the beginning, we need to ssh into the LXC node to run the tests there, using something called
                 ZTK which I don't fully understand
             </p>
+            <p>
+                This brings me to an important point: you may have noticed that I'm using behaviour-driven development
+                and test-driven development mind of interchangeably here. What we're doing here isn't BDD, but the tool
+                we're using, cucumber, comes from the BDD world
+            </p>
         </aside>
         <h1>Features</h1>
         <pre><code data-trim class="gherkin">Feature: webserver
@@ -755,7 +760,13 @@ end</code></pre>
                 fixing the underlying code. But let's cut to the chase here and look at the end of our red - green -
                 refactor process: in the Labfile we assigned the 'certificate' role to the node. Here is a snippet of
                 the file describing that role, and in the run_list we see that it includes another role, called 'base'.
+                </p>
+            {% include click.html %}
+            <p>
                 And then in the base role, we call the default recipe from the git cookbook which actually installs Git.
+            </p>
+            {% include click.html %}
+            <p>
                 So this test now passes
             </p>
         </aside>
@@ -768,9 +779,9 @@ end</code></pre>
 
   run_list "role[base]",
            "recipe[chef-client::cron]</code></pre>
-        <pre><code data-trim class="ruby">name "base"
+        <pre><code data-trim class="ruby fragment">name "base"
   run_list "recipe[git]"</code></pre>
-        <p>
+        <p class="fragment">
             And now this test passes
         </p>
     </section>
@@ -836,7 +847,7 @@ cookbook 'fail2ban', :github => 'opscode-cookbooks/fail2ban'</code></pre>
             </p>
             {% include click.html %}
             <p>
-                But since version 1.1 it can now control cloud nodes, too. In an ideal world, we'd be able tu use an
+                But since version 1.1 it can now control cloud nodes, too. In an ideal world, we'd be able to use an
                 identical Vagrantfile for development and any cloud service, but unfortunately there are quite a lot of
                 wrinkles in the way the various cloud providers work. I lost an entire week trying to write a Vagrant
                 plugin to implement this, but I got lost in callback Hell and it never happened. Maybe one day
@@ -926,7 +937,7 @@ end</code></pre>
             <p>
                 So as soon as a thing is done, it's released. This takes so much of the pain out of deployments. We now
                 happily deploy on Friday afternoons with no terrors, because even if everything catches fire, we're
-                faced with a tiny rollback. Deployment should not
+                faced with a tiny rollback. Deployment should not be like going to the dentists
             </p>
         </aside>
         <h1>Continuous deployment</h1>
@@ -946,16 +957,6 @@ end</code></pre>
         </ul>
     </section>
 </section>
-<section id="questions">
-    <aside class="notes">
-        <p>
-            OK, that's the end. Has anybody got any questions?
-        </p>
-    </aside>
-    <h1>
-        Questions?
-    </h1>
-</section>
 <section id="further_reading">
     <aside class="notes">
         <p>
@@ -971,7 +972,7 @@ end</code></pre>
         </li>
         <li>
             <a href="http://shop.oreilly.com/product/0636920020042.do">Test-Driven Infrastructure with Chef</a>
-            (massively out-of-date, Second Edition expected soon)
+            (Second Edition released last week!)
         </li>
         <li>
             <a href="https://github.com/theodi/odi-chef">The ODI's Chef repo</a>
@@ -985,5 +986,14 @@ end</code></pre>
         </li>
     </ul>
 </section>
-
+<section id="questions">
+    <aside class="notes">
+        <p>
+            OK, that's the end. Has anybody got any questions?
+        </p>
+    </aside>
+    <h1>
+        Questions?
+    </h1>
+</section>
 {% include odi_tech_team.html %}
