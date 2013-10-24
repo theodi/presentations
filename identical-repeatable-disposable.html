@@ -14,7 +14,7 @@ description: Test-Driven Infrastructure with Cucumber-chef
         <p>
             Hello, I'm Sam from the ODI and I'm here to talk to you about Test-Driven Infrastructure with Cucumber-chef.
             Some of this will of necessity be a little hand-wavy, and it may seem to weave around a little because we're
-            going to cover a lot of ground and we only have limited time together, but stay with me and I hope it will
+            going to cover a lot of ground and we only have a limited time together, but stay with me and I hope it will
             all come together and make sense by the
             end
         </p>
@@ -175,7 +175,7 @@ end</code></pre>
                 These step defs here represent the end of a process - when we're actually doing this for real, we
                 proceed in small increments, running the tests at each stage. We follow the red - green - refactor cycle
                 where we have a failing test, we write just enough code to make the test pass, then we refactor what
-                we've written, but now we have a safety net
+                we've written, but with the benefit of a safety net
             </p>
         </aside>
         <h1>Define the steps</h1>
@@ -232,7 +232,7 @@ end</code></pre>
             <p>
                 Aruba is designed for building command-line apps. The smart people behind this recognised that there a
                 fairly small number of common operations that you're likely to be testing when writing such an app, such
-                as checking console output, hecking for the existence of files, etc, so as long as your specs conform to
+                as checking console output, checking for the existence of files, etc. So as long as your specs conform to
                 their patterns, a lot of the heavy lifting has been done for you
             </p>
             {% include click.html %}
@@ -304,13 +304,13 @@ end</code></pre>
             <p>
                 First, let us take a step back and look at how we used to do this stuff. We'd order servers from Compaq
                 or somebody, wait two weeks for them to arrive, take them down to the datacentre and rack them, then
-                install the OS and everything else by hand following whatever unmaintained documentation you had from
-                last time, and only find out which steps you'd forgotten or what you'd screwed up when it started
+                install the OS and everything else by hand following whatever unmaintained documentation we had from
+                last time, and only find out which steps we'd forgotten or what we'd screwed up when it started
                 exploding
             </p>
 
             <p>
-                Or maybe you had some brittle, lashed-together shell scripts, but things like that get out of date real
+                Or maybe we had some brittle, lashed-together shell scripts, but things like that get out of date real
                 quick
             </p>
             {% include click.html %}
@@ -473,7 +473,7 @@ end</code></pre>
                 comes from maths - an operation is idempotent if it produces the same results if executed once or more
                 than once. If we think back to whatever hacky provisioning scripts we had back in the bad old days,
                 there's a fair chance that those weren't safe to run more than once, so if they crapped out halfway
-                through, you'd be pretty screwed
+                through, we'd be pretty screwed
             </p>
             {% include click.html %}
             <p>
@@ -498,7 +498,7 @@ end</code></pre>
     <section>
         <aside class="notes">
             <p>
-                This is just a shell script wrapped in a Chef resource
+                This is just a shell script wrapped in a Chef resource. But Chef is really only a very nice wrapper around a bunch of shell commands
             </p>
             {% include click.html %}
             <p>
@@ -588,7 +588,7 @@ end</code></pre>
     <section>
         <aside class="notes">
             <p>
-                The Chef server is the central piece of a Chef setup, it holds the cookbooks ans stuff. Everything goes
+                The Chef server is the central piece of a Chef setup, it holds the cookbooks and stuff. Everything goes
                 through this
             </p>
         </aside>
@@ -706,10 +706,10 @@ end</code></pre>
                 ZTK which I don't fully understand
             </p>
             <p>
-                This brings me to an important point: you may have noticed that I'm using the terms behaviour-driven
-                development and test-driven development mind of interchangeably here. What we're doing here isn't BDD,
-                we're not describing behaviour as we were in the previous cucumber feature we saw, we're describing how
-                we want our server to be configured, but the tool we're using, cucumber, comes from the BDD world
+                There is an important which I've kind of skipped over: you may have noticed that I'm using the terms behaviour-driven
+                development and test-driven development kind of interchangeably here. What we're doing here isn't BDD, because
+                we're not describing behaviour as we were in the previous cucumber feature we saw. We're describing how
+                we want our server to be configured, but it turns out that Cucumber, which is principally a BDD tool, lends itself to this purpose extremely well
             </p>
         </aside>
         <h1>Features</h1>
@@ -735,7 +735,7 @@ end</code></pre>
                 And here's where the magic happens. I actually wrote this code, sorry it's a bit ugly, but we have to
                 get down to the bare metal somewhere. What it's doing is working out which package manager the
                 underlying OS uses, by trying dpkg and then yum, then running that command remotely through the ZTK
-                connection object, then examining the result to see if the package name appears in the list of installed
+                connection, then examining the result to see if the package name appears in the list of installed
                 packages
             </p>
         </aside>
@@ -794,12 +794,12 @@ end</code></pre>
             </p>
 
             <p>
-                So as we can see here, the default source is the community cookbooks site, but we can also specify
-                versions, or, as with everything else now, we can pull directly from Github
+                So as we can see here, the default source is the community cookbooks site. We can also specify
+                versions, as you'd expect, and, as with everything else now, we can pull directly from Github
             </p>
 
             <p>
-                There's another tool called Berkshelf which is very popular, but which I don't understand
+                There's another tool called Berkshelf which seems to be very popular, but which I don't understand
             </p>
         </aside>
         <h1>Librarian</h1>
@@ -881,16 +881,16 @@ cookbook 'fail2ban', :github => 'opscode-cookbooks/fail2ban'</code></pre>
         <aside class="notes">
             <p>
                 Vagrant is driven with the Vagrantfile, here's a section from one of ours. Note that we specify the Chef
-                environment and run_list there, when this node spins up, it's able to provision itself completely
+                environment and run_list there, so when this node spins up, it's able to provision itself completely
                 automatically. If there's more than one node in the Vagrantfile, and we're careful about the ordering,
-                so that things like database servers come first, we can just type 'vagrant up' and watch a whole
+                so that things like database servers come up first, we can just type 'vagrant up' and specify a provider and watch a whole
                 platform spring into life. This is some sort of Ops Nirvana
             </p>
 
             <p>
                 We had a situation where we needed to up the RAM on a MySQL node. We have another tool, called hoppler,
                 which knows how to restore database backups out of Rackspace Cloudfiles, so we arranged some downtime,
-                took the existing node down using Vagrant. This caused the app to go into a tailspin because it suddenly
+                and took the existing node down using Vagrant. This caused the app to go into a tailspin because it suddenly
                 had no database, but we were in a maintenance window, so no big deal. We edited the Vagrantfile to give
                 it more RAM, then span it up. It came back with the correct databases restored onto it but a different
                 IP address because it was now a fresh node, but we have Chef cronned to run every 5 minutes, so on the
