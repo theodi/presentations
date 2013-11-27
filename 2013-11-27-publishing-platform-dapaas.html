@@ -1,0 +1,255 @@
+---
+layout: reveal
+title: The ODI Publishing Platform
+author: Open Data Institute Tech Team
+twitter: ukoditech
+description: Web publishing as if it was 2013
+---
+
+{% include odi_logo.html %}
+{% include standard_title.html %}
+
+<section id="tech-team">
+    <aside class="notes">
+        
+    </aside>
+    <h2>ODI Tech Team</h2>
+    <ul>
+        <li>started January 2013</li>
+        <li>mixture of skills
+            <ul>
+                <li>data science</li>
+                <li>statistics</li>
+                <li>public data</li>
+                <li>devops</li>
+                <li>engineering</li>
+            </ul>
+        </li>
+        <li>building tools for open data</li>
+        <li>showing best practice</li>
+        <li>open culture in code</li>
+    </ul>
+</section>
+
+<section id="principles">
+  <aside class="notes">
+      When we convened as a team, we set out the following principles. 
+      
+      These inform everything we do
+  </aside>
+  <h2>Our Principles</h2>
+  <ul>
+    <li>Open By Default</li>
+    <li>Borrow Mercilessly</li>
+    <li>Experiment and Learn</li>
+    <li>Share Everything</li>
+    <li>Be Ourselves</li>
+  </ul>
+</section>
+
+<section id="approach">
+  <aside class="notes">
+     As well as trying to use open source as much as possible, we also work completely in the open
+     
+     We also have a continuous integration server which runs tests, tags new releases, and a Chef server that picks up new releases and deploys them
+  </aside>
+  <h2>Our Approach</h2>
+  <ul>
+    <li>Open tools</li>
+    <li>Open workflow</li>
+    <li>Open communication</li>
+    <li>Continuous deployment</li>
+    <li>Infrastructure as code</li>
+  </ul>
+</section>
+
+<section id="website">
+  <h2>Our old website</h2>
+  <img src='2013-11-27-publishing-platform-dapaas/drupal.png' style='max-height: 500px'/>
+</section>
+
+<section id="website-2">
+  <aside class="notes">
+      Our old website was a Drupal-based monster
+      
+      Wanted to be all things to all people, but ended up being nothing (cf. Wordpress wanting to be the operating system of the Internet)
+      
+      Designed to be uploaded via FTP to a shared server. Getting it to fit in with our ops approach was a nightmare.
+  </aside>
+  <h2>Our old website</h2>
+  <ul>
+    <li>Built with <a href="https://drupal.org/">Drupal</a></li>
+    <li>Inherited from the early days of the ODI</li>
+    <li>Inflexible (but, sometimes, too flexible)</li>
+    <li>Not built for automation</li>
+  </ul>
+</section>
+
+<section id="wishlist">
+  <aside class="notes">
+      So, we decided we needed a new website.
+      
+      But what did we want?
+      
+      Treat content as data
+      
+      Everything had to be available openly, as data
+      
+      We're a Ruby shop - so something built with Ruby would be a big plus
+      
+      Flexibility - we wanted multiple frontends
+  </aside>
+  <h2>Our wishlist</h2>
+  <ul>
+    <li>Content = data</li>
+    <li>Open standards</li>
+    <li>APIs everywhere</li>
+    <li>Flexible - multiple frontends</li>
+    <li>Automatable</li>
+    <li>Workflow-compatible</li>
+    <li>A content platform, NOT a website!</li>
+  </ul>
+</section>
+
+<section id="govuk">
+  <h2>Enter GDS and gov.uk</h2>
+  <img src='2013-11-27-publishing-platform-dapaas/govuk.png' style='max-height: 500px'/>
+</section>
+
+<section id="govuk-detail">
+  <h2>Gov.uk is:</h2>
+  <ul>
+    <li>Open source</li>
+    <li>Built in the open</li>
+    <li>Built with Ruby (amongst other languages)</li>
+    <li>The API is the service</li>
+  </ul>
+</section>
+
+<section id="diagram">
+  <h2>Many parts, loosely joined</h2>
+  <img src='2013-11-27-publishing-platform-dapaas/diagram.png' style='max-height: 500px'/>
+</section>
+
+<section id="signon">
+  <h2>Signon</h2>
+  <img src='2013-11-27-publishing-platform-dapaas/signon.png' style='max-height: 500px'/>
+</section>
+
+<section id="panopticon">
+  <h2>Panopticon</h2>
+  <img src='2013-11-27-publishing-platform-dapaas/panopticon.png' style='max-height: 500px'/>
+</section>
+
+<section id="publisher">
+  <h2>Publisher</h2>
+  <img src='2013-11-27-publishing-platform-dapaas/publisher.png' style='max-height: 500px'/>
+</section>
+
+<section id="contentapi">
+  <h2>Content API</h2>
+  <img src='2013-11-27-publishing-platform-dapaas/contentapi.png' style='max-height: 500px'/>
+</section>
+
+<section id="frontend">
+  <h2>Frontend</h2>
+  <img src='2013-11-27-publishing-platform-dapaas/frontend.png' style='max-height: 500px'/>
+</section>
+
+<section id="many-parts">
+  <h2>Many parts, loosely joined</h2>
+  <ul>
+    <li>Content is managed as editions</li>
+    <li>Content is entered as markdown
+      <ul>
+        <li>(Content, not presentation!)</li>
+      </ul>
+    </li>
+    <li>Easy to add extra content types and fields</li>
+    <li>Pushed to an API</li>
+    <li>The frontend consumes the API
+      <ul>
+        <li>(and so can other frontends)</li>
+      </ul>
+    </li>
+    <li>The API is public</li>
+  </ul>
+</section>
+
+<section id="workflow">
+  <h2>Workflow</h2>
+  <ul>
+    <li>For code: GitHub Flow
+      <ul>
+        <li>Branch</li>
+        <li>Code</li>
+        <li>Pull Request</li>
+        <li>Merge</li>
+      </ul>
+    </li>
+    <li>For content:
+      <ul>
+        <li>Create new edition</li>
+        <li>Edit</li>
+        <li>Review</li>
+        <li>Publish</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+<section id="workflow-2">
+  <h2>Workflow</h2>
+  <ul>
+    <li>Comments attached to changes</li>
+    <li>Reviewers notified automatically</li>
+    <li>Even handles external reviewers</li>
+  </ul>
+</section>
+
+<section id="what-next">
+  <h2>What we did next</h2>
+</section>
+
+<section id="documentation-as-code">
+  <h2>Documentation as code</h2>
+  <a href="https://github.com/theodi/quirkafleeg">
+    <img src='2013-11-27-publishing-platform-dapaas/quirkafleeg.png' style='max-height: 500px'/>
+  </a>
+</section>
+
+<section id="changes">
+  <h2>Pushed back improvements</h2>
+  <img src='2013-11-27-publishing-platform-dapaas/fork2.png' style='max-height: 500px'/>
+</section>
+
+<section id="commits">
+  <h2>Commits everwhere!</h2>
+  <img src='2013-11-27-publishing-platform-dapaas/commits.png' style='max-height: 500px'/>
+</section>
+
+<section id="markdown">
+  <h2>Markdown extensions</h2>
+  <img src='2013-11-27-publishing-platform-dapaas/markdown.png' style='max-height: 500px'/>
+</section>
+
+<section id="future-plans">
+  <h2>Future plans</h2>
+  <ul>
+    <li>Push back changes
+      <ul>
+        <li>Wrap instead of fork</li>
+      </ul>
+    </li>
+    <li>Shared templates</li>
+    <li>Moar frontends!
+      <ul>
+        <li>Learning</li>
+        <li>Labs / Tech</li>
+        <li>Specific Projects</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+{% include odi_tech_team.html %}
