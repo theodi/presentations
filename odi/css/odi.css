@@ -145,6 +145,60 @@ iframe {
 	height: 700px;
 }
 
+/***************************
+ * Four Corners positioning
+ ***************************/
+.top-right {
+	position: fixed;
+	right: 20px;
+	top: 20px;
+}
+.top-left {
+	position: fixed;
+	left: 20px;
+	top: 20px;
+}
+.bottom-right {
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+}
+.bottom-left {
+	position: fixed;
+	left: 20px;
+	bottom: 20px;
+}
+
+/***************************
+ * 2 Columns 
+ ***************************/
+
+.left-33 {
+	display: inline-block;
+	float: left;
+	width: 33%;
+}
+.left-66 ul.left-66 {
+	display: inline-block;
+	float: left;
+	width: 60%;
+	min-width: 10%;
+	max-width: 64%;
+}
+.right-33 {
+	display: inline-block;
+	float: right;
+	padding-right: 20px;
+	width: 33%;
+}
+.right-66 {
+	display: inline-block;
+	float: right;
+	padding-right: 30px;
+	width: 60%;
+	min-width: 10%;
+	max-width: 64%;
+}
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
@@ -219,7 +273,6 @@ body {
  *********************************************/
 .reveal section img {
     margin: 0px 0px;
-    background: rgba(255, 255, 255, 0.12);
     -webkit-transition: all .2s linear;
     -moz-transition: all .2s linear;
     -ms-transition: all .2s linear;
