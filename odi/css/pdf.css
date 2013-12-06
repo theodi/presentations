@@ -17,8 +17,8 @@
 
 body {
 	font-size: 18pt;
-	width: 297mm;
-	height: 229mm;
+	width: 1280px;
+	height: 720px;
 	margin: 0 auto !important;
 	border: 0;
 	padding: 0;
@@ -94,8 +94,6 @@ ul, ol, div, p {
 }
 .reveal .slides {
 	position: static;
-	width: 100%;
-	height: auto;
 
 	left: auto;
 	top: auto;
@@ -123,9 +121,9 @@ ul, ol, div, p {
 
 	visibility: visible !important;
 	position: relative !important;
-	width: 100% !important;
-	height: 229mm !important;
-	min-height: 229mm !important;
+	width: 1280px !important;
+	height: 720px !important;
+	min-height: 720px !important;
 	display: block !important;
 	overflow: hidden !important;
 
