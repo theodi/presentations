@@ -13,10 +13,6 @@
  * ODI-specific classes
  **********************/
 
-section {
-/*	height: 100%; */
-}
-
 section.logo-background {
   width: 100%;
   height: 90%;
@@ -27,47 +23,91 @@ section.logo-background {
   background-image: url(../../brand/odi_dynamic_logo.png);
 }
 
-html.odi-red .state-background {
+section.odi-circles {
+	z-index:-30;
+  	background-position: top right;
+	background-repeat: no-repeat;
+	background-image: url(../../brand/odi-colour-circles-top-right.png);
+}
+section.odi-circles .odi-logo {
+	width: 75%;
+}
+
+section.odi-dynamic {
+	z-index:-30;
+  	background-position: top right;
+	background-repeat: no-repeat;
+	background-image: url(../../brand/odi_dynamic_logo-top-right.png);
+}
+
+section.odi-dynamic .odi-logo {
+	width: 65%;
+}
+
+section.odi-polygons {
+	z-index:-30;
+  	background-position: top right;
+	background-repeat: no-repeat;
+	background-image: url(../../brand/odi-colour-polygons-top-right.png);
+}
+
+section.odi-polygons .odi-logo {
+	width: 75%;
+}
+
+section.left { 
+	text-align: left;
+}
+
+section.left h2, section.left p, section.left ul, section.left ol {
+	padding-left: 20px;
+}
+
+section.odi-red impact, section.odi-cyan impact, section.odi-light-blue impact, section.odi-dark-blue impact, section.odi-yellow, section.odi-pale-green impact, section.odi-blue-green impact, section.odi-blue impact, section.odi-orange impact, section.odi-green impact, section.odi-purple impact {
+	color: white;
+}
+
+html.odi-red .state-background,section.odi-red {
   background-color: #d60202;
   z-index: -40;
 }
-html.odi-cyan .state-background {
+html.odi-cyan .state-background,section.odi-cyan {
   background-color: #38ddf9;
   z-index: -40;
 }
-html.odi-light-blue .state-background {
+html.odi-light-blue .state-background,section.odi-light-blue {
   background-color: #00b7ff;
   z-index: -40;
 }
-html.odi-dark-blue .state-background {
+html.odi-dark-blue .state-background,section.odi-dark-blue {
   background-color: #2154f4;
   z-index: -40;
 }
-html.odi-yellow .state-background {
+html.odi-yellow .state-background,section.odi-yellow {
   background-color: #f9bc26;
   z-index: -40;
 }
-html.odi-pale-green .state-background {
+html.odi-pale-green .state-background,section.odi-pale-green {
   background-color: #66ef66;
   z-index: -40;
 }
-html.odi-blue-green .state-background {
+html.odi-blue-green .state-background,section.odi-blue-green {
   background-color: #00b4af;
   z-index: -40;
 }
-html.odi-blue .state-background {
+html.odi-blue .state-background,section.odi-blue {
   background-color: #00b7eb;
   z-index: -40;
 }
-html.odi-orange .state-background {
+html.odi-orange .state-background,section.odi-orange {
   background-color: #ff6600;
   z-index: -40;
 }
-html.odi-green .state-background {
+html.odi-green .state-background,section.odi-green {
   background-color: #0cbc38;
   z-index: -40;
 }
-html.odi-purple .state-background {
+html.odi-purple .state-background,section.odi-purple {
   background-color: #ab2a86;
   z-index: -40;
 }
@@ -92,12 +132,14 @@ impact {
    bottom: 200px;
    display: block;
    width: 90%;
+   padding-left: 20px;
 }
 impact smallest {
    font-size: 32px;
    display: inline-block;
    line-height: 1.2em;
    vertical-align: top;
+   padding-left: 20px;
 }
 
 figure img {
@@ -145,6 +187,60 @@ iframe {
 	height: 700px;
 }
 
+/***************************
+ * Four Corners positioning
+ ***************************/
+.top-right {
+	position: fixed;
+	right: 20px;
+	top: 20px;
+}
+.top-left {
+	position: fixed;
+	left: 20px;
+	top: 20px;
+}
+.bottom-right {
+	position: fixed;
+	right: 20px;
+	bottom: 40px;
+}
+.bottom-left {
+	position: fixed;
+	left: 20px;
+	bottom: 40px;
+}
+
+/***************************
+ * 2 Columns 
+ ***************************/
+
+.left-33 {
+	display: inline-block;
+	float: left;
+	width: 33%;
+}
+.left-66 ul.left-66 {
+	display: inline-block;
+	float: left;
+	width: 60%;
+	min-width: 10%;
+	max-width: 64%;
+}
+.right-33 {
+	display: inline-block;
+	float: right;
+	padding-right: 20px;
+	width: 33%;
+}
+.right-66 {
+	display: inline-block;
+	float: right;
+	padding-right: 30px;
+	width: 60%;
+	min-width: 10%;
+	max-width: 64%;
+}
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
@@ -187,7 +283,6 @@ body {
 
 .reveal h1 {
     font-size: 3em;
-    text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
 }
 
 /*********************************************
@@ -219,7 +314,6 @@ body {
  *********************************************/
 .reveal section img {
     margin: 0px 0px;
-    background: rgba(255, 255, 255, 0.12);
     -webkit-transition: all .2s linear;
     -moz-transition: all .2s linear;
     -ms-transition: all .2s linear;
