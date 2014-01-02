@@ -187,6 +187,20 @@ iframe {
 	height: 700px;
 }
 
+.brand .odi-logo {
+	position: fixed;
+	left: 20px;
+	bottom: 20px;
+	z-index: 30;
+}
+
+.brand .licence {
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	z-index: 30;
+}
+
 /***************************
  * Four Corners positioning
  ***************************/
@@ -423,4 +437,7 @@ body {
 .reveal table td.align-center, th.align-center {
 	text-align: center !important;
 }
-
+.reveal table th {
+	font-weight: bold;
+	border-bottom: 1px solid gray;
+}
