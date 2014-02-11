@@ -1,6 +1,8 @@
 Presentations
 =============
 
+To view the presentations go to [http://theodi.github.io/presentations](http://theodi.github.io/presentations).
+
 Presentations based on [reveal.js](https://github.com/hakimel/reveal.js/).
 
 ### Structure

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>{{ page.title }}</title>
+
+    <meta name="description" content="{{ page.description }}">
+    <meta name="author" content="{{ page.author }}">
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="odi/css/reveal.min.css">
+    <link rel="stylesheet" href="odi/css/odi.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="odi/css/railscasts.css">
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="odi/css/pdf.css" type="text/css" media="print">
+
+</head>
+
+<body>
+
+<div class="reveal">
+
+    
+    <div class="slides">
+
+        {{ content }}
+
+    </div>
+
+    <div id="brand">
+        <a class="image" href="http://theodi.org"><img height="40"
+                                                       style="position:fixed; left:20px; bottom:20px; z-index:30;"
+                                                       src="brand/odi_logo.svg" alt="ODI"></a>
+        <a class="image" href="http://creativecommons.org/licenses/by-sa/3.0/"><img width="97" height="34"
+                                                                                    style="position:fixed; right:20px; bottom:20px; z-index:30;"
+                                                                                    src="brand/licence.png"
+                                                                                    alt="Creative Commons"></a>
+    </div>
+</div>
+
+<script src="odi/js/head.min.js"></script>
+<script src="odi/js/reveal.js"></script>
+<script src="odi/js/jquery-1.10.1.min.js"></script>
+
+<script>
+
+    Reveal.initialize({
+        controls: false,
+        progress: true,
+        history: true,
+        center: false,
+	//width: $(window).width(),
+	//height: $(window).height(),
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        dependencies: [
+            { src: 'odi/js/notes.js', async: true, condition: function () {
+                return !!document.body.classList;
+            } }                  ,
+            { src: 'odi/js/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+
+        ]
+    });
+
+</script>
+
+<script src="odi/js/odi.js"></script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-34573394-10']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+</html>
