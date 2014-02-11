@@ -1,0 +1,304 @@
+---
+layout: reveal
+title: Open Data 101
+description: University of Bedfordshire, 11 February 2014
+author: Dr Tom Heath
+twitter: tommyh
+---
+
+
+{% include odi_logo.html %}
+
+{% include standard_title.html %}
+
+
+<style type="text/css">
+@import url(https://fonts.googleapis.com/css?family=Quicksand:400,700,400italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
+
+reveal {
+  font-family: "Open Sans", sans-serif;
+  font-size: 36px;
+  font-weight: 200;
+  letter-spacing: 0.6em;
+  color: #333333;
+ }
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  margin: 0 0 20px 0;
+  color: #333333;
+  font-family: "Quicksand", sans-serif;
+  line-height: 1.2em;
+  letter-spacing: -0.08em;
+  text-transform: uppercase;
+  text-shadow: none;
+ }
+</style>
+
+<!-- 
+<section>
+	<h2>Background</h2>
+	<ul>
+		<li>Head of Research at ODI</li>
+		<li>Senior Research/Data Scientist at Talis Group</li>
+		<li>PhD in Social Network-driven Recommender Systems</li>
+	</ul>
+</section>
+-->
+
+<!-- 
+<section>
+	<h2>Overview</h2>
+	<ol>
+		<li>The Open Data Institute</li>
+		<li>What is Open Data?</li>
+		<li>Applications of Open Data</li>
+		<li>Considerations for Open Data Consumers</li>
+		<li>Pointers and Questions</li>
+	</ol>
+</section>
+-->
+
+<!-- ==== Open Data Institute ==== -->
+
+<section><h2>The Open Data Institute</h2></section>
+<section>
+	<h2>The Open Data Institute</h2>
+	<ul class="centred-list">
+		<li><strong>founded in 2012</strong><br/>by Tim Berners-Lee and Nigel Shadbolt</li>
+		<li><strong>non-profit, non-partisan company</strong><br/>limited by guarantee</li>
+		<li>helping others to be<br/><strong>successful with open data</strong></li>
+	</ul>
+</section>
+<section>
+	<h2>ODI Headquarters</h2>
+	<h3>Tech City in East London</h3>
+	<p><img src="2014-02-luton-open-data-101/lovquist_5587608199_3d50f55ab6_o-cropped.jpg"/></p>
+	<p style="font-size:small">photo by <a href="http://www.flickr.com/photos/lovquist/5587608199/">Daniel L&ouml;vquist</a>, used under license <a href="http://creativecommons.org/licenses/by-nc/2.0/deed.en">CC BY-NC 2.0</a></p>
+</section>
+
+<!-- ==== Open Data Institute ==== -->
+
+<section>
+	<h2>What is Open Data?</h2>
+</section>
+<section>
+	<p>
+		<blockquote>A piece of data or content is open if anyone is free to use, reuse, and redistribute it &mdash; subject only, at most, to the requirement to attribute and/or share-alike.</blockquote>
+		<span class="quoteattr">&mdash;&nbsp;<a href="http://opendefinition.org/">http://opendefinition.org/</a></span>
+	</p>
+</section>
+<section>
+	<h2>The Open Data Deal</h2>
+	<ul class="centred-list">
+		<li>
+			<strong>open data</strong>
+			<br/>must have a <em>licence</em> to say it is open
+			<br/>(just being on the web is not enough)
+		</li>
+		<li class="fragment">
+			<strong>the license</strong>
+			<br/>may impose some constraints:<br/><em>attribution</em> and/or <em>share-alike</em>
+		</li>
+		<li class="fragment">
+			<strong>the upside</strong>
+			<br/>you&apos;re free to build cool things<br/>without having to pay for the data or collect it yourself
+		</li>
+	</ul>
+</section>
+<section>
+	<h2>Big/Open/Personal Data</h2>
+	<p><img class="stretch" src="2014-02-luton-open-data-101/venn-diagram-open-big-personal.png" style="border:none; box-shadow:none;"/></p>
+	<p style="text-align:center; font-size: smaller;">Image Credit: Ulrich Atz</p>
+</section>
+
+
+<!-- ==== Applications ==== -->
+
+<section><h2>Applications of<br/>Open Data</h2></section>
+<section>
+	<h2>Prescribing Analytics</h2>
+	<h3>The Question</h3>
+	<ul class="centred-list">
+		<li class="fragment">annual prescription drugs bill for NHS is <strong>~&pound;10 billion</strong></li>
+		<li class="fragment">potential cost savings from prescribing <strong>generic drugs</strong></li>
+		<li class="fragment"><strong>how big are the savings?</strong></li>
+	</ul>
+</section>
+<section>
+	<h2>Prescribing Analytics</h2>
+	<h3>The Method</h3>
+	<ul class="centred-list">
+		<li class="fragment">prescription data for england, published monthly<br/>anonymised, under an open license</li>
+		<li class="fragment">work with domain specialists<br/>select one drug class: statins</li>
+		<li class="fragment">find all cases where generic could have been prescribed<br/>with no difference in patient outcomes</li>
+		<li class="fragment">what is the cost difference?</li>
+	</ul>
+</section>
+<section>
+		<img src="2014-02-luton-open-data-101/prescribinganalytics.png"><br/>
+		<span class="quoteattr"><a href="http://prescribinganalytics.com/">http://prescribinganalytics.com/</a></span>
+</section>
+<section>
+	<h2>Prescribing Analytics</h2>
+	<h3>The Results</h3>
+	<ul class="centred-list">
+		<li class="fragment">potential costs savings to national health service of<br/><strong>&pound;200 million per year</strong></li>
+		<li class="fragment"><strong>for just one drug class</strong></li>
+	</ul>
+</section>
+<section>
+	<h2>Fire Stations in London</h2>
+	<ul class="centred-list">
+		<li class="fragment">proposal to close a number of <strong>fire stations</strong>
+				<br/>in central london</li>
+		<li class="fragment">candidates for closure identified by
+				<br/><strong>non-transparent analysis/process</strong></li>
+		<li class="fragment"><strong>questions</strong>
+				<br/>is the analysis fair/accurate?
+				<br/>how can citizens engage in the process?
+		</li>
+	</ul>
+</section>
+<section>
+	<img src="2014-02-luton-open-data-101/london-fire-cropped.png"><br/>
+	<span class="quoteattr"><a href="http://london-fire.labs.theodi.org/">http://london-fire.labs.theodi.org/</a></span>
+</section>
+<section>
+	<h2>Fire Stations in London</h2>
+	<h3>Conclusions</h3>
+	<ul class="centred-list">
+		<li class="fragment">findings broadly compatible with initial analysis</li>
+		<li class="fragment">significantly cheaper than official analysis?</li>
+		<li class="fragment"><strong>tool is publicly available</strong>
+				<br/>citizens can explore the options
+		</li>
+	</ul>
+</section>
+
+
+<!-- ==== Considerations for Data Consumers ==== -->
+
+<section><h2>Considerations for <br/>Open Data Consumers</h2></section>
+
+<section id="handout">
+	<h2>Overview</h2>
+    <ol class="fragment">
+      <li style="color:#D60303">Accessibility</li>
+      <li style="color:#2254F4">Ownership and licensing</li>
+			<li style="color:#0DBC37">Form</li>
+			<li style="color:#FF6700">Quality</li>
+			<li style="color:#B13198">Support</li>
+    </ol>
+</section>
+
+
+<section id="handout1">
+	<h2 style="color:#D60303">Accessibility (1/5)</h2>
+    <ul class="centred-list">
+      <li class="fragment"><strong>is the data already available?</strong><br/>
+      if so, where?</li>
+      <li class="fragment"><strong>how can you access it?</strong><br/>
+      dumps? an <em>api</em>?</li>
+			<li class="fragment"><strong>in what format is the data published?</strong><br/>
+			csv? xml? json? pdf?!</li>
+    </ul>
+</section>
+
+<section id="handout2">
+	<h2 style="color:#2254F4">Ownership and licensing (2/5)</h2>
+    <ul class="centred-list">
+      <li class="fragment"><strong>who publishes the data?</strong></li>
+      <li class="fragment"><strong>are they the originator of the data?</strong></li>
+			<li class="fragment"><strong>under what licence is the data published?</strong></li>
+			<li class="fragment"><strong>does it contain personal data?</strong></li>
+    </ul>
+</section>
+
+<section id="handout3">
+	<h2 style="color:#0DBC37">Form (3/5)</h2>
+    <ul class="centred-list">
+      <li class="fragment"><strong>prior processing</strong><br/>
+      is the data in raw or summary form?<br/>
+      how has it been processed?</li>
+			<li class="fragment"><strong>form</strong><br/>
+			shape, granularity, etc.<br/>
+			how will these affect your analysis/product/application?<br/>
+			is the form compatible with other data you are using?</li>
+			<li class="fragment"><strong>transformations</strong><br/>
+			what syntactic and semantic transformations<br/>will you need to make?</li>
+    </ul>
+</section>
+
+<section id="handout4">
+	<h2 style="color:#FF6700">Quality (4/5)</h2>
+    <ul class="centred-list">
+      <li class="fragment"><strong>currency and regularity</strong><br/>
+      how current is the data?<br/>
+      how regularly is it updated?<br/>
+			for how long will it be published?<br/>
+			what is the commitment by the publisher?</li>
+			<li class="fragment"><strong>comprehensibility</strong><br/>
+			do you understand all the fields and their context?</li>
+			<li class="fragment"><strong>accuracy</strong><br/>
+			what do you know about the accuracy of the data?<br/>
+			how is missing data handled?</li>
+    </ul>
+</section>
+
+<section id="handout5">
+	<h2 style="color:#B13198">Support (5/5)</h2>
+    <ul class="centred-list">
+			<li class="fragment"><strong>(how) is the data set documented?</strong></li>
+			<li class="fragment"><strong>does the metadata make sense?</strong></li>
+      <li class="fragment"><strong>is there a place you can report errors in the data?</strong></li>
+			<li class="fragment"><strong>does the publisher offer support in any way?</strong></li>
+    </ul>
+</section>
+
+
+
+<!-- ==== Pointers and Questions ==== -->
+
+<section>
+	<h2>Pointers</h2>
+	<ul class="centred-list">
+		<li>Example Data Sources<br/><a href="http://is.gd/example_data_sources">http://is.gd/example_data_sources</a></li>
+		<li>OpenRefine<br/><a href=""></a></li>
+		<li>R (Statistical Programming)<br/><a href=""></a></li>
+		<li>Hadoop (Big Data)<br/><a href=""></a></li>
+		<li>D3 (Visualisation Library)<br/><a href=""></a></li>
+		<li>These Slides<br/><a href=""></a></li>
+	</ul>
+</section>
+
+<section>
+  <h2>Questions?</h2><br>
+  <img height="320;" src="brand/odi_dynamic_logo.png" alt="ODI" style="border:none; box-shadow:none;"> 
+  <hr>
+  <p style="text-align:center">Tom Heath · Open Data Institute</p>
+  <p style="text-align:center; font-size: smaller">
+		<a href="mailto:tom.heath@theodi.org">tom.heath@theodi.org</a> ·
+		<a href="https://twitter.com/tommyh">@tommyh</a>
+	</p>
+</section>
+
+<!-- <section>
+  <h2>Acknowledgements</h2>
+  <p style="text-align:center"><strong>DaPaaS</strong> and <strong>OpenDataMonitor</strong> projects</p>
+  <p style="text-align:center">funded by EC FP7 grants 610988 &amp; 611988</p>
+  <img height="320;" src="brand/odi_dynamic_logo.png" alt="ODI" style="border:none; box-shadow:none;"> 
+  <hr>
+  <p style="text-align:center">Tom Heath · Open Data Institute</p>
+  <p style="text-align:center; font-size: smaller">
+		<a href="mailto:tom.heath@theodi.org">tom.heath@theodi.org</a> ·
+		<a href="https://twitter.com/tommyh">@tommyh</a>
+	</p>
+</section> -->
+
+
+{% include odi_tech_team.html %}
