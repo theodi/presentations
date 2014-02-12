@@ -255,6 +255,26 @@ iframe {
 	min-width: 10%;
 	max-width: 64%;
 }
+.reveal .progressbar {
+	width: 800px;
+	border: 1px dashed #111;
+	height: 32px;
+	display: none;
+}
+.reveal .overall_progress {
+	display: none;
+}
+.progresskey {
+	display: none;
+}
+.reveal .progressbar div {
+	height: 100%;
+	color: #fff;
+	text-align: right;
+	line-height: 36px; /* same as #progressBar height if we want text middle aligned */
+	width: 0;
+	background-color: #0099ff;
+}
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
