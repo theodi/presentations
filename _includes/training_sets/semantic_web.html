@@ -112,6 +112,9 @@
 
 	var next_counter = 0;
 	var triangle_done = false;
+	var data_done = false;
+	var information_done = false;
+	var knowledge_done = false;
 
 	function showDays() {
 		whiteAll();
@@ -126,6 +129,18 @@
 		$('#day_nav').show();
 	}
 
+	function showCanvas(id) {
+		if ($('#'+id).is(":visible")) {
+			hideCanvas(id);
+		} else {
+			$('#'+id).css('visibility','visible').hide().fadeIn();
+		}
+	}
+
+	function hideCanvas(id) {
+		$('#'+id).fadeOut();
+	}
+
 	function showTriangle() {
 		$('#day_nav').hide();
 		$('#triangle_nav').show();
@@ -133,12 +148,24 @@
 			return;
 		}
 		var elem = document.getElementById('triangle_nav');
+		elem.addEventListener('click', function (event) {
+			var y = event.pageY - 80;
+			if (y<220 && y>150) {
+				showCanvas("data_canvas");
+			}
+			if (y<150 && y>80) {
+				showCanvas("information_canvas");
+			}
+			if (y<80 && y>0) {
+				showCanvas("knowledge_canvas");
+			}
+		});
 		context = elem.getContext('2d');
 		if (!context) {
 			return;
 		}
-		context.fillStyle="#d60202";
-		context.strokeStyle="#d60202";
+		context.fillStyle="#38ddf9";
+		context.strokeStyle="#38ddf9";
 		context.lineWidth = 2;
 
 		context.beginPath();
@@ -150,6 +177,9 @@
 		
 		context.fill();
 		context.stroke();
+		context.fillStyle="black";
+	  	context.font="40px Helvetica";
+		context.fillText("Data",105,210);
 		context.closePath();
 		
 		context.fillStyle="#0cbc38";
@@ -164,10 +194,13 @@
 		
 		context.fill();
 		context.stroke();
+		context.fillStyle="black";
+	  	context.font="32px Helvetica";
+		context.fillText("Information",70,140);
 		context.closePath();
 	
-		context.fillStyle="#ff6600";
-		context.strokeStyle = '#ff6600';
+		context.fillStyle="#d60202";
+		context.strokeStyle = '#d60202';
 	
 		context.beginPath();
 		context.moveTo(101,79);
@@ -177,6 +210,9 @@
 		
 		context.fill();
 		context.stroke();
+		context.fillStyle="black";
+	  	context.font="32px Helvetica";
+		context.fillText("Knowledge",75,70);
 		context.closePath();
 
 		triangle_done = true;
@@ -279,16 +315,27 @@
 		<a id="triangle" onClick="showTriangle();">Triangle</a> | 
 		<a id="days" onClick="showDays();">Days</a> 
 	</control>
-	<nav id="day_nav" style="position: absolute; top: 80px; left: 10px;">
+	<nav id="day_nav" style="position: absolute; top: 100px; left: 10px; z-index: 30;">
 	</nav>
-	<canvas id="triangle_nav" style="position: absolute; top: 80px; left: 80px;" width="305px" height="225px">
+	<canvas id="triangle_nav" style="position: absolute; top: 80px; left: 80px; z-index: 20;" width="305px" height="225px">
 	</canvas>
-	<section style="width: 80%; margin-top: 130px;" id="layer_cake">
-	</section>
+	<canvas id="data_nav" style="position: absolute; top: 80px; left: 80px;" width="305px" height="225px">
+	</canvas>
+	<div style="position: absolute; left: 20px; top: 130px; width: 950px;" id="layer_cake">
+	<canvas id="data_canvas" style="position: relative; width: 830px; height: 118px; border: 2px solid #38ddf9; border-radius: 15px; left: 130px; top: 245px; z-index: 10; visibility: hidden;"></canvas>
+	<canvas id="information_canvas" style="position: absolute; width: 845px; height: 245px; border: 2px solid #0cbc38; border-radius: 15px; left: 122px; top: 125px; z-index: 10; visibility: hidden;"></canvas>
+	<canvas id="knowledge_canvas" style="position: absolute; width: 860px; height: 375px; border: 2px solid #d60202; border-radius: 15px; left: 115px; top: 0px; z-index: 10; visibility: hidden;"></canvas>
+	<div>
 
 </section>
 <section class="center">
 	<h2><i>This simple idea... remains largely unrealized."</i></h2>
+	<div style="width: 90%; text-align: right;">
+                <i> - Berners-Lee et. al (2006)</i>
+        </div>
+</section>
+<section class="center">
+	<h2><i>Web 2.0 is, of course, a piece of jargon</i></h2>
 	<div style="width: 90%; text-align: right;">
                 <i> - Berners-Lee et. al (2006)</i>
         </div>
