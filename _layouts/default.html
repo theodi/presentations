@@ -1,12 +1,15 @@
+{% assign current = page.link %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>ODI Tech Team Presentations</title>
+    <title>{{ page.title }}</title>
 <!--    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'> -->
     <link href='reveal.js/css/odi/fonts/opensans.css' rel='stylesheet' type='text/css'>
 <!--    <link href="http://assets.theodi.org/css/odi-bootstrap-orange.css" rel="stylesheet"/> -->
     <link href="reveal.js/css/odi/odi-bootstrap-orange.css" rel="stylesheet"/>
+    <!--Modules boxes-->
+    <link rel="stylesheet" href="odi/css/modules.css">
 </head>
 
 <body>
@@ -28,7 +31,7 @@
     <section>
         <header>
             <div class="container">
-                <h1>Presentations</h1>
+                <h1>{{ page.title }}</h1>
             </div>
         </header>
         <div class='container main-default' id='main'>
