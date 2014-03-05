@@ -1,0 +1,179 @@
+---
+layout: reveal
+title: Collaborative Geospatial Data
+description: Open glue for the web of data 
+author: Stuart Harrison
+twitter: pezholio
+---
+
+{% include odi_logo.html %}
+
+{% include standard_title.html %}
+
+
+<style type="text/css">
+@import url(https://fonts.googleapis.com/css?family=Quicksand:400,700,400italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
+
+reveal {
+  font-family: "Open Sans", sans-serif;
+  font-size: 36px;
+  font-weight: 200;
+  letter-spacing: 0.6em;
+  color: #333333; }
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  margin: 0 0 20px 0;
+  color: #333333;
+  font-family: "Quicksand", sans-serif;
+  line-height: 1.2em;
+  letter-spacing: -0.08em;
+  text-transform: uppercase;
+  text-shadow: none;
+ }
+ 
+ .reveal img {
+  border: none !important;
+ }
+ 
+ .organisations img {
+  margin: 0 10px !important;
+ }
+ 
+</style>
+
+
+<section data-background="2014-03-06-collaborative-geospatial-data/mappa-mundi.jpg">
+	<h2>Geo data is brilliant</h2>
+	<ul>
+	  <li>Easily referenceable</li>
+	  <li>Great for visualisations</li>
+	  <li>Even better for linking datasets together</li>
+	</ul>
+
+  <aside class="notes"></aside>
+</section>
+
+<section>
+	<h2>HOWEVER</h2>
+	
+	<aside class="notes"></aside>
+</section>
+
+<section>
+	<h2>Many organisations</h2>
+	
+	<div class="organisations">
+	<img src="2014-03-06-collaborative-geospatial-data/os.png" />
+	<img src="2014-03-06-collaborative-geospatial-data/royal-mail.png" />
+	<img src="2014-03-06-collaborative-geospatial-data/land-registry.png" />
+	<img src="2014-03-06-collaborative-geospatial-data/lichfield-district-council.jpg" />
+	<img src="2014-03-06-collaborative-geospatial-data/national-grid.png" />
+	</div>
+	
+
+  <aside class="notes"></aside>
+</section>
+
+<section data-background="2014-03-06-collaborative-geospatial-data/padlock.jpg"> 
+	<h2>Closed datasets</h2>
+	
+	<div class="photo-credit">
+      <a href="http://www.flickr.com/photos/simon_cocks/4534585117">Padlock</a> by
+      <a href="http://www.flickr.com/photos/simon_cocks/">Simon Cocks</a>
+      <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/">(CC BY-NC-SA 2.0)</a>
+  </div>
+
+  <aside class="notes"></aside>
+</section>
+
+<section data-background="2014-03-06-collaborative-geospatial-data/Tim_Berners-Lee_in_hi_viz_vest.jpg">
+	<h2>Enter OpenStreetMap</h2>
+	
+	<ul>
+	  <li>Not appropriate for temporary information (events etc)</li>
+	  <li>No direct access to raw data via URIs</li>
+	  <li>Sharealike licence</li>
+	  <li>Centralised</li>
+	</ul>
+	
+	<div class="photo-credit">
+      <a href="http://wiki.openstreetmap.org/wiki/File:Tim_Berners-Lee_in_hi_viz_vest.jpg">Tim Berners-Lee in hi viz vest</a> by
+      <a href="http://wiki.openstreetmap.org/wiki/User:Ivansanchez">Ivansanchez</a>
+      <a href="http://wiki.openstreetmap.org/wiki/OpenStreetMap_License">(CC BY-SA 2.0)</a>
+  </div>
+
+  <aside class="notes"></aside>
+</section>
+
+<section>
+	<h2>The solution(s)?</h2>
+	
+	<ul>
+	  <li>Capture existing openly licensed data</li>
+	  <li>Extract into a common format</li>
+	  <li>Crowdsource the gaps</li>
+	</ul>
+
+  <aside class="notes"></aside>
+</section>
+
+<section>
+	<h2>Open Green Spaces</h2>
+	
+	<ul>
+	  <li>Taking green space data from various sources</li>
+	  <li>Allowing the public to add extra context and locations</li>
+	  <li>Licensed under OGL</li>
+	</ul>
+
+  <aside class="notes"></aside>
+</section>
+
+<section>
+	<h2>Open Addresses</h2>
+	
+	<ul>
+	  <li>Building upon Open Green Spaces</li>
+	  <li>Taking existing OGL-licensed content:
+	    <ul>
+	      <li>Land Registry price paid data</li>
+	      <li>Companies House</li>
+	      <li>OS Locator</li>
+	      <li>CodePoint Open</li>
+	    </ul>
+	  </li>
+	</ul>
+
+  <aside class="notes"></aside>
+</section>
+
+<section>
+	<h2>Closing the gaps</h2>
+	
+	<ul>
+	  <li>Programatically guessing gaps (e.g. house numbering)</li>
+	  <li>Crowdsourcing sources of data from other organisations</li>
+	  <li>Allowing individual edits (similar to OSM)</li>
+	  <li>Confidence scoring: How reliable is this data point?</li>
+	</ul>
+
+  <aside class="notes"></aside>
+</section>
+
+<section>
+	<h2>The future</h2>
+	
+	<ul>
+	  <li>Stage 0: <a href="https://github.com/theodi/parse-uk-addresses">https://github.com/theodi/parse-uk-addresses</a></li>
+	  <li>Stage 1: Green Spaces</li>
+	  <li>Stage 2: Funding?</li>
+	</ul>
+
+  <aside class="notes"></aside>
+</section>
