@@ -51,18 +51,22 @@ reveal {
 <section data-background="2014-03-06-collaborative-geospatial-data/mappa-mundi.jpg">
 	<h2>Geo data is brilliant</h2>
 	<ul>
-	  <li>Easily referenceable</li>
+	  <li>Easily reference-able</li>
 	  <li>Great for visualisations</li>
 	  <li>Even better for linking datasets together</li>
 	</ul>
 
-  <aside class="notes"></aside>
+  <aside class="notes">
+    <p>As we all know, Geo data is brilliant.</p>
+  </aside>
 </section>
 
 <section>
 	<h2>HOWEVER</h2>
 	
-	<aside class="notes"></aside>
+	<aside class="notes">
+	 <p>However, in the UK, we have a problem</p>
+	</aside>
 </section>
 
 <section>
@@ -77,7 +81,11 @@ reveal {
 	</div>
 	
 
-  <aside class="notes"></aside>
+  <aside class="notes">
+    <p>Geodata is collected by a wide range of organisations, who don't always use the same standards.</p>
+    <p>And, more crucially..</p>
+    
+  </aside>
 </section>
 
 <section data-background="2014-03-06-collaborative-geospatial-data/padlock.jpg"> 
@@ -89,7 +97,9 @@ reveal {
       <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/">(CC BY-NC-SA 2.0)</a>
   </div>
 
-  <aside class="notes"></aside>
+  <aside class="notes">
+    <p>Despite some of the great strides that OS have made in this area, much of this data is closed</p>
+  </aside>
 </section>
 
 <section data-background="2014-03-06-collaborative-geospatial-data/Tim_Berners-Lee_in_hi_viz_vest.jpg">
@@ -108,7 +118,14 @@ reveal {
       <a href="http://wiki.openstreetmap.org/wiki/OpenStreetMap_License">(CC BY-SA 2.0)</a>
   </div>
 
-  <aside class="notes"></aside>
+  <aside class="notes">
+    <p>Thankfully, there is help in the form of OpenStreetMap.</p>
+    <p>BUT</p>
+    <p>Temporary information can't be added to geodata (for example, events in a park wouldn't be appropriate)</p>
+    <p>It's not part of the linked data web, so doesn't provide direct access to the raw data via URIs</p>
+    <p>The sharealike licence can put people off using it</p>
+    <p>Storing geospatial data in one centralised service may not be the best fit with a distributed web architecture</p>
+  </aside>
 </section>
 
 <section>
@@ -120,7 +137,11 @@ reveal {
 	  <li>Crowdsource the gaps</li>
 	</ul>
 
-  <aside class="notes"></aside>
+  <aside class="notes">
+    <p>How do we get around these issues?</p>
+    <p>Thankfully there's lots of open data available on the web with geodata included</p>
+    <p>So, we can hoover all this up, and provide a platform to crowdsource it</p>
+  </aside>
 </section>
 
 <section>
@@ -129,10 +150,15 @@ reveal {
 	<ul>
 	  <li>Taking green space data from various sources</li>
 	  <li>Allowing the public to add extra context and locations</li>
-	  <li>Licensed under OGL</li>
+	  <li>Licensed under the UK Open Government Licence</li>
 	</ul>
 
-  <aside class="notes"></aside>
+  <aside class="notes">
+    <p>Green space data is very disperate, and held by local councils, NGOs and community groups</p>
+    <p>This platform would allow people and organisations to add information about local parks and open spaces</p>
+    <p>Either individually, or by releasing their own data under the OGL</p>
+    <p>Data would be released in a common format under the OGL</p>
+  </aside>
 </section>
 
 <section>
@@ -150,7 +176,11 @@ reveal {
 	  </li>
 	</ul>
 
-  <aside class="notes"></aside>
+  <aside class="notes">
+    <p>The second step will build on the technology used by Open Green Spaces to provide a crowdsourced address platform</p>
+    <p>Taking existing OGL-licensed content, such as...</p>
+    <p>And get the data into a common format</p>
+  </aside>
 </section>
 
 <section>
@@ -163,7 +193,13 @@ reveal {
 	  <li>Confidence scoring: How reliable is this data point?</li>
 	</ul>
 
-  <aside class="notes"></aside>
+  <aside class="notes">
+    <p>We could probably get 50% of the data from existing sources, but how do we get the rest?</p>
+    <p>We can guess gaps in (for example) house numbering</p>
+    <p>We can allow bulk uploads from organisations such as local authorities, housing associations (subject to licensing)</p>
+    <p>We can allow individual edits</p>
+    <p>All of this will then get a confidence score (e.g. guessed data would have a lower confidence than data from the Land Registry)</p>
+  </aside>
 </section>
 
 <section>
@@ -175,5 +211,11 @@ reveal {
 	  <li>Stage 2: Funding?</li>
 	</ul>
 
-  <aside class="notes"></aside>
+  <aside class="notes">
+    <p>We've already done some work, and we're planning to start work on the green spaces project ourselves</p>
+    <p>BUT, we need funding to take it to the next level</p>
+    <p>Get in touch!</p>
+  </aside>
 </section>
+
+{% include odi_tech_team.html %}
