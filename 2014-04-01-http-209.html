@@ -1,0 +1,128 @@
+---
+layout: reveal
+title: HTTP 209
+description: W3C TAG F2F April 2014
+author: Jeni Tennison
+twitter: JeniT
+---
+
+{% include standard_title.html %}
+
+
+<style type="text/css">
+
+.reveal {
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 36px;
+	font-weight: 200;
+	color: #333333; }
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+	margin: 0 0 20px 0;
+	color: #333333;
+	line-height: 1.2em;
+	text-transform: uppercase;
+	text-shadow: none;
+ }
+ 
+ .reveal img {
+	border: none !important;
+	box-shadow: none !important;
+ }
+ 
+.reveal p {
+	text-align: center;
+}
+
+.reveal pre code {
+	padding: 10px;
+}
+
+</style>
+
+
+<section>
+	<section>
+		<h2>Problem</h2>
+	</section>
+	<section>
+		<img src="2014-04-01-http-209/resources.png">
+	</section>
+	<section>
+		<h3>Parts of large resources</h3>
+		<pre><code class="http">GET /really-big-map HTTP/1.1</code></pre>
+		<pre><code class="http">HTTP/1.1 303 See Other
+Location: /small.png
+Link: &lt;/small.png&gt;; rel=preview</code></pre>
+	</section>
+	<section>
+		<h3>Pages of a collection</h3>
+		<pre><code class="http">GET /long-running-blog HTTP/1.1</code></pre>
+		<pre><code class="http">HTTP/1.1 303 See Other
+Location: /first-page
+Link: &lt;/first-page&gt;; rel=start</code></pre>
+	</section>
+	<section>
+		<h3>Descriptions of non-information resources</h3>
+		<pre><code class="http">GET /tim-berners-lee HTTP/1.1</code></pre>
+		<pre><code class="http">HTTP/1.1 303 See Other
+Location: http://en.wikipedia.org/wiki/Tim_Berners-Lee
+Link: &lt;http://en.wikipedia.org/wiki/Tim_Berners-Lee&gt;; rel=describedby</code></pre>
+	</section>
+	<section>
+		<h3>Why not 303?</h3>
+		<ul>
+			<li>303s mean two roundtrips</li>
+			<li>increases latency</li>
+			<li>(legacy) lack of caching</li>
+			<li>provides the wrong URL for links</li>
+		</ul>
+	</section>
+</section>
+
+<section>
+	<section>
+		<h2>Proposal</h2>
+	</section>
+	<section>
+		<h3>209 Contents of Related</h3>
+		<p><a href="http://www.w3.org/2014/02/2xx/draft-prudhommeaux-http-status-209">http://www.w3.org/2014/02/2xx/draft-prudhommeaux-http-status-209</a></p>
+		<p>from discussions of Linked Data Platform Working Group</p>
+		<pre><code class="http">GET /really-big-map HTTP/1.1</code></pre>
+		<pre><code class="http">HTTP/1.1 209 Contents of Related
+Location: /small.png
+Link: &lt;/small.png&gt;; rel=preview</code></pre>
+	</section>
+	<section>
+		<h3>Issues</h3>
+		<ul>
+			<li>which resource do headers apply to?</li>
+			<li>how do apps that only recognise 200 react?</li>
+			<li>how does a server know which clients understand?</li>
+		</ul>
+	</section>
+	<section>
+		<h3>Alternatives</h3>
+		<ul>
+			<li>link to directly the related resource</li>
+			<li><a href="http://lists.w3.org/Archives/Public/www-tag/2014Mar/0003.html">use <code>Content-Location</code></a></li>
+			<li>use the content of the response to detail relationship</li>
+			<li>use <a href="http://tools.ietf.org/html/draft-ietf-httpbis-http2-10#section-8.2">HTTP 2.0 Server Push</a></li>
+		</ul>
+	</section>
+</section>
+
+<section>
+	<section>
+		<h2>Process</h2>
+	</section>
+	<section>
+		<h3>Via IETF</h3>
+		<p>Internet Draft</p>
+	</section>
+</section>
