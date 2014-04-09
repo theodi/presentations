@@ -1,0 +1,198 @@
+---
+layout: reveal
+title: How Do I GDS?
+description: Learnings from early-adoption of open-source code
+author: ODI Tech Team
+twitter: ukoditech
+---
+
+{% include odi_logo.html %}
+
+{% include standard_title.html %}
+
+
+<style type="text/css">
+    @import url(https://fonts.googleapis.com/css?family=Quicksand:400,700,400italic,700italic);
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
+
+    reveal {
+        font-family: "Open Sans", sans-serif;
+        font-size: 36px;
+        font-weight: 200;
+        letter-spacing: 0.6em;
+        color: #333333;
+    }
+
+    .reveal h1,
+    .reveal h2,
+    .reveal h3,
+    .reveal h4,
+    .reveal h5,
+    .reveal h6 {
+        margin: 0 0 20px 0;
+        color: #333333;
+        font-family: "Quicksand", sans-serif;
+        line-height: 1.2em;
+        letter-spacing: -0.08em;
+        text-transform: uppercase;
+        text-shadow: none;
+    }
+
+</style>
+
+<section>
+    <h2>WTF is the<br/>Open Data Institute?</h2>
+</section>
+
+<section>
+    <h2>Open culture</h2>
+</section>
+
+<section>
+    <h2>Who are the tech team?</h2>
+
+    What do we do?
+</section>
+
+<section>
+    <h2>How do we work?</h2>
+
+    Agile, TDD, continuous-deployment &c
+</section>
+
+<section>
+    <h2>What were we trying to fix?</h2>
+
+    We inherited a terrible Drupal install
+</section>
+
+<section>
+    <h2>What did we really want?</h2>
+
+    Web-publishing platform which we could bring into our workflow, testable, automatable &c
+</section>
+
+<section>
+    <h2>Content-as-data</h2>
+
+    The web is not just for humans
+</section>
+
+<section>
+    <h2>API first, not bolted-on (cf. Drupal)</h2>
+</section>
+
+<section>
+    <h2>Do web-publishing better</h2>
+    decoupled, multiple views as artefacts of the core platform - this matters to the ODI
+    because Open is the most important consideration for us. The platform needs to reflect who we are
+</section>
+
+<section>
+    <h2>Saw Tom Loosemore and Jordan speaking at OpenTech</h2>
+    saw that they had the parts we needed - it was built in the
+    right way, let's not re-invent any wheels. Building on the work of others is exactly what we should be doing
+</section>
+
+<section>
+    <h2>Took a 1-week spike, got it kind-of working</h2>
+    realised that while this is open-source, nobody had ever considered
+    that it might be re-used by somebody else. But it was useful for us
+</section>
+
+<section>
+    <h2>So we wrote some docs and pushed them upstream</h2>
+    and we made some of the code more generic, and pushed that
+    upstream.
+
+    DIAGRAM HERE!
+
+    Wrote a (clunky) script to get it up and running on a Vagrant box
+</section>
+
+<section>
+    <h2>Needed to validate our assumptions</h2>
+    so went to speak to some people at GDS - Mazz and David and others
+</section>
+
+<section>
+    <h2>Discovered that some things that confused us were done because SPEED</h2>
+    positive intent, but we're all human.
+</section>
+
+<section>
+    <h2>We need to make it more generic, but this will help others, so that's OK</h2>
+</section>
+
+<section>
+    <h2>When to fork, when to break forks?</h2>
+    How to keep up to date? (forkbomb, mazzops)
+</section>
+
+<section>
+    <h2>How and where to customise?</h2>
+    odi_content_models, odidown, customise things that should remain generic (publisher,
+    panopticon)
+</section>
+
+<section>
+    <h2>Make all your improvements opt-in so you don't need upstream to care</h2>
+</section>
+
+<section>
+    <h2>How aggressively do we feel we can refactor?</h2>
+    Confidence
+</section>
+
+<section>
+    <h2>Tests are *essential*</h2>
+    If they didn't have tests, we would never have been able to do this, if we push back
+    without tests they'll never accept our PRs
+</section>
+
+<section>
+    <h2>What should we contribute back?</h2>
+    Do GDS want this shit? Do they have TIME to deal with it?
+</section>
+
+<section>
+    <h2>Could others pick up our version?</h2>
+    Probably not. Yet. Would be nice to get to a fully-generic, fully-customisable
+    version
+</section>
+
+<section>
+    <h2>Ongoing process</h2>
+    we're still working on it all
+</section>
+
+<section>
+    <h2>What makes this hard?</h2>
+    * Piecing it all together from blogposts and scraps of documentation - this is not apt-get install gds
+    * Not knowing their roadmap
+    * Not being their primary customer
+    * Differences in tooling choices - e.g. test::unit
+    * Mysterious missing parts - *this is overwritten on deploy* all over the place
+</section>
+
+<section>
+    <h2>What did we fuck up?</h2>
+    * Emailing winston@gov.uk because *they'd left this hard-coded in a config file*
+    * Occasionally accidentally opened pull-requests onto alphagov's master branch and we still owe them cake
+    * Emailed half of GDS on a failed Travis build
+
+    And only discovered these when we got emails from them saying 'please don't do this'
+</section>
+
+<section>
+    <h2>Summarise learnings</h2>
+    * Know what you're getting into
+    * Push back, but consider the impact
+    * Upstream, there are humans
+    * Use, fork, or split? Easier on a decoupled project
+    * Rule 5: there are no rules
+</section>
+
+<!-- mention that the slides are data too! -->
+
+{% include odi_tech_team.html %}
