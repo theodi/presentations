@@ -10,7 +10,6 @@ twitter: ukoditech
 
 {% include standard_title.html %}
 
-
 <style type="text/css">
     @import url(https://fonts.googleapis.com/css?family=Quicksand:400,700,400italic,700italic);
     @import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
@@ -73,20 +72,46 @@ twitter: ukoditech
 
 <section>
     <h2>How do we work?</h2>
-
-    Agile, TDD, continuous-deployment &c
+    <ul>
+        <li>agility</li>
+        <li>TDD</li>
+        <li>Lots of automation</li>
+    </ul>
 </section>
 
 <section>
     <h2>What were we trying to fix?</h2>
 
-    We inherited a terrible Drupal install
+    <ul>
+        <li>We inherited a Drupal install</li>
+        <li>None of us knows PHP or Drupal</li>
+        <li>Drupal is hard to
+            <ul>
+                <li>
+                    Scale
+                </li>
+                <li>
+                    Automate
+                </li>
+                <li>
+                    Test
+                </li>
+            </ul>
+        </li>
+    </ul>
 </section>
 
 <section>
     <h2>What did we really want?</h2>
 
-    Web-publishing platform which we could bring into our workflow, testable, automatable &c
+    <ul>
+        <li>A web-publishing platform which we could bring into our workflow
+            <ul>
+                <li>Testable</li>
+                <li>Automatable</li>
+            </ul>
+        </li>
+    </ul>
 </section>
 
 <section>
@@ -96,54 +121,97 @@ twitter: ukoditech
 </section>
 
 <section>
-    <h2>API first, not bolted-on (cf. Drupal)</h2>
+    <h2>API first</h2>
+
+    Not bolted-on (cf. Drupal)
 </section>
 
 <section>
     <h2>Do web-publishing better</h2>
-    decoupled, multiple views as artefacts of the core platform - this matters to the ODI
-    because Open is the most important consideration for us. The platform needs to reflect who we are
+
+    <ul>
+        <li>Decoupled - many parts, loosely joined</li>
+        <li>Multiple views as artefacts of the core platform</li>
+        <li>This stuff matters to the ODI because Open is the most important consideration for us. The platform needs to
+            reflect who we are
+        </li>
+    </ul>
 </section>
 
 <section>
-    <h2>Saw Tom Loosemore and Jordan speaking at OpenTech</h2>
-    saw that they had the parts we needed - it was built in the
-    right way, let's not re-invent any wheels. Building on the work of others is exactly what we should be doing
+    <h2>OpenTech 2013</h2>
+    <ul>
+        <li>Saw Tom Loosemore and Jordan Hatch speaking about their platform</li>
+        <li>They had the parts we needed
+            <ul>
+                <li>It was built in the right way</li>
+                <li>Using tools we know</li>
+                <li>Let's not re-invent any wheels - building on the work of others is exactly what we should be doing
+                </li>
+            </ul>
+        </li>
+    </ul>
 </section>
 
 <section>
-    <h2>Took a 1-week spike, got it kind-of working</h2>
-    realised that while this is open-source, nobody had ever considered
-    that it might be re-used by somebody else. But it was useful for us
+    <h2>The Spike</h2>
+    <ul>
+        <li>Took a 1-week spike, got it kind-of working</li>
+        <li>Realised that while this is open-source, nobody had ever considered that it might be re-used by somebody
+            else
+        </li>
+        <li> But it looked like it would fit our needs</li>
+    </ul>
 </section>
 
 <section>
     <h2>So we wrote some docs and pushed them upstream</h2>
-    and we made some of the code more generic, and pushed that
-    upstream.
-
-    DIAGRAM HERE!
-
-    Wrote a (clunky) script to get it up and running on a Vagrant box
+    <ul>
+        <li>And we made some of the code more generic, and pushed that upstream
+        </li>
+        <li>
+            <img src="diagram.png"/>
+        </li>
+        <li>
+            And wrote a (clunky) script to get it up and running on a Vagrant box
+        </li>
+    </ul>
 </section>
 
 <section>
-    <h2>Needed to validate our assumptions</h2>
-    so went to speak to some people at GDS - Mazz and David and others
+    <h2>Time to validate our assumptions</h2>
+    <ul>
+        <li>Went to speak to some people at GDS</li>
+        <li>There are humans at the other end of this</li>
+    </ul>
 </section>
 
 <section>
-    <h2>Discovered that some things that confused us were done because SPEED</h2>
-    positive intent, but we're all human.
+    <h2>Resolved some mysteries</h2>
+    <ul>
+        <li>Discovered that some things that confused us were like that because GDS had been in a hurry</li>
+        <li> There was positive intent, but we're all human</li>
+    </ul>
 </section>
 
 <section>
-    <h2>We need to make it more generic, but this will help others, so that's OK</h2>
+    <h2>We needed to make it more generic</h2>
+
+    But this will help others, so that's OK
 </section>
 
 <section>
-    <h2>When to fork, when to break forks?</h2>
-    How to keep up to date? (forkbomb, mazzops)
+    <h2>How Do I Fork?</h2>
+    <ul>
+        <li>When to fork?</li>
+        <li>When to break your fork?</li>
+        <li> How to keep up to date?
+            <ul>
+                <li>forkbomb</li>
+                <li>Mazzops</li>
+            </ul>
+        </li>
+    </ul>
 </section>
 
 <section>
