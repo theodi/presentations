@@ -216,66 +216,161 @@ twitter: ukoditech
 
 <section>
     <h2>How and where to customise?</h2>
-    odi_content_models, odidown, customise things that should remain generic (publisher,
-    panopticon)
+
+    <ul>
+        <li>Fork, e.g. odi_content_models</li>
+        <li> Wrap, e.g. odidown</li>
+        <li>Customise things that ought to remain generic?
+            <ul>
+                <li>Publisher</li>
+                <li>Panopticon</li>
+            </ul>
+        </li>
+    </ul>
 </section>
 
 <section>
-    <h2>Make all your improvements opt-in so you don't need upstream to care</h2>
+    <h2>Make your improvements opt-in</h2>
+
+    So you don't need upstream to care
 </section>
 
 <section>
-    <h2>How aggressively do we feel we can refactor?</h2>
-    Confidence
+    <h2>Refactoring</h2>
+    <ul>
+        <li>
+            How aggressively do we feel we can refactor?
+        </li>
+        <li>
+            Requires a lot of confidence
+        </li>
+    </ul>
 </section>
 
 <section>
-    <h2>Tests are *essential*</h2>
-    If they didn't have tests, we would never have been able to do this, if we push back
-    without tests they'll never accept our PRs
+    <h2>Tests are <em>essential</em></h2>
+
+    <ul>
+        <li>
+            If GDS didn't have tests, we would never have been able to do this
+        </li>
+        <li>
+            If we push back to them without tests they'll never accept our PRs
+        </li>
+    </ul>
 </section>
 
 <section>
     <h2>What should we contribute back?</h2>
-    Do GDS want this shit? Do they have TIME to deal with it?
+    <ul>
+        <li>
+            Do GDS want this shit?
+        </li>
+        <li>
+            Do they have time to deal with it?
+        </li>
+    </ul>
 </section>
 
 <section>
     <h2>Could others pick up our version?</h2>
-    Probably not. Yet. Would be nice to get to a fully-generic, fully-customisable
-    version
+    <ul>
+        <li>
+            Probably not
+        </li>
+        <li>
+            Yet
+        </li>
+        <li>
+            Would be great to get to a fully-generic, fully-customisable version
+        </li>
+    </ul>
 </section>
 
 <section>
     <h2>Ongoing process</h2>
-    we're still working on it all
+    <ul>
+        <li>
+            We're still working on it all
+        </li>
+        <li>
+            Building new front-ends for different projects
+        </li>
+    </ul>
 </section>
 
 <section>
     <h2>What makes this hard?</h2>
-    * Piecing it all together from blogposts and scraps of documentation - this is not apt-get install gds
-    * Not knowing their roadmap
-    * Not being their primary customer
-    * Differences in tooling choices - e.g. test::unit
-    * Mysterious missing parts - *this is overwritten on deploy* all over the place
+    <ul>
+        <li>
+            Piecing it all together from blogposts and scraps of documentation
+            <ul>
+                <li>
+                    This is not apt-get install gds
+                </li>
+            </ul>
+        </li>
+        <li>
+            Not having visibility on GDS's roadmap
+        </li>
+        <li>
+            Not being their primary customer
+        </li>
+        <li>
+            Differences in tooling choices
+            <ul>
+                <li>e.g. test::unit
+                </li>
+            </ul>
+        </li>
+        <li>
+            Mysterious missing parts
+            <ul>
+                <li><em>this is overwritten on deploy</em> all over the place</li>
+            </ul>
+        </li>
+    </ul>
 </section>
 
 <section>
     <h2>What did we fuck up?</h2>
-    * Emailing winston@gov.uk because *they'd left this hard-coded in a config file*
-    * Occasionally accidentally opened pull-requests onto alphagov's master branch and we still owe them cake
-    * Emailed half of GDS on a failed Travis build
-
-    And only discovered these when we got emails from them saying 'please don't do this'
+    <ul>
+        <li>
+            Sending mail to <em>winston@alphagov.co.uk</em> because <em>GDS had left this hard-coded in an
+            initialiser</em>
+        </li>
+        <li>Occasionally accidentally opening pull-requests onto alphagov's master branch
+            <ul>
+                <li>and we still owe them cake
+                </li>
+            </ul>
+        </li>
+        <li>
+            Emailing half of GDS on a failed Travis build
+        </li>
+        <li>
+            And only discovering these things when we got emails from GDS saying 'please stop doing this'
+        </li>
+    </ul>
 </section>
 
 <section>
-    <h2>Summarise learnings</h2>
-    * Know what you're getting into
-    * Push back, but consider the impact
-    * Upstream, there are humans
-    * Use, fork, or split? Easier on a decoupled project
-    * Rule 5: there are no rules
+    <h2>Summary of our learnings</h2>
+    <ul>
+        <li>Know what you're getting into</li>
+        <li>Push back, but consider the impact</li>
+        <li>Upstream, there are humans</li>
+        <li>Use, fork, or split?
+            <ul>
+                <li>
+                    Easier on a decoupled project
+                </li>
+            </ul>
+        </li>
+        <li>
+            Rule 5: there are no rules
+        </li>
+    </ul>
 </section>
 
 <!-- mention that the slides are data too! -->
