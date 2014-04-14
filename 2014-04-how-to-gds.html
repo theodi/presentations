@@ -134,7 +134,12 @@ reveal {
 </section>
 <section class="sam">
   <aside class="notes">
-
+    <p>
+      The only piece of legacy infrastructure we inherited when we started was a single Drupal box serving theodi.org. There is no PHP or Drupal expertise in the team, so it was a bit of a black box to us. We attempted to apply some automation magic to it, but even attempting to run it across a pair of load-balanced servers led us down a rathole of hatred and anger
+    </p>
+    <p>
+      So we had this thing that devs didn't want to work on, ops didn't want to support, and users didn't want to use. We stuck with it for far longer than we should have, but eventually we were in a position to move on
+    </p>
   </aside>
   <h2>
     What were we trying to fix?
@@ -168,6 +173,9 @@ reveal {
   </ul>
 </section>
 <section class="sam">
+  <aside class="notes">
+    So what were we really looking for? We're big fans of things that are identical, repeatable and disposable, and Drupal ticks none of these boxes - or maybe it does, but we don't know how, and life is short
+  </aside>
   <h2>
     What did we really want?
   </h2>
@@ -186,20 +194,30 @@ reveal {
   </ul>
 </section>
 <section class="sam">
+  <aside class="notes">
+    <p>
+      We wanted something that had a data API right at the heart of it - there are Drupal modules that allow you to expose your content as data, but this is definitely the wrong way round
+    </p>
+  </aside>
   <h2>
-    Content-as-data
+    The web is not just for humans
   </h2>
 
-  The web is not just for humans
+  <ul>
+    <li>
+      API first - not bolted-on (c.f. Drupal)
+    </li>
+    <li>
+      Content-as-data
+    </li>
+  </ul>
 </section>
 <section class="sam">
-  <h2>
-    API first
-  </h2>
-
-  Not bolted-on (cf. Drupal)
-</section>
-<section class="sam">
+  <aside class="notes">
+    <p>
+      So in summary, we wanted a way to do web-publishing better - small parts loosely-joined is always appealing, the ability to layer multiple frontends on top of the API is really nice, and we want to use the most open tools we can because the platform should reflect who we are and how we work
+    </p>
+  </aside>
   <h2>
     Do web-publishing better
   </h2>
@@ -217,6 +235,11 @@ reveal {
   </ul>
 </section>
 <section class="sam">
+  <aside class="notes">
+    <p>
+      So in May last year, we went along to OpenTech, I imagine some of you were there too, and we watched Tom and Jordan from GDS talking about their platform. I was sat at the back with James, and we were both saying "this seems to be what we're looking for". It appeared that it had been built in the right way, it was certainly using tools we know, and we have a firm belief that there are more good ideas in the World than there are in the ODI
+    </p>
+  </aside>
   <h2>
     OpenTech 2013
   </h2>
@@ -277,6 +300,11 @@ reveal {
     </ul>
 </section>
 <section class="sam">
+  <aside class="notes">
+    <p>
+      So we thought we were probably heading down the right path, but there were a few puzzling things we'd come across. So we arranged a meeting with some of the lovely people down at GDS - the most important thing to remember is that there are people at the other and of this
+    </p>
+  </aside>
   <h2>
     Time to validate our assumptions
   </h2>
@@ -290,6 +318,11 @@ reveal {
   </ul>
 </section>
 <section class="sam">
+  <aside class="notes">
+    <p>
+    And we spent a couple of hours with them and some things became clearer - there were some parts of the system that had puzzled us, but we found out that they were like that because GDS had been in hurry, which was kind of reassuring
+  </p>
+  </aside>
   <h2>
     Resolved some mysteries
   </h2>
@@ -303,6 +336,11 @@ reveal {
   </ul>
 </section>
 <section class="sam">
+  <aside class="notes">
+    <p>
+      There were some parts of the system that were very GDS-specific, and we needed to make them more generic for our purposes. But the hops is that this will help other people who might want to pick this up, so that's OK
+    </p>
+  </aside>
   <h2>
     We needed to make it more generic
   </h2>
@@ -371,13 +409,23 @@ reveal {
   </ul>
 </section>
 <section class="sam">
+  <aside class="notes">
+    <p>
+      So what lessons can we take from all this? Well, when you're pushing back, you should try to not change the default behaviour, so upstream can merge without needing to care too much
+    </p>
+  </aside>
   <h2>
     Make your improvements opt-in
   </h2>
 
-  So you don't need upstream to care
+  Don't change default behaviour, so you don't need upstream to care
 </section>
 <section class="sam">
+  <aside class="notes">
+    <p>
+      It takes a certain amount of balls to aggressively refactor somebody else's code and then push it back upstream, particularly if you want them to merge your PR. There's a balance to be struck here, but always remember, there's a human at the other end of this
+    </p>
+  </aside>
   <h2>
     Refactoring
   </h2>
@@ -391,6 +439,9 @@ reveal {
   </ul>
 </section>
 <section class="sam">
+  <aside class="notes">
+    And I hope this doesn't come as a surprise to anybody in this room, but without tests none of this would be possible. If GDS didn't have tests, then we'd be in the same place we were with Drupal, and if we don't push back with tests, they will ignore our PRs and rightly so
+  </aside>
   <h2>
     Tests are <em>essential</em>
   </h2>
@@ -404,6 +455,11 @@ reveal {
   </ul>
 </section>
 <section class="sam">
+  <aside class="notes">
+    <p>
+      So how much stuff should we push back? Do GDS want this stuff? Do they have time to deal with it? We are certainly not their primary concern
+    </p>
+  </aside>
   <h2>
     What should we contribute back?
   </h2>
@@ -417,6 +473,11 @@ reveal {
   </ul>
 </section>
 <section class="sam">
+  <aside class="notes">
+    <p>
+      So could you pick up our versions of all of this stuff and run with it? No, not yet. We'd love to get to a fully-generic version, but that's a long way off
+    </p>
+  </aside>
   <h2>
     Could others pick up our version?
   </h2>
@@ -424,7 +485,7 @@ reveal {
     <li>
       Probably not
     </li>
-    <li>
+    <li class="fragment">
       Yet
     </li>
     <li>
@@ -433,6 +494,11 @@ reveal {
   </ul>
 </section>
 <section class="sam">
+  <aside class="notes">
+    <p>
+      We're still working on this stuff, we've recently launched a website for an ODI-related project that is not much more than a new frontend on top of the existing platform, and we expect to be doing more of this sort of stuff
+    </p>
+  </aside>
   <h2>
     Ongoing process
   </h2>
@@ -491,6 +557,20 @@ reveal {
     <img src='2014-04-how-to-gds/quirkafleeg.jpg'/>
 </section>
 <section class="sam">
+  <aside class="notes">
+    <p>
+      So what did we do wrong? Well, when I was trying to get it to send mail, I looked in the config and found that it was using Amazon's Simple Email Service, so I ripped that out and got it using Postfix instead, and then when I enabled that I saw in the logs that it was sending a load of mail to winston@alphagov.co.uk, so I quickly stopped that
+    </p>
+    <p>
+      And then occasionally, when we've been attempting to PR between our own branches, we've accidentally opened PRs onto GDS's master. And we still owe them cake for that
+    </p>
+    <p>
+      And then more recently we moved one of the projects from Jenkins onto Travis, and it emailed half of GDS when it failed
+    </p>
+    <p>
+      And we only discovered any of this stuff when we got emails from GDS saying 'please stop doing this'
+    </p>
+  </aside>
   <h2>
     What did we fuck up?
   </h2>
@@ -502,7 +582,7 @@ reveal {
       <li class="fragment">
         Occasionally accidentally opening pull-requests onto alphagov's master branch
         <ul>
-          <li>and we still owe them cake
+          <li class="fragment">and we still owe them cake
           </li>
         </ul>
       </li>
