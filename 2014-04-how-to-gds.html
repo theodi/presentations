@@ -10,516 +10,519 @@ twitter: ukoditech
 {% include standard_title.html %}
 
 <style type="text/css">
-    @import url(https://fonts.googleapis.com/css?family=Quicksand:400,700,400italic,700italic);
-    @import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
+@import url(https://fonts.googleapis.com/css?family=Quicksand:400,700,400italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
 
-    reveal {
-        font-family: "Open Sans", sans-serif;
-        font-size: 36px;
-        font-weight: 200;
-        letter-spacing: 0.6em;
-        color: #333333;
-    }
+reveal {
+  font-family: "Open Sans", sans-serif;
+  font-size: 36px;
+  font-weight: 200;
+  letter-spacing: 0.6em;
+  color: #333333;
+}
 
-    .reveal h1,
-    .reveal h2,
-    .reveal h3,
-    .reveal h4,
-    .reveal h5,
-    .reveal h6 {
-        margin: 0 0 20px 0;
-        color: #333333;
-        font-family: "Quicksand", sans-serif;
-        line-height: 1.2em;
-        letter-spacing: -0.08em;
-        text-transform: uppercase;
-        text-shadow: none;
-    }
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  margin: 0 0 20px 0;
+  color: #333333;
+  font-family: "Quicksand", sans-serif;
+  line-height: 1.2em;
+  letter-spacing: -0.08em;
+  text-transform: uppercase;
+  text-shadow: none;
+}
 
-    .sam {
-      background-image: url(https://avatars3.githubusercontent.com/u/885973?s=32);
-      background-repeat: no-repeat;
-      background-position: right 0px top 0px;
-    }
+.sam {
+  background-image: url(https://avatars3.githubusercontent.com/u/885973?s=32);
+  background-repeat: no-repeat;
+  background-position: right 0px top 0px;
+}
 
-    .james {
-      background-image: url(https://avatars0.githubusercontent.com/u/3565?s=32);
-      background-repeat: no-repeat;
-      background-position: right 0px top 0px;
-    }
-
+.james {
+  background-image: url(https://avatars0.githubusercontent.com/u/3565?s=32);
+  background-repeat: no-repeat;
+  background-position: right 0px top 0px;
+}
 </style>
 <section class="james">
-    <h2>
-        WTF is the Open Data Institute?
-    </h2>
+  <h2>
+    WTF is the Open Data Institute?
+  </h2>
+  <ul>
+    <li>
+      Launched October 2012
+    </li>
+    <li>
+      Non-profit
+    </li>
+    <li>
+      Funded by
+      <ul>
+        <li>
+          UK Government
+        </li>
+        <li>
+          Matched by others
+        </li>
+      </ul>
+    </li>
+    <li>
+      Dedicated to Open Data
+    </li>
     <ul>
-        <li>
-            Launched October 2012
-        </li>
-        <li>
-            Non-profit
-        </li>
-        <li>
-            Funded by
-            <ul>
-                <li>
-                    UK Government
-                </li>
-                <li>
-                    Matched by others
-                </li>
-            </ul>
-        </li>
-        <li>
-            Dedicated to Open Data
-        </li>
-        <ul>
-            <li>
-                Increasing supply
-            </li>
-            <li>
-                Increasing demand
-            </li>
-            <li>
-                Education and training
-            </li>
-        </ul>
+      <li>
+        Increasing supply
+      </li>
+      <li>
+        Increasing demand
+      </li>
+      <li>
+        Education and training
+      </li>
     </ul>
+  </ul>
 </section>
 <section class="james">
-    <h2>
-        Open culture
-    </h2>
-    <img src='2014-04-how-to-gds/vending_machine.jpg' style='max-height: 550px'/>
+  <h2>
+    Open culture
+  </h2>
+  <img src='2014-04-how-to-gds/vending_machine.jpg' style='max-height: 550px'/>
 </section>
 <section class="james">
-    <h2>
-        Who are the tech team?
-    </h2>
-    <ul>
+  <h2>
+    Who are the tech team?
+  </h2>
+  <ul>
+    <li>
+      Mixture of skills
+    </li>
+    <li>
+      Building tools for open data
+      <ul>
         <li>
-            Mixture of skills
+          CSVlint
         </li>
-        <li>
-            Building tools for open data
-            <ul>
-                <li>
-                    CSVlint
-                </li>
-            </ul>
-        </li>
-        <li>
-            Showing best practice
-        </li>
-        <li>
-            Open culture in code
-        </li>
-    </ul>
+      </ul>
+    </li>
+    <li>
+      Showing best practice
+    </li>
+    <li>
+      Open culture in code
+    </li>
+  </ul>
 </section>
 <section class="james">
-    <h2>
-        How do we work?
-    </h2>
-    <ul>
-        <li>
-            agility
-        </li>
-        <li>
-            TDD
-        </li>
-        <li>
-            Lots of automation
-        </li>
-    </ul>
+  <h2>
+    How do we work?
+  </h2>
+  <ul>
+    <li>
+      agility
+    </li>
+    <li>
+      TDD
+    </li>
+    <li>
+      Lots of automation
+    </li>
+  </ul>
 </section>
 <section class="sam">
-    <h2>
-        What were we trying to fix?
-    </h2>
-    <ul>
+  <aside class="notes">
+    
+  </aside>
+  <h2>
+    What were we trying to fix?
+  </h2>
+  <ul>
+    <li>
+      We inherited a Drupal install
+    </li>
+    <li>
+      None of us knows PHP or Drupal
+      <ul>
         <li>
-            We inherited a Drupal install
+          Nor do we want to
+        </li>
+      </ul>
+    </li>
+    <li>
+      Drupal is hard to
+      <ul>
+        <li>
+          Scale
         </li>
         <li>
-            None of us knows PHP or Drupal
-            <ul>
-                <li>
-                    Nor do we want to
-                </li>
-            </ul>
+          Automate
         </li>
         <li>
-            Drupal is hard to
-            <ul>
-                <li>
-                    Scale
-                </li>
-                <li>
-                    Automate
-                </li>
-                <li>
-                    Test
-                </li>
-            </ul>
+          Test
         </li>
-    </ul>
+      </ul>
+    </li>
+  </ul>
 </section>
 <section class="sam">
-    <h2>
-        What did we really want?
-    </h2>
-    <ul>
+  <h2>
+    What did we really want?
+  </h2>
+  <ul>
+    <li>
+      A web-publishing platform which we could bring into our workflow
+      <ul>
         <li>
-            A web-publishing platform which we could bring into our workflow
-            <ul>
-                <li>
-                    Testable
-                </li>
-                <li>
-                    Automatable
-                </li>
-            </ul>
+          Testable
         </li>
-    </ul>
+        <li>
+          Automatable
+        </li>
+      </ul>
+    </li>
+  </ul>
 </section>
 <section class="sam">
-    <h2>
-        Content-as-data
-    </h2>
+  <h2>
+    Content-as-data
+  </h2>
 
-    The web is not just for humans
+  The web is not just for humans
 </section>
 <section class="sam">
-    <h2>
-        API first
-    </h2>
+  <h2>
+    API first
+  </h2>
 
-    Not bolted-on (cf. Drupal)
+  Not bolted-on (cf. Drupal)
 </section>
 <section class="sam">
-    <h2>
-        Do web-publishing better
-    </h2>
-    <ul>
-        <li>
-            Decoupled - many parts, loosely joined
-        </li>
-        <li>
-            Multiple views as artefacts of the core platform
-        </li>
-        <li>
-            This stuff matters to the ODI because Open is the most important consideration for us - the platform needs
-            to reflect who we are
-        </li>
-    </ul>
+  <h2>
+    Do web-publishing better
+  </h2>
+  <ul>
+    <li>
+      Decoupled - many parts, loosely joined
+    </li>
+    <li>
+      Multiple views as artefacts of the core platform
+    </li>
+    <li>
+      This stuff matters to the ODI because Open is the most important consideration for us - the platform needs
+      to reflect who we are
+    </li>
+  </ul>
 </section>
 <section class="sam">
-    <h2>
-        OpenTech 2013
-    </h2>
-    <ul>
+  <h2>
+    OpenTech 2013
+  </h2>
+  <ul>
+    <li>
+      Saw Tom Loosemore and Jordan Hatch speaking about their platform
+    </li>
+    <li>
+      They had the parts we needed
+      <ul>
         <li>
-            Saw Tom Loosemore and Jordan Hatch speaking about their platform
+          It was built in the right way
         </li>
         <li>
-            They had the parts we needed
-            <ul>
-                <li>
-                    It was built in the right way
-                </li>
-                <li>
-                    Using tools we know
-                </li>
-                <li>
-                    Let's not re-invent any wheels - building on the work of others is one of our core principles
-                </li>
-            </ul>
+          Using tools we know
         </li>
-    </ul>
+        <li>
+          Let's not re-invent any wheels - building on the work of others is one of our core principles
+        </li>
+      </ul>
+    </li>
+  </ul>
 </section>
 <section class="james">
-    <h2>
-        The Spike
-    </h2>
-    <ul>
-        <li>
-            Took a 1-week spike, got it kind-of working
-        </li>
-        <li>
-            Realised that while this stuff is open-source, nobody had ever considered that it might be re-used by
-            somebody else
-        </li>
-        <li>
-            But it looked like it would fit our needs
-        </li>
-    </ul>
+  <h2>
+    The Spike
+  </h2>
+  <ul>
+    <li>
+      Took a 1-week spike, got it kind-of working
+    </li>
+    <li>
+      Realised that while this stuff is open-source, nobody had ever considered that it might be re-used by
+      somebody else
+    </li>
+    <li>
+      But it looked like it would fit our needs
+    </li>
+  </ul>
 </section>
 <section class="james">
   <img src="diagram.png"/>
 </section>
 <section class="james">
-    <h2>
-        So we wrote some docs and pushed them upstream
-    </h2>
-    <ul>
-        <li>
-            And we made some of the code more generic, and pushed that upstream
-        </li>
-        <li>
-            And wrote a (clunky) script to get it up and running on a Vagrant box
-        </li>
-    </ul>
+  <h2>
+    So we wrote some docs and pushed them upstream
+  </h2>
+  <ul>
+    <li>
+      And we made some of the code more generic, and pushed that upstream
+    </li>
+    <li>
+      And wrote a (clunky) script to get it up and running on a Vagrant box
+    </li>
+  </ul>
 </section>
 <section class="sam">
-    <h2>
-        Time to validate our assumptions
-    </h2>
-    <ul>
-        <li>
-            Went to speak to some people at GDS
-        </li>
-        <li>
-            There are humans at the other end of this
-        </li>
-    </ul>
+  <h2>
+    Time to validate our assumptions
+  </h2>
+  <ul>
+    <li>
+      Went to speak to some people at GDS
+    </li>
+    <li>
+      There are humans at the other end of this
+    </li>
+  </ul>
 </section>
 <section class="sam">
-    <h2>
-        Resolved some mysteries
-    </h2>
-    <ul>
-        <li>
-            Discovered that some things that confused us were like that because GDS had been in a hurry
-        </li>
-        <li>
-            There was positive intent, but we're all human
-        </li>
-    </ul>
+  <h2>
+    Resolved some mysteries
+  </h2>
+  <ul>
+    <li>
+      Discovered that some things that confused us were like that because GDS had been in a hurry
+    </li>
+    <li>
+      There was positive intent, but we're all human
+    </li>
+  </ul>
 </section>
 <section class="sam">
-    <h2>
-        We needed to make it more generic
-    </h2>
+  <h2>
+    We needed to make it more generic
+  </h2>
 
-    But this will help others, so that's OK
+  But this will help others, so that's OK
 </section>
 <section class="james">
-    <h2>
-        How Do I Fork?
-    </h2>
-    <ul>
+  <h2>
+    How Do I Fork?
+  </h2>
+  <ul>
+    <li>
+      When to fork?
+    </li>
+    <li>
+      When to break your fork?
+    </li>
+    <li>
+      How to keep up to date?
+      <ul>
         <li>
-            When to fork?
+          <a href="http://forkbomb.io">Forkbomb.io</a>
         </li>
         <li>
-            When to break your fork?
+          Mazzops
         </li>
-        <li>
-            How to keep up to date?
-            <ul>
-                <li>
-                    Forkbomb.io
-                </li>
-                <li>
-                    Mazzops
-                </li>
-            </ul>
-        </li>
-    </ul>
+      </ul>
+    </li>
+  </ul>
 </section>
 <section class="james">
-    <h2>
-        How and where to customise?
-    </h2>
-    <ul>
+  <h2>
+    How and where to customise?
+  </h2>
+  <ul>
+    <li>
+      Fork
+      <ul>
         <li>
-            Fork
-            <ul>
-                <li>
-                    e.g. odi_content_models
-                </li>
-            </ul>
+          e.g. odi_content_models
+        </li>
+      </ul>
+    </li>
+    <li>
+      Wrap
+      <ul>
+        <li>
+          e.g. odidown
+        </li>
+      </ul>
+    </li>
+    <li>
+      Customise things that ought to remain generic?
+      <ul>
+        <li>
+          Publisher
         </li>
         <li>
-            Wrap
-            <ul>
-                <li>
-                    e.g. odidown
-                </li>
-            </ul>
+          Panopticon
         </li>
-        <li>
-            Customise things that ought to remain generic?
-            <ul>
-                <li>
-                    Publisher
-                </li>
-                <li>
-                    Panopticon
-                </li>
-            </ul>
-        </li>
-    </ul>
+      </ul>
+    </li>
+  </ul>
 </section>
 <section class="sam">
-    <h2>
-        Make your improvements opt-in
-    </h2>
+  <h2>
+    Make your improvements opt-in
+  </h2>
 
-    So you don't need upstream to care
+  So you don't need upstream to care
 </section>
 <section class="sam">
-    <h2>
-        Refactoring
-    </h2>
-    <ul>
-        <li>
-            How aggressively do we feel we can refactor?
-        </li>
-        <li>
-            Requires a lot of confidence
-        </li>
-    </ul>
+  <h2>
+    Refactoring
+  </h2>
+  <ul>
+    <li>
+      How aggressively do we feel we can refactor?
+    </li>
+    <li>
+      Requires a lot of confidence
+    </li>
+  </ul>
 </section>
 <section class="sam">
-    <h2>
-        Tests are <em>essential</em>
-    </h2>
-    <ul>
-        <li>
-            If GDS didn't have tests, we would never have been able to do this
-        </li>
-        <li>
-            If we push back to them without tests they'll never accept our PRs
-        </li>
-    </ul>
+  <h2>
+    Tests are <em>essential</em>
+  </h2>
+  <ul>
+    <li>
+      If GDS didn't have tests, we would never have been able to do this
+    </li>
+    <li>
+      If we push back to them without tests they'll never accept our PRs
+    </li>
+  </ul>
 </section>
 <section class="sam">
-    <h2>
-        What should we contribute back?
-    </h2>
-    <ul>
-        <li>
-            Do GDS want this shit?
-        </li>
-        <li>
-            Do they have time to deal with it?
-        </li>
-    </ul>
+  <h2>
+    What should we contribute back?
+  </h2>
+  <ul>
+    <li>
+      Do GDS want this shit?
+    </li>
+    <li>
+      Do they have time to deal with it?
+    </li>
+  </ul>
 </section>
 <section class="sam">
-    <h2>
-        Could others pick up our version?
-    </h2>
-    <ul>
-        <li>
-            Probably not
-        </li>
-        <li>
-            Yet
-        </li>
-        <li>
-            Would be great to get to a fully-generic, fully-customisable version
-        </li>
-    </ul>
+  <h2>
+    Could others pick up our version?
+  </h2>
+  <ul>
+    <li>
+      Probably not
+    </li>
+    <li>
+      Yet
+    </li>
+    <li>
+      Would be great to get to a fully-generic, fully-customisable version
+    </li>
+  </ul>
 </section>
 <section class="sam">
-    <h2>
-        Ongoing process
-    </h2>
-    <ul>
-        <li>
-            We're still working on it all
-        </li>
-        <li>
-            Building new front-ends for different projects
-        </li>
-    </ul>
+  <h2>
+    Ongoing process
+  </h2>
+  <ul>
+    <li>
+      We're still working on it all
+    </li>
+    <li>
+      Building new front-ends for different projects
+    </li>
+  </ul>
 </section>
 <section class="james">
-    <h2>
-        What makes this hard?
-    </h2>
-    <ul>
+  <h2>
+    What makes this hard?
+  </h2>
+  <ul>
+    <li class="fragment">
+      Piecing it all together from blogposts and scraps of documentation
+      <ul>
         <li>
-            Piecing it all together from blogposts and scraps of documentation
-            <ul>
-                <li>
-                    This is not apt-get install gds
-                </li>
-            </ul>
+          This is not apt-get install gds
         </li>
-        <li>
-            Not having visibility on GDS's roadmap
+      </ul>
+    </li>
+    <li class="fragment">
+      Not having visibility on GDS's roadmap
+    </li>
+    <li class="fragment">
+      Not being their primary customer
+    </li>
+    <li class="fragment">
+      Differences in tooling choices
+      <ul>
+        <li>e.g. <em>test::unit</em>
         </li>
-        <li>
-            Not being their primary customer
-        </li>
-        <li>
-            Differences in tooling choices
-            <ul>
-                <li>e.g. test::unit
-                </li>
-            </ul>
-        </li>
-        <li>
-            Mysterious missing parts
-            <ul>
-                <li><em>this is overwritten on deploy</em> all over the place</li>
-            </ul>
-        </li>
-    </ul>
+      </ul>
+    </li>
+    <li class="fragment">
+      Mysterious missing parts
+      <ul>
+        <li><em>this is overwritten on deploy</em> all over the place</li>
+      </ul>
+    </li>
+  </ul>
 </section>
 <section class="sam">
+  <h2>
+    What did we fuck up?
+  </h2>
+  <ul>
+    <li class="fragment">
+      Sending mail to <em>winston@alphagov.co.uk</em> because <em>GDS had left this hard-coded in an
+        initialiser</em>
+      </li>
+      <li class="fragment">
+        Occasionally accidentally opening pull-requests onto alphagov's master branch
+        <ul>
+          <li>and we still owe them cake
+          </li>
+        </ul>
+      </li>
+      <li class="fragment">
+        Emailing half of GDS on a failed Travis build
+      </li>
+      <li class="fragment">
+        And only discovering these things when we got emails from GDS saying 'please stop doing this'
+      </li>
+    </ul>
+  </section>
+  <section class="james">
     <h2>
-        What did we fuck up?
+      Summary of our learnings
     </h2>
     <ul>
-        <li>
-            Sending mail to <em>winston@alphagov.co.uk</em> because <em>GDS had left this hard-coded in an
-            initialiser</em>
-        </li>
-        <li>Occasionally accidentally opening pull-requests onto alphagov's master branch
-            <ul>
-                <li>and we still owe them cake
-                </li>
-            </ul>
-        </li>
-        <li>
-            Emailing half of GDS on a failed Travis build
-        </li>
-        <li>
-            And only discovering these things when we got emails from GDS saying 'please stop doing this'
-        </li>
+      <li class="fragment">
+        Know what you're getting into
+      </li>
+      <li class="fragment">
+        Push back, but consider the impact
+      </li>
+      <li class="fragment">
+        Upstream, there are humans
+      </li>
+      <li class="fragment">
+        Use, fork, or split?
+        <ul>
+          <li>
+            Easier on a decoupled project
+          </li>
+        </ul>
+      </li>
+      <li class="fragment">
+        Rule 5: there are no rules
+      </li>
     </ul>
-</section>
-<section class="james">
-    <h2>
-        Summary of our learnings
-    </h2>
-    <ul>
-        <li>
-            Know what you're getting into
-        </li>
-        <li>
-            Push back, but consider the impact
-        </li>
-        <li>
-            Upstream, there are humans
-        </li>
-        <li>
-            Use, fork, or split?
-            <ul>
-                <li>
-                    Easier on a decoupled project
-                </li>
-            </ul>
-        </li>
-        <li>
-            Rule 5: there are no rules
-        </li>
-    </ul>
-</section>
+  </section>
 
-{% include odi_tech_team.html %}
+  {% include odi_tech_team.html %}
