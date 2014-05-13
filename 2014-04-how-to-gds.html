@@ -1,0 +1,625 @@
+---
+layout: reveal
+title: How Do I GDS?
+description: Learnings from early-adoption of open-source code
+author: ODI Tech Team
+twitter: ukoditech
+---
+
+{% include odi_logo.html %}
+{% include standard_title.html %}
+
+<style type="text/css">
+@import url(https://fonts.googleapis.com/css?family=Quicksand:400,700,400italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
+
+reveal {
+  font-family: "Open Sans", sans-serif;
+  font-size: 36px;
+  font-weight: 200;
+  letter-spacing: 0.6em;
+  color: #333333;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  margin: 0 0 20px 0;
+  color: #333333;
+  font-family: "Quicksand", sans-serif;
+  line-height: 1.2em;
+  letter-spacing: -0.08em;
+  text-transform: uppercase;
+  text-shadow: none;
+}
+
+.sam {
+  background-image: url(https://avatars3.githubusercontent.com/u/885973?s=32);
+  background-repeat: no-repeat;
+  background-position: right 0px top 0px;
+}
+
+.james {
+  background-image: url(https://avatars0.githubusercontent.com/u/3565?s=32);
+  background-repeat: no-repeat;
+  background-position: right 0px top 0px;
+}
+</style>
+<section class="james">
+  <h2>
+    WTF is the Open Data Institute?
+  </h2>
+  <ul>
+    <li>
+      Launched October 2012
+    </li>
+    <li>
+      Non-profit
+    </li>
+    <li>
+      Funded by
+      <ul>
+        <li>
+          UK Government
+        </li>
+        <li>
+          Matched by others
+        </li>
+      </ul>
+    </li>
+    <li>
+      Dedicated to Open Data
+    </li>
+    <ul>
+      <li>
+        Increasing supply
+      </li>
+      <li>
+        Increasing demand
+      </li>
+      <li>
+        Education and training
+      </li>
+    </ul>
+  </ul>
+</section>
+<section class="james">
+  <h2>
+    Open culture
+  </h2>
+  <img src='2014-04-how-to-gds/vending_machine.jpg' style='max-height: 550px'/>
+</section>
+<section class="james">
+  <h2>
+    Who are the tech team?
+  </h2>
+  <ul>
+    <li>
+      Mixture of skills
+    </li>
+    <li>
+      Building tools for open data
+      <ul>
+        <li>
+          CSVlint
+        </li>
+      </ul>
+    </li>
+    <li>
+      Showing best practice
+    </li>
+    <li>
+      Open culture in code
+    </li>
+  </ul>
+</section>
+<section class="james">
+  <h2>
+    How do we work?
+  </h2>
+  <ul>
+    <li>
+      agility
+    </li>
+    <li>
+      TDD
+    </li>
+    <li>
+      Lots of automation
+    </li>
+  </ul>
+</section>
+<section class="sam">
+  <aside class="notes">
+    <p>
+      The only piece of legacy infrastructure we inherited when we started was a single Drupal box serving theodi.org. There is no PHP or Drupal expertise in the team, so it was a bit of a black box to us. We attempted to apply some automation magic to it, but even attempting to run it across a pair of load-balanced servers led us down a rathole of hatred and anger
+    </p>
+    <p>
+      So we had this thing that devs didn't want to work on, ops didn't want to support, and users didn't want to use. We stuck with it for far longer than we should have, but eventually we were in a position to move on
+    </p>
+  </aside>
+  <h2>
+    What were we trying to fix?
+  </h2>
+  <ul>
+    <li>
+      We inherited a Drupal install
+    </li>
+    <li>
+      None of us knows PHP or Drupal
+      <ul>
+        <li>
+          Nor do we want to
+        </li>
+      </ul>
+    </li>
+    <li>
+      Drupal is hard to
+      <ul>
+        <li>
+          Scale
+        </li>
+        <li>
+          Automate
+        </li>
+        <li>
+          Test
+        </li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section class="sam">
+  <aside class="notes">
+    So what were we really looking for? We're big fans of things that are identical, repeatable and disposable, and Drupal ticks none of these boxes - or maybe it does, but we don't know how, and life is short
+  </aside>
+  <h2>
+    What did we really want?
+  </h2>
+  <ul>
+    <li>
+      A web-publishing platform which we could bring into our workflow
+      <ul>
+        <li>
+          Testable
+        </li>
+        <li>
+          Automatable
+        </li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section class="sam">
+  <aside class="notes">
+    <p>
+      We wanted something that had a data API right at the heart of it - there are Drupal modules that allow you to expose your content as data, but this is definitely the wrong way round
+    </p>
+  </aside>
+  <h2>
+    The web is not just for humans
+  </h2>
+
+  <ul>
+    <li>
+      API first - not bolted-on (c.f. Drupal)
+    </li>
+    <li>
+      Content-as-data
+    </li>
+  </ul>
+</section>
+<section class="sam">
+  <aside class="notes">
+    <p>
+      So in summary, we wanted a way to do web-publishing better - small parts loosely-joined is always appealing, the ability to layer multiple frontends on top of the API is really nice, and we want to use the most open tools we can because the platform should reflect who we are and how we work
+    </p>
+  </aside>
+  <h2>
+    Do web-publishing better
+  </h2>
+  <ul>
+    <li>
+      Decoupled - many parts, loosely joined
+    </li>
+    <li>
+      Multiple views as artefacts of the core platform
+    </li>
+    <li>
+      This stuff matters to the ODI because Open is the most important consideration for us - the platform needs
+      to reflect who we are
+    </li>
+  </ul>
+</section>
+<section class="sam">
+  <aside class="notes">
+    <p>
+      So in May last year, we went along to OpenTech, I imagine some of you were there too, and we watched Tom and Jordan from GDS talking about their platform. I was sat at the back with James, and we were both saying "this seems to be what we're looking for". It appeared that it had been built in the right way, it was certainly using tools we know, and we have a firm belief that there are more good ideas in the World than there are in the ODI
+    </p>
+  </aside>
+  <h2>
+    OpenTech 2013
+  </h2>
+  <ul>
+    <li>
+      Saw Tom Loosemore and Jordan Hatch speaking about their platform
+    </li>
+    <li>
+      They had the parts we needed
+      <ul>
+        <li>
+          It was built in the right way
+        </li>
+        <li>
+          Using tools we know
+        </li>
+        <li>
+          Let's not re-invent any wheels - building on the work of others is one of our core principles
+        </li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section class="james">
+  <h2>
+    The Spike
+  </h2>
+  <ul>
+    <li>
+      Took a 1-week spike, got it kind-of working
+    </li>
+    <li>
+      Realised that while this stuff is open-source, nobody had ever considered that it might be re-used by
+      somebody else
+    </li>
+    <li>
+      But it looked like it would fit our needs
+    </li>
+  </ul>
+</section>
+<section class="james">
+  <img src="2014-04-how-to-gds/diagram.png"/>
+</section>
+<section class="james">
+    <h2>
+        Pushing Upstream
+    </h2>
+    <ul>
+        <li>
+          Made a setup script
+        </li>
+        <li>
+          Wrote some documentation
+        </li>
+        <li>
+          Made things a little more generic
+        </li>
+    </ul>
+</section>
+<section class="sam">
+  <aside class="notes">
+    <p>
+      So we thought we were probably heading down the right path, but there were a few puzzling things we'd come across. So we arranged a meeting with some of the lovely people down at GDS - the most important thing to remember is that there are people at the other end of this
+    </p>
+  </aside>
+  <h2>
+    Time to validate our assumptions
+  </h2>
+  <ul>
+    <li>
+      Went to speak to some people at GDS
+    </li>
+    <li>
+      There are humans at the other end of this
+    </li>
+  </ul>
+</section>
+<section class="sam">
+  <aside class="notes">
+    <p>
+    And we spent a couple of hours with them and some things became clearer - there were some parts of the system that had puzzled us, but we found out that they were like that because GDS had been in hurry, which was kind of reassuring
+  </p>
+  </aside>
+  <h2>
+    Resolved some mysteries
+  </h2>
+  <ul>
+    <li>
+      Discovered that some things that confused us were like that because GDS had been in a hurry
+    </li>
+    <li>
+      There was positive intent, but we're all human
+    </li>
+  </ul>
+</section>
+<section class="sam">
+  <aside class="notes">
+    <p>
+      There were some parts of the system that were very GDS-specific, and we needed to make them more generic for our purposes. But the hope is that this will help other people who might want to pick this up, so that's OK
+    </p>
+  </aside>
+  <h2>
+    We needed to make it more generic
+  </h2>
+
+  But this will help others, so that's OK
+</section>
+<section class="james">
+    <h2>
+        How Do I Fork?
+    </h2>
+    <ul>
+        <li>
+            When to fork?
+        </li>
+        <li>
+            When to break your fork?
+        </li>
+        <li>
+            How to keep up to date?
+        </li>
+    </ul>
+</section>
+<section class="james">
+  <img src='2014-04-how-to-gds/forkbomb.png'/>
+  <caption><a href='http://forkbomb.io'>forkbomb.io</a></caption>
+</section>
+<section class="james">
+  <img src='2014-04-how-to-gds/mazzops.png'/>
+  <caption><a href='http://www.mazz-ops.com/'>mazz-ops.com</a></caption>
+</section>
+<section class="james">
+  <h2>
+    How and where to customise?
+  </h2>
+  <ul>
+    <li>
+      Extend
+      <ul>
+        <li>
+          e.g. odi_content_models
+        </li>
+      </ul>
+    </li>
+    <li>
+      Monkeypatch
+      <ul>
+        <li>
+          e.g. odidown
+        </li>
+      </ul>
+    </li>
+    <li>
+      Fork and customise
+      <ul>
+        <li>
+          Publisher
+        </li>
+        <li>
+          Panopticon
+        </li>
+      </ul>
+    </li>
+    <li>
+      Can apps be customised on the fly with Engines?
+    </li>
+  </ul>
+</section>
+<section class="sam">
+  <aside class="notes">
+    <p>
+      So what lessons can we take from all this? Well, when you're pushing back, you should try to not change the default behaviour, so upstream can merge without needing to care too much
+    </p>
+  </aside>
+  <h2>
+    Make your improvements opt-in
+  </h2>
+
+  Don't change default behaviour, so you don't need upstream to care
+</section>
+<section class="sam">
+  <aside class="notes">
+    <p>
+      It takes a certain amount of balls to aggressively refactor somebody else's code and then push it back upstream, particularly if you want them to merge your PR. There's a balance to be struck here, but always remember, there's a human at the other end of this
+    </p>
+  </aside>
+  <h2>
+    Refactoring
+  </h2>
+  <ul>
+    <li>
+      How aggressively do we feel we can refactor?
+    </li>
+    <li>
+      Requires a lot of confidence
+    </li>
+  </ul>
+</section>
+<section class="sam">
+  <aside class="notes">
+    And I hope this doesn't come as a surprise to anybody in this room, but without tests none of this would be possible. If GDS didn't have tests, then we'd be in the same place we were with Drupal, and if we don't push back with tests, they will ignore our PRs and rightly so
+  </aside>
+  <h2>
+    Tests are <em>essential</em>
+  </h2>
+  <ul>
+    <li>
+      If GDS didn't have tests, we would never have been able to do this
+    </li>
+    <li>
+      If we push back to them without tests they'll never accept our PRs
+    </li>
+  </ul>
+</section>
+<section class="sam">
+  <aside class="notes">
+    <p>
+      So how much stuff should we push back? Do GDS want this stuff? Do they have time to deal with it? We are certainly not their primary concern
+    </p>
+  </aside>
+  <h2>
+    What should we contribute back?
+  </h2>
+  <ul>
+    <li>
+      Do GDS want this shit?
+    </li>
+    <li>
+      Do they have time to deal with it?
+    </li>
+  </ul>
+</section>
+<section class="sam">
+  <aside class="notes">
+    <p>
+      So could you pick up our versions of all of this stuff and run with it? No, not yet. We'd love to get to a fully-generic version, but that's a long way off
+    </p>
+  </aside>
+  <h2>
+    Could others pick up our version?
+  </h2>
+  <ul>
+    <li>
+      Probably not
+    </li>
+    <li class="fragment">
+      Yet
+    </li>
+    <li>
+      Would be great to get to a fully-generic, fully-customisable version
+    </li>
+  </ul>
+</section>
+<section class="sam">
+  <aside class="notes">
+    <p>
+      We're still working on this stuff, we've recently launched a website for an ODI-related project that is not much more than a new frontend on top of the existing platform, and we expect to be doing more of this sort of stuff
+    </p>
+  </aside>
+  <h2>
+    Ongoing process
+  </h2>
+  <ul>
+    <li>
+      We're still working on it all
+    </li>
+    <li>
+      Building new front-ends for different projects
+    </li>
+  </ul>
+</section>
+<section class="james">
+  <h2>
+    What makes this hard?
+  </h2>
+  <ul>
+    <li class="fragment">
+      Piecing it all together from blogposts and scraps of documentation
+      <ul>
+        <li>
+          This is not apt-get install gds
+        </li>
+      </ul>
+    </li>
+    <li class="fragment">
+      Not having visibility on GDS's roadmap
+    </li>
+    <li class="fragment">
+      Not being their primary customer
+    </li>
+    <li class="fragment">
+      Differences in tooling choices
+      <ul>
+        <li>e.g. <em>test::unit</em>
+        </li>
+      </ul>
+    </li>
+    <li class="fragment">
+      Mysterious missing parts
+      <ul>
+        <li><em>this is overwritten on deploy</em> all over the place</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section class="james">
+    <h1>
+        WHAT IS THIS THING EVEN CALLED?
+    </h1>
+</section>
+<section class="james">
+    <img src='2014-04-how-to-gds/jet_set_willy.png'/>
+</section>
+<section class="james">
+    <img src='2014-04-how-to-gds/quirkafleeg.jpg'/>
+</section>
+<section class="sam">
+  <aside class="notes">
+    <p>
+      So what did we do wrong? Well, when I was trying to get it to send mail, I looked in the config and found that it was using Amazon's Simple Email Service, so I ripped that out and got it using Postfix instead, and then when I enabled that I saw in the logs that it was sending a load of mail to winston@alphagov.co.uk, so I quickly stopped that
+    </p>
+    <p>
+      And then occasionally, when we've been attempting to PR between our own branches, we've accidentally opened PRs onto GDS's master. And we still owe them cake for that
+    </p>
+    <p>
+      And then more recently we moved one of the projects from Jenkins onto Travis, and it emailed half of GDS when it failed
+    </p>
+    <p>
+      And we only discovered any of this stuff when we got emails from GDS saying 'please stop doing this'. But these are things that you might expect on any open-source project
+    </p>
+  </aside>
+  <h2>
+    What did we fuck up?
+  </h2>
+  <ul>
+    <li class="fragment">
+      Sending mail to <em>winston@alphagov.co.uk</em> because <em>GDS had left this hard-coded in an
+        initialiser</em>
+      </li>
+      <li class="fragment">
+        Occasionally accidentally opening pull-requests onto alphagov's master branch
+        <ul>
+          <li class="fragment">and we still owe them cake
+          </li>
+        </ul>
+      </li>
+      <li class="fragment">
+        Emailing half of GDS on a failed Travis build
+      </li>
+      <li class="fragment">
+        And only discovering these things when we got emails from GDS saying 'please stop doing this'
+      </li>
+    </ul>
+  </section>
+  <section class="james">
+    <h2>
+      Summary of our learnings
+    </h2>
+    <ul>
+      <li class="fragment">
+        Know what you're getting into
+      </li>
+      <li class="fragment">
+        Push back, but consider the impact
+      </li>
+      <li class="fragment">
+        Upstream, there are humans
+      </li>
+      <li class="fragment">
+        Use, fork, or split?
+        <ul>
+          <li>
+            Easier on a decoupled project
+          </li>
+        </ul>
+      </li>
+      <li class="fragment">
+        Rule 5: there are no rules
+      </li>
+    </ul>
+  </section>
+
+  {% include odi_tech_team.html %}
