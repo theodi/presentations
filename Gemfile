@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.0.0'
-#ruby-gemset=open-development
+ruby '2.1.2'
+#ruby-gemset=presentations
 
 gem 'jekyll'
