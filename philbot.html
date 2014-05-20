@@ -1,0 +1,213 @@
+---
+layout: reveal
+title: Philbot
+description: Building a Rackspace Cloudfiles Appliance for a hundred quid
+author: ODI Tech Team
+twitter: ukoditech
+---
+
+{% include odi_logo.html %}
+{% include standard_title.html %}
+
+<style type="text/css">
+@import url(https://fonts.googleapis.com/css?family=Quicksand:400,700,400italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
+
+reveal {
+  font-family: "Open Sans", sans-serif;
+  font-size: 36px;
+  font-weight: 200;
+  letter-spacing: 0.6em;
+  color: #333333;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  margin: 0 0 20px 0;
+  color: #333333;
+  font-family: "Quicksand", sans-serif;
+  line-height: 1.2em;
+  letter-spacing: -0.08em;
+  text-transform: uppercase;
+  text-shadow: none;
+}
+
+</style>
+
+<section>
+  <h2>
+    What is the Open Data Institute?
+  </h2>
+  <aside class='notes'>
+    <ul>
+      <li>
+        Launched October 2012
+      </li>
+      <li>
+        Non-profit
+      </li>
+      <li>
+        Funded by
+        <ul>
+          <li>
+            UK Government
+          </li>
+          <li>
+            Matched by others
+          </li>
+        </ul>
+      </li>
+      <li>
+        Dedicated to Open Data
+      </li>
+      <ul>
+        <li>
+          Increasing supply
+        </li>
+        <li>
+          Increasing demand
+        </li>
+        <li>
+          Education and training
+        </li>
+      </ul>
+    </ul>
+  </aside>
+</section>
+
+<section>
+  <h2>
+    What problem were we trying to solve?
+  </h2>
+  <aside class='notes'>
+    <p>
+      Our production editor needed somewhere to store large media files. He was putting things into Google Drive out of neccessity, but this was was far from ideal
+    </p>
+    <p>
+      Our production editor is called Phil
+    </p>
+  </aside>
+</section>
+
+<section>
+  <h2>
+    We needed an AWS Storage Gateway
+  </h2>
+  <h3>
+    But for Rackspace Cloudfiles
+  </h3>
+  <aside class='notes'>
+    After a bit of back-and-forth between Phil and the tech team, it seemed like we needed something like the Amazon S3 Appliance, but for Rackspace
+  </aside>
+</section>
+
+<section>
+  <h2>
+    Met with Gus
+  </h2>
+  <h3>
+    At the ODI office
+  </h3>
+  <aside class='notes'>
+    Were kind of surprised to find out that suck a thing does not already exist. However
+  </aside>
+</section>
+
+<section>
+  <h2>
+    The blog post
+  </h2>
+  <img src='philbot/blost.png' />
+  <a href='http://blog.rackspace.co.uk/dev-ops/devops-how-to-transfer-files-from-legacy-applications-to-cloud-files/'>http://blog.rackspace.co.uk/dev-ops/devops-how-to-transfer-files-from-legacy-applications-to-cloud-files/</a>
+  <aside class='notes'>
+    Gus pointed us towards this blogpost. It contained some ugly bash - any sufficiently useful bash script is ugly - designed to run on Redhat something, and we're more of an Ubuntu shop. It also relies on some Python thing, and we're Rubyists. But this was a good start
+  </aside>
+</section>
+
+<section>
+  <h2>
+    Ran this up on a VirtualBox VM
+  </h2>
+  <h3>
+    It was clunky, but it worked
+  </h3>
+  <aside class='notes'>
+    I kicked this around and got it working just enough on Ubuntu using the Fog Rubygem, which gave me confidence that it could be done
+  </aside>
+</section>
+
+<section>
+  <h2>
+    But we're a Ruby shop
+  </h2>
+  <h3>
+    Rewrote the whole thing test-first, outside-in in Ruby
+  </h3>
+  <aside class='notes'>
+    Underneath, we use Samba for file-sharing, and Redis to provide a queue
+  </aside>
+</section>
+
+<section>
+  <h2>
+    Enter Cucumber
+  </h2>
+  <img src='philbot/cuke.png' />
+  <a href='https://github.com/theodi/philbot/blob/master/features/crud/file_update.feature'>https://github.com/theodi/philbot/blob/master/features/crud/file_update.feature</a>
+  <aside class='notes'>
+    Turns out it's hard to test asynchronous things. But we were able to put this into continuous integration on Travis
+  </aside>
+</section>
+
+<section>
+  <h2>
+    The hardware
+  </h2>
+  <img src='philbot/philbot.jpg' />
+  <aside class='notes'>
+    That's a Raspberry Pi and a 2 TB external drive, and the whole thing cost about £100
+  </aside>
+</section>
+
+<section>
+  <h2>
+    Philbot on the network
+  </h2>
+  <img src='philbot/finder.png' />
+  <aside class='notes'>
+    Avahi means it auto-advertises itself on the network - you just enter your credentials and you're set. Drag files on and they are asynchronously uploaded to Cloudfiles, update them and they are updated, delete them and they are deleted
+  </aside>
+</section>
+
+<section>
+  <h2>
+    Roadmap
+  </h2>
+  <ul>
+    <li>
+      Auto-configuration
+    </li>
+    <li>
+      Cold storage
+    </li>
+    <li>
+      Raspberry Pi image
+    </li>
+  </ul>
+  <aside class='notes'>
+    Auto-configuration, where an out-of-the-box install will offer up a dummy configuration, which can be filled in, Philbot will notice the file has changed and move it into the correct location, and it will all just work.
+  </aside>
+</section>
+
+<section>
+  <h1>
+    Questions?
+  </h1>
+  <a href='http://theodi.github.io/philbot/'>http://theodi.github.io/philbot/</a>
+</section>
+
+{% include odi_tech_team.html %}
