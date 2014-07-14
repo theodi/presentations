@@ -1,0 +1,269 @@
+---
+layout: reveal
+title: CSVlint.io
+description: Publishing data that doesn't suck
+author: James Smith
+twitter: floppy
+---
+
+{% include odi_logo.html %}
+
+{% include standard_title.html %}
+
+<section>
+  <h1>CSV is amazing</h1>
+</section>
+
+<section>
+  <blockquote>
+    CSV is the data Kalashnikov: not pretty, but many wars have been fought with it and kids can use it.
+    <br/>
+    <small>Friedrich Lindenberg - <a href='http://twitter.com/pudo'>@pudo</a></small>
+  </blockquote>
+  <img style='border: none; box-shadow: none' src='2014-07-15-csvlint/ak47.png'/>
+  <aside class='notes'>
+    CSV is the AK47 of data. Simple, cheap, reliable, ubiquitous, etc.
+  </aside>
+</section>
+
+<section>
+  <img src='2014-07-15-csvlint/nicedata.png'/>
+</section>
+
+<section>
+  <h1>CSVs are terrible</h1>
+</section>
+
+<section data-background='2014-07-15-csvlint/howdidthis.jpg'>
+  <img style='border: none; box-shadow: none' src='2014-07-15-csvlint/broken_ak47.png'/>
+</section>
+
+<section>
+  <img src='2014-07-15-csvlint/crapdata-1.png'/>
+</section>
+
+<section>
+  <img src='2014-07-15-csvlint/crapdata-2.png'/>
+</section>
+
+<section>
+  <img src='2014-07-15-csvlint/wat.jpg'/>
+</section>
+
+<section>
+  <h2>Stick .CSV on it<br/>and call it data</h2>
+  <img src='2014-07-15-csvlint/dgu-stats.png'/>
+  <small>From <a href='http://theodi.org/blog/the-status-of-csvs-on-datagovuk'>"What is a CSV? A case study of CSVs on data.gov.uk"</a> by Ulrich Atz</small>
+</section>
+
+<section>
+  <h1>Reuse-Ready Data</h1>
+</section>
+
+<section>
+  <h1>CSVlint</h1>
+  <h2><a href='http://csvlint.io'>http://csvlint.io</a></h2>
+</section>
+
+<section>
+  <img src='2014-07-15-csvlint/csvlint.png'/>
+</section>
+
+<section>
+  <img src='2014-07-15-csvlint/validation.png'/>
+</section>
+
+<section>
+  <h1>RFC 4180</h1>
+</section>
+
+<section>
+  <h2>Errors</h2>
+  <ul>
+    <li>wrong content type</li>
+    <li>ragged rows</li>
+    <li>blank rows</li>
+    <li>invalid encoding</li>
+    <li>not found</li>
+    <li>stray quote</li>
+    <li>unclosed quote</li>
+    <li>whitespace</li>
+    <li>line breaks</li>
+    <li>no header</li>
+    <li>empty column name</li>
+    <li>duplicate column name</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Warnings</h2>
+  <ul>
+    <li>no encoding specified in HTTP response</li>
+    <li>encoding not UTF-8</li>
+    <li>no content type in HTTP response</li>
+    <li>excel (.xls extension)</li>
+    <li>check options (single column)</li>
+    <li>inconsistent values</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Information</h2>
+  <ul>
+    <li>non rfc line breaks (not CRLF)</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Status badges</h2>
+  <img src='2014-07-15-csvlint/not_found.svg' style='border: 0px; box-shadow: 0px; height: 50px'/>
+  <img src='2014-07-15-csvlint/invalid.svg' style='border: 0px; box-shadow: 0px; height: 50px'/>
+  <br/>
+  <img src='2014-07-15-csvlint/warnings.svg' style='border: 0px; box-shadow: 0px; height: 50px'/>
+  <img src='2014-07-15-csvlint/valid.svg' style='border: 0px; box-shadow: 0px; height: 50px'/>
+</section>
+
+<section>
+  <img src='2014-07-15-csvlint/headers.png'/>
+  <small>From <a href='http://theodi.org/blog/the-status-of-csvs-on-datagovuk'>"What is a CSV? A case study of CSVs on data.gov.uk"</a> by Ulrich Atz</small>
+</section>
+
+<section>
+  <img src='2014-07-15-csvlint/schema.png'/>
+</section>
+
+<section>
+  <pre>{
+  "fields": [
+    {
+      "name": "id",
+      "constraints": { "required": true }
+    },
+    {
+      "name": "price",
+      "constraints": { "required": true, "minLength": 1 }
+    },
+    {
+      "name": "postcode",
+      "constraints": {
+        "required": true,
+        "pattern": "[A-Z]{1,2}[0-9][0-9A-Z]? ?[0-9][A-Z]{2}"
+      }
+    }
+  ]
+}</pre>
+  JSON Table Schema
+  <br/>
+  <a href='http://dataprotocols.org/json-table-schema/'>http://dataprotocols.org/json-table-schema/</a>
+</section>
+
+<section>
+  <h2>Constraints</h2>
+  <ul>
+    <li>required</li>
+    <li>unique</li>
+    <li>minLength</li>
+    <li>maxLength</li>
+    <li>pattern (regular expression)</li>
+    <li>type (XML Schema types)</li>
+    <li>minimum</li>
+    <li>maximum</li>
+    <li>datePattern (strftime)</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Data types</h2>
+  <ul>
+    <li>String</li>
+    <li>Integer, Float, Double</li>
+    <li>URI</li>
+    <li>Boolean</li>
+    <li>Non Positive Integer</li>
+    <li>Positive Integer</li>
+    <li>Non Negative Integer</li>
+    <li>Negative Integer</li>
+    <li>Date</li>
+    <li>Date Time</li>
+    <li>Year</li>
+    <li>Year Month</li>
+    <li>Time</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Schema Errors/Warnings</h2>
+  <ul>
+    <li>missing value</li>
+    <li>min length</li>
+    <li>max length</li>
+    <li>pattern</li>
+    <li>header name</li>
+    <li>missing column</li>
+    <li>extra column</li>
+    <li>unique</li>
+    <li>below minimum</li>
+    <li>above maximum</li>
+  </ul>
+</section>
+
+<section>
+  <img src='2014-07-15-csvlint/recent_schemas.png'/>
+</section>
+
+<section>
+  <h2>Multi-file datasets</h2>
+  <ul>
+    <li>Datapackage</li>
+    <li>.zip upload</li>
+    <li>Separate validations</li>
+  </ul>
+</section>
+
+<section>
+  <img src='2014-07-15-csvlint/api-read.png'/>
+</section>
+
+<section>
+  <img src='2014-07-15-csvlint/api-create.png'/>
+</section>
+
+<section>
+  <h2>Source code</h2>
+  <h3>App: <a href='http://github.com/theodi/csvlint'>http://github.com/theodi/csvlint</a></h3>
+  <h3>Gem: <a href='http://github.com/theodi/csvlint.rb'>http://github.com/theodi/csvlint.rb</a></h3>
+  <small>
+    All MIT licensed (of course)
+  </small>
+</section>
+
+<section>
+  <h2>Cid</h2>
+  <h3>Continuous Integration for Data</h3>
+  <ul>
+    <li>Validate CSVs against schema</li>
+    <li>Update datapackage.json and push</li>
+    <li>Instructions: <a href='https://github.com/theodi/cid/blob/master/README.md'>https://github.com/theodi/cid</a></li>
+  </ul>
+</section>
+
+<section>
+  <h2>Future plans</h2>
+  <ul>
+    <li>data analysis</li>
+    <li>heuristics</li>
+    <li>integrations with other services</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Please use it!</h2>
+  <h3><a href='http://csvlint.io'>http://csvlint.io</a></h3>
+</section>
+
+<section>
+  <h2>Contribute!</h2>
+  <h3><a href='http://github.com/theodi/csvlint'>http://github.com/theodi/csvlint</a></h3>
+</section>
+
+{% include odi_tech_team.html %}
