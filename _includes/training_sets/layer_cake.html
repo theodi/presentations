@@ -1,0 +1,235 @@
+<section class="left">
+<script>
+ 	var cmds = new Array();
+
+	cmds[10] = "Trust,250,50,10,10,110,30";
+	cmds[9] = "Proof,250,50,120,70,110,30";
+	cmds[8] = "Logic,350,50,120,130,160,30";
+	cmds[4] = "Cryptography,100,230,10,70,1,100";
+	cmds[7] = "Taxonomies,140,50,120,190,28,30";
+	cmds[6] = "Ontologies,140,50,270,190,32,30";
+	cmds[5] = "Rules,140,50,420,190,50,30";
+	cmds[2] = "Shared Data Formats,440,50,120,250,130,30";
+	cmds[3] = "APIs,100,110,570,190,35,60";
+	cmds[1] = "Open Namespaces,360,50,10,310,110,30";
+	cmds[0] = "Open Identifiers (****),360,50,380,310,125,30";
+	cmds[11] = "The Web,780,50,10,370,360,30";
+
+	var next_counter = 0;
+	var triangle_done = false;
+	var data_done = false;
+	var information_done = false;
+	var knowledge_done = false;
+
+	function showDays() {
+		whiteAll();
+		if (!document.getElementById("Day 1")) {
+			console.log("Adding Days");
+			addDay("Day 1",'#00b7ff','40px',25);
+			addDay("Day 2",'#f9bc26','150px',25);
+			addDay("Day 3",'#66ef66','260px',25);
+			addDay("Day 4",'#ab2a86','370px',25);
+			addDay("Not Covered",'white','480px',2);
+		}
+		$('#day_nav').show();
+	}
+
+	function showCanvas(id) {
+		if ($('#'+id).is(":visible")) {
+			hideCanvas(id);
+		} else {
+			$('#'+id).css('visibility','visible').hide().fadeIn();
+		}
+	}
+
+	function hideCanvas(id) {
+		$('#'+id).fadeOut();
+	}
+
+	function showTriangle() {
+		$('#day_nav').hide();
+		$('#triangle_nav').show();
+		if (triangle_done) {
+			return;
+		}
+		var elem = document.getElementById('triangle_nav');
+		elem.addEventListener('click', function (event) {
+			var y = event.pageY - 80;
+			if (y<220 && y>150) {
+				showCanvas("data_canvas");
+			}
+			if (y<150 && y>80) {
+				showCanvas("information_canvas");
+			}
+			if (y<80 && y>0) {
+				showCanvas("knowledge_canvas");
+			}
+		});
+		context = elem.getContext('2d');
+		if (!context) {
+			return;
+		}
+		context.fillStyle="#38ddf9";
+		context.strokeStyle="#38ddf9";
+		context.lineWidth = 2;
+
+		context.beginPath();
+		context.moveTo(0,220);
+		context.lineTo(300,220);
+		context.lineTo(250,150);
+		context.lineTo(50,150);
+		context.lineTo(0,220);
+		
+		context.fill();
+		context.stroke();
+		context.fillStyle="black";
+	  	context.font="40px Helvetica";
+		context.fillText("Data",105,210);
+		context.closePath();
+		
+		context.fillStyle="#0cbc38";
+		context.strokeStyle="#0cbc38";
+
+		context.beginPath();
+		context.moveTo(51,149);
+		context.lineTo(249,149);
+		context.lineTo(200,80);
+		context.lineTo(100,80);
+		context.lineTo(51,149);
+		
+		context.fill();
+		context.stroke();
+		context.fillStyle="black";
+	  	context.font="32px Helvetica";
+		context.fillText("Information",70,140);
+		context.closePath();
+	
+		context.fillStyle="#d60202";
+		context.strokeStyle = '#d60202';
+	
+		context.beginPath();
+		context.moveTo(101,79);
+		context.lineTo(199,79);
+		context.lineTo(150,10);
+		context.lineTo(101,79);
+		
+		context.fill();
+		context.stroke();
+		context.fillStyle="black";
+	  	context.font="32px Helvetica";
+		context.fillText("Knowledge",75,70);
+		context.closePath();
+
+		triangle_done = true;
+	
+	}
+
+	function revealDay(day) {
+		if (day == "Day 1") {
+			$("canvas[id='Shared Data Formats']").animate({backgroundColor: '#00b7ff'});
+			$("canvas[id='The Web']").animate({backgroundColor: '#00b7ff'});	
+		}
+		if (day == "Day 2") {
+			$("canvas[id='Open Namespaces']").animate({backgroundColor: '#f9bc26'});
+			$("canvas[id='Open Identifiers (****)']").animate({backgroundColor: '#f9bc26'});
+		}
+		if (day == "Day 3") {
+			$('#APIs').animate({backgroundColor: '#66ef66'});	
+			$('#Proof').animate({backgroundColor: '#66ef66'});	
+			$('#Trust').animate({backgroundColor: '#66ef66'});	
+			$('#Logic').animate({backgroundColor: '#66ef66'});	
+		}
+		if (day == "Day 4") {
+			$('#Rules').animate({backgroundColor: '#ab2a86'});	
+			$('#Ontologies').animate({backgroundColor: '#ab2a86'});	
+			$('#Taxonomies').animate({backgroundColor: '#ab2a86'});	
+		}
+	}
+
+	function whiteAll() {
+		$('#triangle_nav').hide();
+		$('#day_nav').hide();
+		for (i=0;i<cmds.length;i++) {
+			id = (cmds[i].split(","))[0];
+			$("canvas[id='"+id+"']").animate({backgroundColor: 'white'});
+		}
+	}	
+	
+	function showAll() {
+		for (i=0;i<12;i++) {
+			showNext();
+		}
+		$('#show_all').hide();
+	}
+	function showNext() {
+		cmd = cmds[next_counter];
+		parts = cmd.split(",");
+		addElement(parts[0],parts[1],parts[2],parts[3],parts[4],parts[5],parts[6]);
+		next_counter++;
+		if (next_counter > 11) {
+			$('#show_next').hide();
+		}
+	}
+
+	function addDay(id,color,padding,x) {
+	  c = document.createElement("canvas");
+	  c.setAttribute("id",id);
+	  c.setAttribute("width",100);
+	  c.setAttribute("height",50);
+	  c.setAttribute("class","box");
+	  c.setAttribute("style","left: " + padding + "; background-color: " + color + ";");
+	  c.addEventListener('click', function(event) {
+		revealDay(id);
+	  });
+	  parent = document.getElementById("day_nav");
+	  parent.appendChild(c);
+	  addText(id,x,30);
+	}
+
+	function addElement(id,w,h,r,t,x,y) {
+	  c = document.createElement("canvas");
+	  c.setAttribute("id",id);
+	  c.setAttribute("width",w);
+	  c.setAttribute("height",h);
+	  c.setAttribute("class","box");
+	  c.setAttribute("style","right: " + r + "px; top: " + t + "px; background-color: white;");
+	  parent = document.getElementById("layer_cake");
+	  parent.appendChild(c);
+	  addText(id,x,y);
+	}
+	
+	function addText(id,x,y) {
+	  var c=document.getElementById(id);
+	  var ctx=c.getContext("2d");
+	  ctx.font="16px Helvetica";
+	  ctx.fillText(id,x,y);
+	}
+
+	</script>
+	<style>
+	.reveal .box {
+	  border:1px solid #000000;
+	  position: absolute;
+	  float: right;
+	}
+	</style>
+	<h2 style="float: left;">The Semantic Web</h2>
+	<control style="font-size: 0.5em; cursor: pointer; float:right; padding-right: 1em;">
+		<a id="show_all" onClick="showAll();">All</a> | 
+		<a id="show_next" onClick="showNext();">Progress</a> | 
+		<a id="triangle" onClick="showTriangle();">Triangle</a> | 
+		<a id="days" onClick="showDays();">Days</a> 
+	</control>
+	<nav id="day_nav" style="position: absolute; top: 100px; left: 10px; z-index: 30;">
+	</nav>
+	<canvas id="triangle_nav" style="position: absolute; top: 80px; left: 80px; z-index: 20;" width="305px" height="225px">
+	</canvas>
+	<canvas id="data_nav" style="position: absolute; top: 80px; left: 80px;" width="305px" height="225px">
+	</canvas>
+	<div style="position: absolute; left: 20px; top: 130px; width: 950px;" id="layer_cake">
+	<canvas id="data_canvas" style="position: relative; width: 830px; height: 118px; border: 2px solid #38ddf9; border-radius: 15px; left: 130px; top: 245px; z-index: 10; visibility: hidden;"></canvas>
+	<canvas id="information_canvas" style="position: absolute; width: 845px; height: 245px; border: 2px solid #0cbc38; border-radius: 15px; left: 122px; top: 125px; z-index: 10; visibility: hidden;"></canvas>
+	<canvas id="knowledge_canvas" style="position: absolute; width: 860px; height: 375px; border: 2px solid #d60202; border-radius: 15px; left: 115px; top: 0px; z-index: 10; visibility: hidden;"></canvas>
+	<div>
+
+</section>

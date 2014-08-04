@@ -1,0 +1,45 @@
+<section class="left">
+	<h2 style="float: left;">AI Challenges</h2>
+	<a id="ratings_click" onClick="showRatings();" style="font-size: 0.5em; cursor: pointer; float:right; padding-right: 1em;">Reveal Progress</a>
+	<h2 style="float: right; padding-right: 1em;" class="overall_progress">54%</h2>
+	<table width="90%" id="progress_table" style="padding-left: 30px;">
+		<tr><td width="40%" height="46px">Perception</td><td width="60%"><div class="progressbar" id="perception_progress"><div></div></div></td></tr>
+		<tr><td width="40%" height="46px">Learning</td><td width="60%"><div class="progressbar" id="learning_progress"><div></div></div></td></tr>
+		<tr><td width="40%" height="46px">Knowledge</td><td width="60%"><div class="progressbar" id="knowledge_progress"><div></div></div></td></tr>
+		<tr><td width="40%" height="46px">Context</td><td width="60%"><div class="progressbar" id="context_progress"><div></div></div></td></tr>
+		<tr><td width="40%" height="46px">Planning</td><td width="60%"><div class="progressbar" id="planning_progress"><div></div></div></td></tr>
+		<tr><td width="40%" height="46px">Reasoning</td><td width="60%"><div class="progressbar" id="reasoning_progress"><div></div></div></td></tr>
+		<tr><td width="40%" height="46px">Common Sense</td><td width="60%"><div class="progressbar" id="commonsense_progress"><div></div></div></td></tr>
+		<tr><td width="40%" height="46px">Communication</td><td width="60%"><div class="progressbar" id="communication_progress"><div></div></div></td></tr>
+		<tr><td width="40%" height="46px">Ethics</td><td width="60%"><div class="progressbar" id="ethics_progress"><div></div></div></td></tr>
+		<tr><td width="40%" height="46px">Legal</td><td width="60%"><div class="progressbar" id="legal_progress"><div></div></div></td></tr>
+		<tr><td width="40%" height="46px">&nbsp;</td><td width="60%" class="progresskey" style="vertical-align: top; font-size: 0.5em; line-height: 0.6em;">
+		<span style="float: left;">0....</span>
+		<span style="float: right;">Turing test complete</span>
+		</td></tr>
+	</table>
+
+	<script>
+	function progress(percent, element) {
+		var progressBarWidth = percent * $('#'+element).width() / 100;
+		$('#'+element).find('div').animate({ width: progressBarWidth }, 500).html(percent + "%&nbsp;");
+	}
+	function showRatings() {
+		$('#ratings_click').fadeOut();
+		$('.progressbar').fadeIn();
+		$('.progresskey').fadeIn();
+		base_time = 4000;
+		setTimeout(function(){progress(65, "perception_progress");},base_time);		
+		setTimeout(function(){progress(60, "learning_progress");},base_time + 200);
+		setTimeout(function(){progress(60, "knowledge_progress");},base_time + 400);
+		setTimeout(function(){progress(30, "context_progress");},base_time + 600);
+		setTimeout(function(){progress(70, "planning_progress");},base_time + 800);
+		setTimeout(function(){progress(55, "reasoning_progress");},base_time + 1000);
+		setTimeout(function(){progress(40, "commonsense_progress");},base_time + 1200);
+		setTimeout(function(){progress(60, "communication_progress");},base_time + 1400);
+		setTimeout(function(){progress(40, "ethics_progress");},base_time + 1600);
+		setTimeout(function(){progress(60, "legal_progress");},base_time + 1800);
+		setTimeout(function(){$('.overall_progress').fadeIn();},base_time + 2800);
+	}
+	</script>
+</section>
