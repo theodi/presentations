@@ -1,2 +1,135 @@
-<section>
+<section class="left">
+<script>
+ 	var cmds = new Array();
+
+	cmds[10] = "Trust,250,50,10,10,110,30";
+	cmds[9] = "Proof,250,50,120,70,110,30";
+	cmds[8] = "Logic,350,50,120,130,160,30";
+	cmds[4] = "Cryptography,100,230,10,70,1,100";
+	cmds[7] = "Taxonomies,140,50,120,190,28,30";
+	cmds[6] = "Ontologies,140,50,270,190,32,30";
+	cmds[5] = "Rules,140,50,420,190,50,30";
+	cmds[2] = "Shared Data Formats,440,50,120,250,130,30";
+	cmds[3] = "APIs,100,110,570,190,35,60";
+	cmds[1] = "Open Namespaces,360,50,10,310,110,30";
+	cmds[0] = "Open Identifiers (****),360,50,380,310,125,30";
+	cmds[11] = "The Web,780,50,10,370,360,30";
+
+	var next_counter = 0;
+
+	function showAll() {
+		for (i=0;i<12;i++) {
+			showNext();
+		}
+	}
+	function showNext() {
+		cmd = cmds[next_counter];
+		parts = cmd.split(",");
+		addElement(parts[0],parts[1],parts[2],parts[3],parts[4],parts[5],parts[6]);
+		next_counter++;
+	}
+
+	function highlight() {
+		$("canvas[id='The Web']").animate({backgroundColor: '#00b7ff'});	
+		$('#highlight').hide();
+		
+	}
+
+	function addElement(id,w,h,r,t,x,y) {
+	  c = document.createElement("canvas");
+	  c.setAttribute("id",id);
+	  c.setAttribute("width",w);
+	  c.setAttribute("height",h);
+	  c.setAttribute("class","box");
+	  c.setAttribute("style","right: " + r + "px; top: " + t + "px; background-color: white;");
+	  parent = document.getElementById("layer_cake2");
+	  parent.appendChild(c);
+	  addText(id,x,y);
+	}
+	
+	function addText(id,x,y) {
+	  var c=document.getElementById(id);
+	  var ctx=c.getContext("2d");
+	  ctx.font="16px Helvetica";
+	  ctx.fillText(id,x,y);
+	}
+
+	</script>
+	<style>
+	.reveal .box {
+	  border:1px solid #000000;
+	  position: absolute;
+	  float: right;
+	}
+	</style>
+	<h2 style="float: left;">Part 1: The Web</h2>
+	<control style="font-size: 0.5em; cursor: pointer; float:right; padding-right: 1em;">
+		<a id="highlight" onClick="highlight();">Highlight</a> 
+	</control>
+	<div style="position: absolute; left: 20px; top: 130px; width: 950px;" id="layer_cake2">
+	</div>
+
+<script>
+	showAll();
+	$("canvas[id='The Web']").animate({backgroundColor: '#00b7ff'});	
+</script>
 </section>
+
+<section>
+	<h2>Evolution of the Web</h2>
+	<ul class="no-bullet">
+		<li style="margin-left: -30px;">Web 1.0</li>
+		<ul>
+			<li>HTTP 1.0 and HTML 1.0-4.0</li>
+			<li>Static documents</li>
+			<li>Curated for invididual consumption</li>
+		</ul>
+		<li style="margin-left: -30px;">Web 2.0</li>
+		<ul>
+			<li>HTTP 1.0/1 and HTML 4.0/5.0</li>
+			<li>Content focussed</li>
+			<li>Dynamic to the needs of communities</li>
+		</ul>
+		<li style="margin-left: -30px;">Web 3.0</li>
+		<ul>
+			<li>HTTP, SPDY? &amp; HTML 5.0</li>
+			<li>Semantic Web?</li>
+			<li>Ubiquitous?</li>
+		</ul>
+	</ul>
+</section>
+
+<section class="center">
+	<h2>Standards don't define the webs evolution, people do.</h2>
+	<h2>Some experts refer to the web as the worlds biggest social machine.</h2>
+</section>
+
+<section class="center">
+	<h2><i>"Web 2.0 is, of course, a piece of jargon"</i></h2>
+	<div style="width: 90%; text-align: right;">
+                <i> - Berners-Lee et. al (2006)</i>
+        </div>
+</section>
+
+<section class="left odi-circles">
+	<h2>Features of Web 2.0</h2>
+	<p class="odi-logo">If we define Web 2.0 as "beyond documents" then there are some key charecteristics:</p>
+	<br>
+	<ul>
+		<li>Social networks</li>
+		<li>Content markup</li>
+		<li>Loosely coupled services via APIs</li>
+		<li>Crowed sourced and curated content</li>
+	</ul>
+	<br>
+	<br>
+	<p class="odi-logo">Berners-Lee held this as his vision of Web 1.0, hense why Web 2.0 is, to him, jargon. There was nothing new, it just took a while for people to understand the power of the web.</p>
+</section>
+
+<section class="center">
+	<h2>Examples!</h2>
+	<p>Think this as a good, bad and ugly of examples</p>
+</section>
+
+
+
