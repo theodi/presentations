@@ -201,6 +201,10 @@ iframe {
 	z-index: 30;
 }
 
+.right-title {
+	text-align: right;
+	width: 96%;
+}
 /***************************
  * Four Corners positioning
  ***************************/
