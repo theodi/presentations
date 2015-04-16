@@ -1,12 +1,25 @@
 <section class="odi-dynamic left">
         <h2>The ODI</h2>
         <p style="margin-left: 40px; margin-top: 30px; width: 60%; font-size: 64px; line-height: 1.4em;">
-        Open data is data that is made <em>available</em> by <em>organisations</em>, <em>businesses</em> and <em>individuals</em> for <em>anyone</em> to <em>access</em>, <em>use</em> and <em>share</em>.
+	<span id="odinew1">             D</span><span id="odiold1">Open data is d</span>ata that <span id="odiold2">is made <em>available</em> by <em>organisations</em>, <em>businesses</em> and <em>individuals</em> for </span><em>anyone</em> <span id="odiold3">to </span><span id="odinew2">can </span><em>access</em>, <em>use</em> and <em>share</em>.
 	</p>
 	<p style="margin-left: 300px; margin-top: 30px; font-size: 36px;">
 		- Open Data Institute FAQ
 	</p>
-	<p style="margin-left: 350px; font-size: 24px; color: #bfbfbf;">
-		Current deffinition
-	</p>
+	<div align="center">
+	<button id="showNew" style="padding: 10px 20px; background: #00b4af; font-size: 1em;" onclick="showNew();">View 2015 deffinition</button>
+	</div>
 </section>
+<script>
+	$('#odinew1').fadeOut(0);
+	$('#odinew2').fadeOut(0);
+	function showNew() {
+		$('#odiold1').fadeOut(2000, function() {
+			$('#odinew1').fadeIn(2000);
+		});
+		$('#odiold2').fadeOut(2000);
+		$('#odiold3').fadeOut(2000, function() {
+			$('#odinew2').fadeIn(2000);
+		});
+	}
+</script>
