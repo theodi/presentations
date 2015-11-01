@@ -12,6 +12,16 @@
 /**********************
  * ODI-specific classes
  **********************/
+.invert {
+	background-color: black;
+	display: inline-block;
+	margin-left: 30px;
+	padding-left: 23px;
+	padding-right: 23px;
+	padding-bottom: 10px;
+	min-width: 50%;
+}
+
 
 section.logo-background {
   width: 100%;
@@ -72,6 +82,19 @@ section.left {
 
 section.left h2, section.left p, section.left ul, section.left ol {
 	padding-left: 20px;
+}
+
+heading {
+	display: block;
+	padding-bottom: 20px;
+}
+.invert {
+	background-color: black;
+	display: inline-block;
+	margin-left: 30px;
+	padding-left: 23px;
+	padding-right: 23px;
+	padding-bottom: 10px;
 }
 
 section.odi-red impact, section.odi-cyan impact, section.odi-light-blue impact, section.odi-dark-blue impact, section.odi-yellow, section.odi-pale-green impact, section.odi-blue-green impact, section.odi-blue impact, section.odi-orange impact, section.odi-green impact, section.odi-purple impact {
